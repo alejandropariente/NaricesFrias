@@ -236,6 +236,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="aaaaaaa\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
