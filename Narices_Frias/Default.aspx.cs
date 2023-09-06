@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NFDao.Implementation;
+using NFDao.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,10 @@ namespace Narices_Frias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SystemUserImpl impl = new SystemUserImpl();
 
+            List<SystemUser> systemUsers = impl.Select();
+            int x = impl.Insert(new SystemUser("Ejemplo","123","asd@gmail.com",3,0));
         }
     }
 }
