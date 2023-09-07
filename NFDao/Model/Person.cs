@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace NFDao.Model
 {
-    public class Person : SystemUser
+    public class Person 
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string lastName { get; set; }
         public string secondLastName { get; set; }
@@ -17,8 +18,7 @@ namespace NFDao.Model
             
         }
 
-        public Person(int id, string name, string lastName, string secondLastName, DateTime birthdate,
-            string userName, string password, string email, byte role, int userId) :base(id,userName,password,email,role,userId)
+        public Person(int id, string name, string lastName, string secondLastName, DateTime birthdate)
         {
             this.id = id;
             this.name = name;
@@ -27,8 +27,7 @@ namespace NFDao.Model
             this.birthdate = birthdate;
         }
 
-        public Person(string name, string lastName, string secondLastName, DateTime birthdate,
-            string userName, string password, string email, byte role, int userId) : base(userName, password, email, role, userId)
+        public Person(string name, string lastName, string secondLastName, DateTime birthdate)
         {
             this.name = name;
             this.lastName = lastName;

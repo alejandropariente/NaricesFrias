@@ -46,7 +46,9 @@
     <Compile Include="Model\BaseConnection.cs" />
     <Compile Include="Model\KeyQuery.cs" />
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\ShelterStaff.cs" />
     <Compile Include="Model\SystemUser.cs" />
+    <Compile Include="Model\Vet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
