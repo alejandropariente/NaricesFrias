@@ -45,6 +45,7 @@
     <Compile Include="Implementation\SystemUserImpl.cs" />
     <Compile Include="Model\BaseConnection.cs" />
     <Compile Include="Model\KeyQuery.cs" />
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Model\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

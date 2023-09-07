@@ -15,7 +15,7 @@ namespace NFDao.Implementation
             {new KeyQuery("Select",
             @"SELECT userName , email , role FROM SystemUser WHERE status = 1") ,
              new KeyQuery("Insert",
-             @"INSERT SystemUser(userName,password,email,role,userId) VALUES(@userName,@password,@email,@role,@userId)") ,
+             @"INSERT SystemUser(userName,password,email,role,userId) VALUES(@userName,HASHBYTES('MD5',@password),@email,@role,@userId)") ,
              new KeyQuery("Update",
              @"") ,
              new KeyQuery("Get",
