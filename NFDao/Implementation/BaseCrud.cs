@@ -70,7 +70,15 @@ namespace NFDao.Implementation
 
                 // Agrega un parámetro a la consulta con el nombre de la propiedad
                 // y el valor obtenido del objeto
-                command.Parameters.AddWithValue("@" + propertyName, propertyValue);
+                if(propertyName == "password")
+                {
+                    command.Parameters.AddWithValue("@" + propertyName, propertyValue).SqlDbType = SqlDbType.VarChar; ;
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@" + propertyName, propertyValue);
+                }
+                
             }
             try
             {
@@ -94,7 +102,14 @@ namespace NFDao.Implementation
 
                 // Agrega un parámetro a la consulta con el nombre de la propiedad
                 // y el valor obtenido del objeto
-                command.Parameters.AddWithValue("@" + propertyName, propertyValue);
+                if (propertyName == "password")
+                {
+                    command.Parameters.AddWithValue("@" + propertyName, propertyValue).SqlDbType = SqlDbType.VarChar; ;
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@" + propertyName, propertyValue);
+                }
             }
             try
             {
