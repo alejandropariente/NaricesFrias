@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Narices_Frias", "Narices_Frias\Narices_Frias.csproj", "{A896C7C6-A869-480B-B660-3BF5E6C207BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFDao", "NFDao\NFDao.csproj", "{4169B81B-0247-49A8-BE56-6A3EDF79E139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTesting", "NFTesting\NFTesting.csproj", "{92B26231-85F1-45BD-A562-DF836076F469}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A896C7C6-A869-480B-B660-3BF5E6C207BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A896C7C6-A869-480B-B660-3BF5E6C207BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A896C7C6-A869-480B-B660-3BF5E6C207BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4169B81B-0247-49A8-BE56-6A3EDF79E139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4169B81B-0247-49A8-BE56-6A3EDF79E139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4169B81B-0247-49A8-BE56-6A3EDF79E139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4169B81B-0247-49A8-BE56-6A3EDF79E139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92B26231-85F1-45BD-A562-DF836076F469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B26231-85F1-45BD-A562-DF836076F469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B26231-85F1-45BD-A562-DF836076F469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B26231-85F1-45BD-A562-DF836076F469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
