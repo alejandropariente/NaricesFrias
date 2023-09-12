@@ -45,6 +45,8 @@
     <Compile Include="Implementation\PersonImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
+    <Compile Include="Interfaces\IShelterStaff.cs" />
+    <Compile Include="Interfaces\ISystemUser.cs" />
     <Compile Include="Model\BaseConnection.cs" />
     <Compile Include="Model\KeyQuery.cs" />
     <Compile Include="Model\Person.cs" />
@@ -52,8 +54,6 @@
     <Compile Include="Model\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
