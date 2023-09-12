@@ -1,4 +1,5 @@
 ﻿
+using NFDao.Interfaces;
 using NFDao.Model;
 using System;
 using System.Collections;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace NFDao.Implementation
 {
-    public class SystemUserImpl : BaseCrud<SystemUser>
+    public class SystemUserImpl : BaseCrud<SystemUser> , ISystemUser
     {
         public SystemUserImpl()
         {
@@ -29,6 +30,32 @@ namespace NFDao.Implementation
                                         FROM SystemUser S
                                         INNER JOIN Person P ON P.id = S.id
                                         WHERE P.id = @id") };
+        }
+
+        public int UpdateSystemUser(SystemUser user)
+        {
+            string query = @"BEGIN TRANSACTION
+	                                        UPDATE Person SET name = @name , lastName = @lastName , secondLastName = @secondLastName , lastUpdate = CURRENT_TIMESTAMP , userId = @userId  WHERE id = @id
+	                                        UPDATE SystemUser SET email = @email , role = @role , birthdate = @birthdate WHERE id = @id
+                                            COMMIT";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@id", user.id);
+            command.Parameters.AddWithValue("@name", user.name);
+            command.Parameters.AddWithValue("@lastName", user.lastName);
+            command.Parameters.AddWithValue("@secondLastName", user.secondLastName);
+            command.Parameters.AddWithValue("@userId", user.userId);
+            command.Parameters.AddWithValue("@email", user.email);
+            command.Parameters.AddWithValue("@role", user.role);
+            command.Parameters.AddWithValue("@birthdate", user.birthdate);
+            try
+            {
+                return ExecuteCommand(command);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

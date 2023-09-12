@@ -1,13 +1,16 @@
-﻿using NFDao.Model;
+﻿using NFDao.Interfaces;
+using NFDao.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NFDao.Implementation
 {
-    public class ShelterStaffImpl : BaseCrud<ShelterStaff>
+    public class ShelterStaffImpl : BaseCrud<ShelterStaff> , IShelterStaff
     {
         public ShelterStaffImpl()
         {
@@ -29,6 +32,39 @@ namespace NFDao.Implementation
                                         INNER JOIN Person P ON P.id = S.id
                                         INNER JOIN ShelterStaff SH ON SH.id = P.id
                                         WHERE P.id = @id") };
+        }
+
+
+
+        public int UpdateStaff(ShelterStaff staff)
+        {
+            string query = @"BEGIN TRANSACTION
+	                                        UPDATE Person SET name = @name , lastName = @lastName , secondLastName = @secondLastName , lastUpdate = CURRENT_TIMESTAMP , userId = @userId  WHERE id = @id
+	                                        UPDATE SystemUser SET email = @email , role = @role , birthdate = @birthdate WHERE id = @id
+	                                        UPDATE ShelterStaff SET ci = @ci , phone = @phone , address = @address , collegeNumber = @collegeNumber WHERE id = @id
+                                            COMMIT";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@id", staff.id);
+            command.Parameters.AddWithValue("@name", staff.name);
+            command.Parameters.AddWithValue("@lastName", staff.lastName);
+            command.Parameters.AddWithValue("@secondLastName", staff.secondLastName);
+            command.Parameters.AddWithValue("@userId", staff.userId);
+            command.Parameters.AddWithValue("@phone", staff.phone);
+            command.Parameters.AddWithValue("@email", staff.email);
+            command.Parameters.AddWithValue("@role", staff.role);
+            command.Parameters.AddWithValue("@birthdate", staff.birthdate);
+            command.Parameters.AddWithValue("@ci", staff.ci);
+            command.Parameters.AddWithValue("@address", staff.address);
+            command.Parameters.AddWithValue("@collegeNumber", staff.collegeNumber);
+            try
+            {
+                return ExecuteCommand(command);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
