@@ -32,6 +32,26 @@ namespace NFDao.Implementation
                                         WHERE P.id = @id") };
         }
 
+        public SystemUser Login(string username, string password)
+        {
+            string query = @"SELECT id
+                           FROM SystemUser s
+                           INNER JOIN Person p ON p.id = s.id
+                           WHERE p.status = 1 AND s.userName = @userName AND s.password = HASHBYTES('MD5',@password)";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@userName", username);
+            command.Parameters.AddWithValue("@password", password).SqlDbType = SqlDbType.VarChar;
+            try
+            {
+                return Get(ExecuteScalar(command));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public int UpdateSystemUser(SystemUser user)
         {
             string query = @"BEGIN TRANSACTION
