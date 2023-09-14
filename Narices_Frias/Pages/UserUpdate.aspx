@@ -1,15 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="UserCrud.aspx.cs" Inherits="Narices_Frias.Pages.UserCrud" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="UserUpdate.aspx.cs" Inherits="Narices_Frias.Pages.UserUpdate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container-fluid">
-        <div class="row">
-            <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
-<asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" Onclick="btnClose_Click"/>
+<div class="row">
+<div class="alert alert-success alert-dismissible" id="Div1" runat="server">
+
+<asp:Button Text="x" ID="Button1" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" Onclick ="Button1_Click"/>
 <h5><i class="icon fas fa-check"></i> Alerta!</h5>
-                    Registro insertado con exito!!..
+                    Registro Eliminado con exito!!..
 </div>
+<div class="alert alert-success alert-dismissible" id="midiv" runat="server">
+<asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
+<h5><i class="icon fas fa-check"></i> Alerta!</h5>
+                    Registro modificado con exito!!..
+</div>
+  <div class="container-fluid">
+        <div class="row">
             <div class="crudSearcher">
                 <h1>Gestion de Usuarios</h1>
             </div>
@@ -53,63 +60,19 @@
 </asp:DropDownList>
 </div>
 
-<div class="form-group">
-<label for=""></label>
-<asp:TextBox ID="txtPassword" CssClass="form-control form-control-lg"
-                                    placeholder="Ingresar Contrasena" runat="server" onblur="validatePasswordRepeat()"></asp:TextBox>
 
- 
-
-                                <div class="form-group">
-<label for="txtPasswordRepeat">Repetir Contraseña:</label>
-<asp:TextBox ID="txtPasswordRepeat" CssClass="form-control form-control-lg" placeholder="Repetir Contraseña" runat="server" onblur="validatePasswordRepeat()"></asp:TextBox>
-</div>
-</div>
 
                  <div class="box-body">
-<asp:GridView ID="dgvSalida" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped dataTable dtr-inline">
-<Columns>
-<asp:BoundField DataField="id" HeaderText="ID" />
-<asp:BoundField DataField="name" HeaderText="Nombres" />
-<asp:BoundField DataField="lastName" HeaderText="Primer Apellido" />
-<asp:BoundField DataField="secondLastName" HeaderText="Segundo Apellido" />
-<asp:BoundField DataField="userName" HeaderText="Nombre de usuario" />
-<asp:BoundField DataField="email" HeaderText="Correo Electronico" />
-<asp:BoundField DataField="role" HeaderText="Rol" />
-<asp:BoundField DataField="birthdate" HeaderText="Fecha de Nacimiento" />
-<asp:TemplateField HeaderText="Acciones">
-<ItemTemplate>
-<a href='UserUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
 
-
-<a href='UserCrud.aspx'>Volver</a>
-
-</ItemTemplate>
-</asp:TemplateField>
-</Columns>
-</asp:GridView>
 </div>
-                 <asp:Button runat="server" ID="btnRegistrar" OnClick="btnRegistrar_Click" Text="Registrar" />
+               
 
         <div class="row">
             <div class="col-xl-12">
                 <div>
-                    <nav>
-                        <ul>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconInsert.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconUpdate.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconDelete.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                        </ul>
-                    </nav>
+                   <a href='UserCrud.aspx'>Volver</a>
+<asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"/>
+<asp:Button ID="btnDelete" runat="server" Text="Eliminar" OnClientClick="return confirm('¿Estás seguro de que deseas eliminar este registro?');" OnClick="btnDelete_Click"/>
                 </div>
             </div>
         </div>
@@ -163,50 +126,11 @@
 
            
 
-        function validatePassword() {
-            var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
-            var passwordValue = passwordTextBox.value;
+       
 
  
 
-            if (passwordValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
-            }
-
- 
-
-            // Verificar si la contraseña cumple con los requisitos
-            var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{9,}$/;
-            if (!regex.test(passwordValue)) {
-                alert("La contraseña debe tener al menos 9 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.");
-                passwordTextBox.value = "";
-                passwordTextBox.focus();
-            }
-        }
-
- 
-
-        function validatePasswordRepeat() {
-            var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
-            var passwordRepeatTextBox = document.getElementById('<%= txtPasswordRepeat.ClientID %>');
-            var passwordValue = passwordTextBox.value;
-            var passwordRepeatValue = passwordRepeatTextBox.value;
-
- 
-
-            if (passwordRepeatValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
-            }
-
- 
-
-            if (passwordValue !== passwordRepeatValue) {
-                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-                passwordTextBox.value = "";
-                passwordRepeatTextBox.value = "";
-                passwordTextBox.focus();
-            }
-        }
+      
         function validateDateOfBirth() {
             var dateOfBirthTextBox = document.getElementById('<%= txtBornDate.ClientID %>');
                var dateOfBirthValue = dateOfBirthTextBox.value;
@@ -293,9 +217,10 @@
 
                return isFormValid;
            }
-</script>
+       </script>
  
 
 
 
 </asp:Content>
+
