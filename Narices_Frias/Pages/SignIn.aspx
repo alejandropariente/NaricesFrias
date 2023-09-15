@@ -2,7 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
+
+    <div class="container-fluid CrudSection">
         <div class="row">
             <div class="col-xl-12">
                 <h1>Registrarse</h1>
@@ -43,7 +45,7 @@
                             </div>
                             
                             <div class="form-group row">
-                                <div class="offset-sm-2 col-xl-12">
+                                <div class="btnRegister offset-sm-2 col-xl-12">
                                     <button type="submit" class="btn btn-primary">Registrar</button>
                                 </div>
                             </div>
