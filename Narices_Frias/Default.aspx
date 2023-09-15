@@ -39,14 +39,15 @@
                             
                             <div class="form-group row">
                                 <div class="offset-sm-2 col-xl-12">
-                                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                                      <asp:Button Text="Ingresar" ID="btnIngresar" runat="server" CssClass="boton" OnClick="btnIngresar_Click" />
+                                </div>
+                                <div id="myAlert" runat="server" class="alert alert-danger alert-dismissible" style="display: none;">
+                                        Los campos de usuario y contraseña son obligatorios.
                                 </div>
                             </div>
                         </form>
                         <h4><a href=""> Olvidaste tu cotrasena? </a></h4>
-                    </div>
-
-
+                    </div
                     
                 </div>
             </div>
