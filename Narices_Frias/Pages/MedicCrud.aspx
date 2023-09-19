@@ -2,7 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
+
+    <div class="container-fluid CrudSection">
         <div class="row">
             <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
                    <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
@@ -59,7 +61,6 @@
                         <label for="txtDireccion">Dirección:</label>
                         <asp:TextBox ID="txtDireccion" CssClass="form-control form-control-lg" placeholder="Ingresar Dirección" runat="server"></asp:TextBox>
                     </div>
-
                     <div class="form-group">
                         <label for="txtUniversidad">Número de Universidad:</label>
                         <asp:TextBox ID="txtUniversidad" CssClass="form-control form-control-lg" placeholder="Ingresar Número de Universidad" runat="server"></asp:TextBox>
@@ -130,6 +131,7 @@
             </nav>
             </div>
             </div>
+
             </div>
     </div>
 

@@ -1,0 +1,55 @@
+﻿body {
+
+   
+}
+.CrudSection {
+    background-color: #FEDF6A;
+    padding:4em 10em;
+
+}
+.btnRegister{
+    margin-left:0;
+}
+.form-control {
+    background-color: #FEF0B9;
+    border:0;
+    margin-top:0.5em;
+    border-bottom:solid 2px black;
+}
+.form-group {
+    margin: 0.5em 8em;
+}
+.btnRegister{
+    display:grid;
+    justify-content:center;
+    margin-top:2em;
+}
+.btn{
+    background-color:black;
+    padding:0.8em 5em;
+    border:0;
+    border-radius:10px;
+}
+.crudMenu {
+    background-color:white;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    position:fixed;
+    right:25%;
+    width:800px;
+    bottom:0;
+    z-index:3;
+   
+}
+li{
+    list-style:none;
+    margin:1em 2em;
+
+}
+li a img{
+    width:70px;
+}
+.crudMenu nav ul {
+    display:flex;
+    justify-content:center;
+}
