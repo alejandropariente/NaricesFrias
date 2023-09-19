@@ -1,15 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="MedicCrud.aspx.cs" Inherits="Narices_Frias.Pages.MedicCrud" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="MedicCrudUpdate.aspx.cs" Inherits="Narices_Frias.Pages.MedicCrudUpdate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
-
-    <div class="container-fluid CrudSection">
+    <div class="container-fluid">
         <div class="row">
+            <div class="alert alert-success alert-dismissible" id="Div1" runat="server">
+                    
+                    <asp:Button Text="x" ID="Button1" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="Button1_Click"/>
+                    <h5><i class="icon fas fa-check"></i> Alerta!</h5>
+                    Registro Eliminado con exito!!..
+                </div>
             <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
                    <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
                     <h5><i class="icon fas fa-check"></i> Alerta!</h5>
-                    Registro insertado con exito!!..
+                    Registro modificado con exito!!..
                 </div>
             <div class="crudSearcher">
                 <h1>Gestión de Médicos</h1>
@@ -61,21 +65,18 @@
                         <label for="txtDireccion">Dirección:</label>
                         <asp:TextBox ID="txtDireccion" CssClass="form-control form-control-lg" placeholder="Ingresar Dirección" runat="server"></asp:TextBox>
                     </div>
+
                     <div class="form-group">
                         <label for="txtUniversidad">Número de Universidad:</label>
                         <asp:TextBox ID="txtUniversidad" CssClass="form-control form-control-lg" placeholder="Ingresar Número de Universidad" runat="server"></asp:TextBox>
                     </div>
-                    <div class="form-group">
-                        <label for="txtPassword">Contraseña:</label>
-                        <asp:TextBox ID="txtPassword" CssClass="form-control form-control-lg" placeholder="Ingresar Contraseña" runat="server" onblur="validatePassword()"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPasswordRepeat">Repetir Contraseña:</label>
-                        <asp:TextBox ID="txtPasswordRepeat" CssClass="form-control form-control-lg" placeholder="Repetir Contraseña" runat="server" onblur="validatePasswordRepeat()"></asp:TextBox>
-                    </div>
+                    
                     <div class="form-group row">
                         <div class="offset-sm-2 col-xl-12">
-                            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click"/>
+                            <a href='MedicCrud.aspx'>Volver</a>
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"/>
+                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" OnClientClick="return confirm('¿Estás seguro de que deseas eliminar este registro?');" OnClick="btnDelete_Click" />
+
 
                         </div>
                     </div>
@@ -83,58 +84,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-5">
-                        <div class="box-body">
-                            <asp:GridView ID="dgvSalida" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped dataTable dtr-inline">
-                                <Columns>
-                                    <asp:BoundField DataField="id" HeaderText="ID" />
-                                    <asp:BoundField DataField="name" HeaderText="Nombres" />
-                                    <asp:BoundField DataField="lastName" HeaderText="Primer Apellido" />
-                                    <asp:BoundField DataField="secondLastName" HeaderText="Segundo Apellido" />
-                                    <asp:BoundField DataField="ci" HeaderText="Carnet de Identidad" />
-                                    <asp:BoundField DataField="phone" HeaderText="Celular" />
-                                    <asp:BoundField DataField="collegeNumber" HeaderText="Numero Colegiatura" />
-                                    <asp:BoundField DataField="address" HeaderText="Direccion" />
-                                    <asp:BoundField DataField="userName" HeaderText="Nombre de usuario" />
-                                    <asp:BoundField DataField="email" HeaderText="Correo Electronico" />
-                                    <asp:BoundField DataField="role" HeaderText="Rol" />
-                                    <asp:BoundField DataField="birthdate" HeaderText="Fecha de Nacimiento" />
-                                    <asp:TemplateField HeaderText="Acciones">
-                                        <ItemTemplate>
-                                            <a href='MedicCrudUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
-                                            <a href='MedicCrud.aspx'>Volver</a>
-                                            
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
-                        </div>
-                    </div>
-        <div class="row">
-            <div class="col-xl-12">
-            <div>
-            <nav>
-            <ul>
-            <li><a href="#">
-            <asp:Image runat="server" src="../Images/iconInsert.png"
-                                             alt="Sample image"/>
-            </a></li>
-            <li><a href="#">
-            <asp:Image runat="server" src="../Images/iconUpdate.png"
-                                             alt="Sample image"/>
-            </a></li>
-            <li><a href="#">
-            <asp:Image runat="server" src="../Images/iconDelete.png"
-                                             alt="Sample image"/>
-            </a></li>
-            </ul>
-            </nav>
-            </div>
-            </div>
-
-            </div>
-    </div>
-
+      </div>
     <script>
         function validateCI() {
             var ciTextBox = document.getElementById('<%= txtCi.ClientID %>');
@@ -194,40 +144,6 @@
             }
         }
 
-        function validatePassword() {
-            var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
-            var passwordValue = passwordTextBox.value;
-
-            if (passwordValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
-            }
-
-            // Verificar si la contraseña cumple con los requisitos
-            var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{9,}$/;
-            if (!regex.test(passwordValue)) {
-                alert("La contraseña debe tener al menos 9 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.");
-                passwordTextBox.value = "";
-                passwordTextBox.focus();
-            }
-        }
-
-        function validatePasswordRepeat() {
-            var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
-            var passwordRepeatTextBox = document.getElementById('<%= txtPasswordRepeat.ClientID %>');
-            var passwordValue = passwordTextBox.value;
-            var passwordRepeatValue = passwordRepeatTextBox.value;
-
-            if (passwordRepeatValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
-            }
-
-            if (passwordValue !== passwordRepeatValue) {
-                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-                passwordTextBox.value = "";
-                passwordRepeatTextBox.value = "";
-                passwordTextBox.focus();
-            }
-        }
         function validateDateOfBirth() {
             var dateOfBirthTextBox = document.getElementById('<%= txtBornDate.ClientID %>');
             var dateOfBirthValue = dateOfBirthTextBox.value;
@@ -291,6 +207,4 @@
             return isFormValid;
         }
     </script>
-
-
 </asp:Content>
