@@ -42,20 +42,6 @@ namespace NFDao.Model
             }
             finally { command.Connection.Close(); }
         }
-        public int ExecuteScalar(SqlCommand command)
-        {
-            try
-            {
-                command.Connection.Open();
-                return (int) command.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally { command.Connection.Close(); }
-        }
 
         public DataTable DataTableCommand(SqlCommand command)
         {
