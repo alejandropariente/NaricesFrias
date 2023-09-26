@@ -17,51 +17,51 @@ namespace Narices_Frias.Pages
         PersonImpl personImpl;
         protected void Page_Load(object sender, EventArgs e)
         {
-            midiv.Visible = false;
-            Div1.Visible = false;
-            if (!IsPostBack)
-            {
-                string id = Request.QueryString["id"];
+            //midiv.Visible = false;
+            //Div1.Visible = false;
+            //if (!IsPostBack)
+            //{
+            //    string id = Request.QueryString["id"];
 
-                try
-                {
+            //    try
+            //    {
 
-                    sImpl = new ShelterStaffImpl();
-                    s = sImpl.Get(int.Parse(id));
-                    if (s != null)
-                    {
-                        txtName.Text = s.name;
-                        txtfirstName.Text = s.lastName;
-                        txtMiddleName.Text = s.secondLastName;
-                        string fechaDesdeBaseDeDatos = s.birthdate.ToString();
-                        fechaDesdeBaseDeDatos = fechaDesdeBaseDeDatos.Trim('{', '}');
-                        if (DateTime.TryParseExact(fechaDesdeBaseDeDatos, "M/d/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime fecha))
-                        {
+            //        sImpl = new ShelterStaffImpl();
+            //        s = sImpl.Get(int.Parse(id));
+            //        if (s != null)
+            //        {
+            //            txtName.Text = s.name;
+            //            txtfirstName.Text = s.lastName;
+            //            txtMiddleName.Text = s.secondLastName;
+            //            string fechaDesdeBaseDeDatos = s.birthdate.ToString();
+            //            fechaDesdeBaseDeDatos = fechaDesdeBaseDeDatos.Trim('{', '}');
+            //            if (DateTime.TryParseExact(fechaDesdeBaseDeDatos, "M/d/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime fecha))
+            //            {
                             
-                            DateTime fechaSinHoraMinutosSegundos = fecha.Date;
+            //                DateTime fechaSinHoraMinutosSegundos = fecha.Date;
 
                             
-                            string fechaFormateada = fechaSinHoraMinutosSegundos.ToString("yyyy-MM-dd");
+            //                string fechaFormateada = fechaSinHoraMinutosSegundos.ToString("yyyy-MM-dd");
 
-                            txtBornDate.Text = fechaFormateada;
-                        }
-                        txtEmail.Text = s.email;
-                        txtPhone.Text = s.phone;
+            //                txtBornDate.Text = fechaFormateada;
+            //            }
+            //            txtEmail.Text = s.email;
+            //            txtPhone.Text = s.phone;
 
 
-                        ddlRol.Text = s.role.ToString();
-                        txtDireccion.Text = s.address;
-                        txtUniversidad.Text = s.collegeNumber;
-                        txtCi.Text = s.ci;
+            //            ddlRol.Text = s.role.ToString();
+            //            txtDireccion.Text = s.address;
+            //            txtUniversidad.Text = s.collegeNumber;
+            //            txtCi.Text = s.ci;
 
-                    }
-                }
-                catch (Exception ex)
-                {
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
 
-                    throw ex;
-                }
-            }
+            //        throw ex;
+            //    }
+            //}
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
