@@ -18,64 +18,64 @@ namespace Narices_Frias.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            midiv.Visible = false;
-            Div1.Visible = false;
-            if (!IsPostBack)
-            {
-                string id = Request.QueryString["id"];
+            //midiv.Visible = false;
+            //Div1.Visible = false;
+            //if (!IsPostBack)
+            //{
+            //    string id = Request.QueryString["id"];
 
 
 
-                try
-                {
+            //    try
+            //    {
 
 
 
-                    userImpl = new SystemUserImpl();
-                    user = userImpl.Get(int.Parse(id));
-                    if (user != null)
-                    {
-                        txtName.Text = user.name;
-                        txtfirstName.Text = user.lastName;
-                        txtMiddleName.Text = user.secondLastName;
-                        string fechaDesdeBaseDeDatos = user.birthdate.ToString();
-                        fechaDesdeBaseDeDatos = fechaDesdeBaseDeDatos.Trim('{', '}');
-                        if (DateTime.TryParseExact(fechaDesdeBaseDeDatos, "M/d/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime fecha))
-                        {
+            //        userImpl = new SystemUserImpl();
+            //        user = userImpl.Get(int.Parse(id));
+            //        if (user != null)
+            //        {
+            //            txtName.Text = user.name;
+            //            txtfirstName.Text = user.lastName;
+            //            txtMiddleName.Text = user.secondLastName;
+            //            string fechaDesdeBaseDeDatos = user.birthdate.ToString();
+            //            fechaDesdeBaseDeDatos = fechaDesdeBaseDeDatos.Trim('{', '}');
+            //            if (DateTime.TryParseExact(fechaDesdeBaseDeDatos, "M/d/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime fecha))
+            //            {
 
-                            DateTime fechaSinHoraMinutosSegundos = fecha.Date;
-
-
-
-
-                            string fechaFormateada = fechaSinHoraMinutosSegundos.ToString("yyyy-MM-dd");
+            //                DateTime fechaSinHoraMinutosSegundos = fecha.Date;
 
 
 
-                            txtBornDate.Text = fechaFormateada;
-                        }
-                        txtEmail.Text = user.email;
+
+            //                string fechaFormateada = fechaSinHoraMinutosSegundos.ToString("yyyy-MM-dd");
+
+
+
+            //                txtBornDate.Text = fechaFormateada;
+            //            }
+            //            txtEmail.Text = user.email;
                        
 
 
 
 
 
-                        ddlRol.Text = user.role.ToString();
+            //            ddlRol.Text = user.role.ToString();
                       
 
 
 
-                    }
-                }
-                catch (Exception ex)
-                {
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
 
 
 
-                    throw ex;
-                }
-            }
+            //        throw ex;
+            //    }
+            //}
 
         }
 
