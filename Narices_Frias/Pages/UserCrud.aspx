@@ -22,7 +22,7 @@
 <div class="form-group">
 <label for=""></label>
 <asp:TextBox ID="txtName" CssClass="form-control form-control-lg"
-                                    placeholder="Ingresar Nombre" runat="server" onblur="validateName()" ></asp:TextBox>
+ placeholder="Ingresar Nombre" runat="server" onblur="validateName()" ></asp:TextBox>
 </div>
 <div class="form-group">
 <label for=""></label>
@@ -91,7 +91,7 @@
 </asp:GridView>
 </div>
                  <asp:Button runat="server" ID="btnRegistrar" OnClick="btnRegistrar_Click" Text="Registrar" CssClass="btnCrudRegister" />
-
+                 
         <div class="row">
             <div class="col-xl-12">
                 <div class="crudMenu">
