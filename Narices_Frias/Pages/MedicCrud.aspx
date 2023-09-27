@@ -139,35 +139,65 @@
         function validateCI() {
             var ciTextBox = document.getElementById('<%= txtCi.ClientID %>');
             var ciValue = ciTextBox.value;
-            var regex = /^[0-9-]+$/; // Acepta números y guiones
+            
+            if (ciValue.trim() === "") {
+                return;
+            }
+            var regex = /^[0-9-]+$/; 
             if (!regex.test(ciValue)) {
                 alert("El CI debe contener solo números y un guión (-) opcional.");
                 ciTextBox.value = "";
                 ciTextBox.focus();
+                
             }
+           
         }
         function validateName() {
             var nameTextBox = document.getElementById('<%= txtName.ClientID %>');
-            var nameValue = nameTextBox.value;
+            var firstNameTextBox = document.getElementById('<%= txtfirstName.ClientID %>');
+            var middleNameTextBox = document.getElementById('<%= txtMiddleName.ClientID %>');
 
-            if (nameValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
+            var nameValue = nameTextBox.value;
+            var firstNameValue = firstNameTextBox.value;
+            var middleNameValue = middleNameTextBox.value;
+
+            
+            if (nameValue.trim() === "" && firstNameValue.trim() === "" && middleNameValue.trim() === "") {
+                return; 
             }
 
             var regex = /^[a-zA-Z\s]+$/;
-            if (!regex.test(nameValue)) {
+
+            
+            if (nameValue.trim() !== "" && !regex.test(nameValue)) {
                 alert("El nombre no debe contener números ni caracteres especiales.");
                 nameTextBox.value = "";
                 nameTextBox.focus();
             }
+
+            
+            if (firstNameValue.trim() !== "" && !regex.test(firstNameValue)) {
+                alert("El primer apellido no debe contener números ni caracteres especiales.");
+                firstNameTextBox.value = "";
+                firstNameTextBox.focus();
+            }
+
+           
+            if (middleNameValue.trim() !== "" && !regex.test(middleNameValue)) {
+                alert("El segundo apellido no debe contener números ni caracteres especiales.");
+                middleNameTextBox.value = "";
+                middleNameTextBox.focus();
+            }
         }
+
+        
 
         function validateEmail() {
             var emailTextBox = document.getElementById('<%= txtEmail.ClientID %>');
             var emailValue = emailTextBox.value;
 
             if (emailValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
+                return; 
             }
 
             var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -183,7 +213,7 @@
             var phoneValue = phoneTextBox.value;
 
             if (phoneValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
+                return; 
             }
 
             var regex = /^\d{1,8}$/;
@@ -199,10 +229,10 @@
             var passwordValue = passwordTextBox.value;
 
             if (passwordValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
+                return; 
             }
 
-            // Verificar si la contraseña cumple con los requisitos
+            
             var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{9,}$/;
             if (!regex.test(passwordValue)) {
                 alert("La contraseña debe tener al menos 9 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.");
@@ -218,7 +248,7 @@
             var passwordRepeatValue = passwordRepeatTextBox.value;
 
             if (passwordRepeatValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
+                return; 
             }
 
             if (passwordValue !== passwordRepeatValue) {
@@ -233,14 +263,14 @@
             var dateOfBirthValue = dateOfBirthTextBox.value;
 
             if (dateOfBirthValue.trim() === "") {
-                return; // Campo vacío, no se realiza validación
+                return; 
             }
 
             var birthDate = new Date(dateOfBirthValue);
             var currentDate = new Date();
             var age = currentDate.getFullYear() - birthDate.getFullYear();
 
-            // Comprobar si ya ha pasado el cumpleaños de este año
+            
             if (currentDate.getMonth() < birthDate.getMonth() || (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
                 age--;
             }
@@ -255,32 +285,32 @@
         function validateForm() {
             var isFormValid = true;
 
-            // Validar Nombre
+            
             if (!validateName()) {
                 isFormValid = false;
             }
 
-            // Validar Correo Electrónico
+           
             if (!validateEmail()) {
                 isFormValid = false;
             }
 
-            // Validar Celular
+            
             if (!validatePhone()) {
                 isFormValid = false;
             }
 
-            // Validar Contraseña
+            
             if (!validatePassword()) {
                 isFormValid = false;
             }
 
-            // Validar Repetir Contraseña
+           
             if (!validatePasswordRepeat()) {
                 isFormValid = false;
             }
 
-            // Validar Fecha de Nacimiento
+           
             if (!validateDateOfBirth()) {
                 isFormValid = false;
             }
