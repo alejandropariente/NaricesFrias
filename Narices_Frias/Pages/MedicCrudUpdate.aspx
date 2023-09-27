@@ -100,24 +100,12 @@
                                     
                                 </asp:Label>
                     </div>
-                    <div class="form-group">
-                        <label for="txtPassword">Contraseña:</label>
-                        <asp:TextBox ID="txtPassword" CssClass="form-control form-control-lg" placeholder="Ingresar Contraseña" runat="server" onblur="validatePassword()"></asp:TextBox>
-                         <asp:Label runat="server" ID="lblPass" CssClass="error">
-                                    
-                                </asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPasswordRepeat">Repetir Contraseña:</label>
-                        <asp:TextBox ID="txtPasswordRepeat" CssClass="form-control form-control-lg" placeholder="Repetir Contraseña" runat="server" onblur="validatePasswordRepeat()"></asp:TextBox>
-                         <asp:Label runat="server" ID="lblPass1" CssClass="error">
-                                    
-                                </asp:Label>
-                    </div>
+                    
                     <div class="form-group row">
                         <div class="offset-sm-2 col-xl-12">
                             <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click1"/>
-
+                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" OnClick="btnDelete_Click2"/>
+                            <a href='MedicCrud.aspx'>Volver</a>
                         </div>
                     </div>
                     
@@ -143,7 +131,7 @@
                                     <asp:TemplateField HeaderText="Acciones">
                                         <ItemTemplate>
                                             <a href='MedicCrudUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
-                                            <a href='MedicCrud.aspx'>Volver</a>
+                                            
                                             
                                         </ItemTemplate>
                                     </asp:TemplateField>

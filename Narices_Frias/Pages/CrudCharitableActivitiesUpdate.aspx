@@ -1,14 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudCharitableActivities.aspx.cs" Inherits="Narices_Frias.Pages.CrudCharitableActivities" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudCharitableActivitiesUpdate.aspx.cs" Inherits="Narices_Frias.Pages.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
     <div class="container-fluid CrudSection">
         <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
                    <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
                     <h5><i class="icon fas fa-check"></i> Alerta!</h5>
                     Registro insertado con exito!!..
+                </div>
+        <div class="alert alert-success alert-dismissible" id="Div1" runat="server">
+                   <asp:Button Text="x" ID="Button1" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="Button1_Click"/>
+                    <h5><i class="icon fas fa-check"></i> Alerta!</h5>
+                    Registro Eliminado con exito!!..
                 </div>
         <div class="row">
             <div class="crudSearcher">
@@ -52,6 +56,13 @@
                                 </asp:Label>
                                                              
                             </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-2 col-xl-12">
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click1"/>
+                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" OnClick="btnDelete_Click"/>
+                            <a href='CrudCharitableactivities.aspx'>Volver</a>
+                        </div>
+                    </div>
                             <div class="form-group row">
                                 <div class="btnRegister offset-sm-2 col-xl-12">
                                     <asp:GridView ID="dgvSalida" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped dataTable dtr-inline">
@@ -75,7 +86,7 @@
 
 
 
-                                    <asp:Button runat="server" ID="btnRegistrar" ForeColor="White"  Text="Registrar" CssClass="btnCrudRegister" OnClick="btnRegistrar_Click" />  
+                                     
 
                                 </div>
                             </div>
@@ -105,7 +116,4 @@
             </div>
         </div>
     </div>
-
-
-
 </asp:Content>

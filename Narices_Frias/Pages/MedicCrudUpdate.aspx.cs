@@ -71,19 +71,6 @@ namespace Narices_Frias.Pages
             midiv.Visible = false;
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            p = new Person();
-            personImpl = new PersonImpl();
-            string id1 = Request.QueryString["id"];
-            int id = int.Parse(id1);
-            int v = personImpl.Delete(id);
-            if (v > 0)
-            {
-                Div1.Visible = true;
-            }
-        }
-
        
 
         protected void Button1_Click1(object sender, EventArgs e)
@@ -95,7 +82,7 @@ namespace Narices_Frias.Pages
 
         protected void btnActualizar_Click1(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtfirstName.Text == "" || txtMiddleName.Text == "" || txtBornDate.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtPhone.Text == "" || ddlRol.Text == "" || txtDireccion.Text == "" || txtUniversidad.Text == "" || txtCi.Text == "")
+            if (txtName.Text == "" || txtfirstName.Text == "" || txtMiddleName.Text == "" || txtBornDate.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || ddlRol.Text == "" || txtDireccion.Text == "" || txtUniversidad.Text == "" || txtCi.Text == "")
             {
                 if (txtName.Text == "")
                 {
@@ -137,22 +124,7 @@ namespace Narices_Frias.Pages
                 {
                     lblEmail.Text = "";
                 }
-                if (txtPassword.Text == "")
-                {
-                    lblPass.Text = "Debe llenar este campo";
-                }
-                if (!string.IsNullOrEmpty(txtPassword.Text))
-                {
-                    lblPass.Text = "";
-                }
-                if (txtPasswordRepeat.Text == "")
-                {
-                    lblPass1.Text = "Debe llenar este campo";
-                }
-                if (!string.IsNullOrEmpty(txtPasswordRepeat.Text))
-                {
-                    lblPass1.Text = "";
-                }
+                
                 if (txtPhone.Text == "")
                 {
                     lblPhone.Text = "Debe llenar este campo";
@@ -202,8 +174,7 @@ namespace Narices_Frias.Pages
                 lblMiddle.Text = "";
                 lblDate.Text = "";
                 lblEmail.Text = "";
-                lblPass.Text = "";
-                lblPass1.Text = "";
+                
                 lblPhone.Text = "";
                 lblRol.Text = "";
                 lblDireccion.Text = "";
@@ -232,6 +203,20 @@ namespace Narices_Frias.Pages
                     midiv.Visible = true;
 
                 }
+            }
+        }
+
+
+        protected void btnDelete_Click2(object sender, EventArgs e)
+        {
+            p = new Person();
+            personImpl = new PersonImpl();
+            string id1 = Request.QueryString["id"];
+            int id = int.Parse(id1);
+            int v = personImpl.Delete(id);
+            if (v > 0)
+            {
+                Div1.Visible = true;
             }
         }
     }
