@@ -132,6 +132,8 @@
     <Content Include="Images\NaricesFriasLogoWhite.png" />
     <Content Include="Images\UserIconBlack.png" />
     <Content Include="Pages\cashierCrud.aspx" />
+    <Content Include="Pages\CrudCharitableActivities.aspx" />
+    <Content Include="Pages\CrudPets.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
     <Content Include="Pages\MedicCrud.aspx" />
     <Content Include="Pages\MedicCrudUpdate.aspx" />
@@ -196,7 +198,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Stylesheets\LogIn.css" />
+    <Content Include="Stylesheets\Default.css" />
     <Content Include="Stylesheets\MasterPage.css" />
     <Content Include="Stylesheets\StylesCrud.css" />
     <Content Include="ViewSwitcher.ascx" />
@@ -244,6 +246,20 @@
     </Compile>
     <Compile Include="Pages\cashierCrud.aspx.designer.cs">
       <DependentUpon>cashierCrud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudCharitableActivities.aspx.cs">
+      <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudCharitableActivities.aspx.designer.cs">
+      <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudPets.aspx.cs">
+      <DependentUpon>CrudPets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudPets.aspx.designer.cs">
+      <DependentUpon>CrudPets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudVolunteer.aspx.cs">
       <DependentUpon>CrudVolunteer.aspx</DependentUpon>
