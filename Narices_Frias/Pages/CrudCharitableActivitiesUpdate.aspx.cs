@@ -134,6 +134,8 @@ namespace Narices_Frias.Pages
                     ca.name = txtName.Text;
                     ca.description = txtDescripcion.Text;
                     ca.date = DateTime.Parse(txtFecha.Text);
+                    ca.shelterId = 1;
+                    ca.userId = 1;
                     ca.moneyRaising= decimal.Parse(txtTotalRecaudado.Text);
                     
 
@@ -144,6 +146,10 @@ namespace Narices_Frias.Pages
                     {
 
                         midiv.Visible = true;
+                        txtName.Text = "";
+                        txtDescripcion.Text = "";
+                        txtFecha.Text = "";
+                        txtTotalRecaudado.Text = "";
 
                     }
 
@@ -165,6 +171,10 @@ namespace Narices_Frias.Pages
             if (v > 0)
             {
                 Div1.Visible = true;
+                txtName.Text = "";
+                txtDescripcion.Text = "";
+                txtFecha.Text = "";
+                txtTotalRecaudado.Text = "";
             }
         }
     }

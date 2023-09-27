@@ -164,12 +164,13 @@
             alert("El campo Total Recaudado es obligatorio.");
             isFormValid = false;
             totalRecaudadoTextBox.focus();
-        } else if (!/^\d+(\.\d{1,2})?$/.test(totalRecaudadoValue)) {
-            alert("El campo Total Recaudado debe contener solo números y puede tener hasta dos decimales.");
+        } else if (!/^\d+(\.\d{1,2})?|\d+(,\d{1,2})?$/.test(totalRecaudadoValue)) {
+            alert("El campo Total Recaudado debe contener solo números y puede tener hasta dos decimales (usando coma o punto como separador decimal).");
             isFormValid = false;
             totalRecaudadoTextBox.value = ""; 
             totalRecaudadoTextBox.focus();
         }
+
 
         return isFormValid;
     }
