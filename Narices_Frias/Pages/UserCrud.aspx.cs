@@ -17,7 +17,7 @@ namespace Narices_Frias.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             midiv.Visible = false;
-            Select();
+            //Select();
             if (!IsPostBack)
             {
                 // Obtener la fecha actual

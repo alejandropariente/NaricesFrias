@@ -148,7 +148,7 @@
                     </div>
         <div class="row">
             <div class="col-xl-12">
-            <div>
+            <div class="crudMenu">
             <nav>
             <ul>
             <li><a href="#">
