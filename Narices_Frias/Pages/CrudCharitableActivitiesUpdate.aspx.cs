@@ -134,7 +134,7 @@ namespace Narices_Frias.Pages
                     ca.name = txtName.Text;
                     ca.description = txtDescripcion.Text;
                     ca.date = DateTime.Parse(txtFecha.Text);
-                    ca.moneyRaising= double.Parse(txtTotalRecaudado.Text);
+                    ca.moneyRaising= decimal.Parse(txtTotalRecaudado.Text);
                     
 
 

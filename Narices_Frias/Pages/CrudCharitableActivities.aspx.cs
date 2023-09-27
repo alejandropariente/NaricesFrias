@@ -25,7 +25,7 @@ namespace Narices_Frias.Pages
         }
         void Select()
         {
-            /*
+            
             try
             {
                 caImpl = new CharitableActivitiesImpl();
@@ -38,7 +38,7 @@ namespace Narices_Frias.Pages
             {
 
                 throw ex;
-            }*/
+            }
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace Narices_Frias.Pages
                     lblfecha.Text = "";
                     lblRecaudacion.Text = "";
                     string name= txtName.Text;
-                    double recaudacion = double.Parse(txtTotalRecaudado.Text);
+                    decimal recaudacion = decimal.Parse(txtTotalRecaudado.Text);
                     string Date = txtFecha.Text;
                     string descripcion = txtDescripcion.Text;
                     ca= new CharitableActivities(name,descripcion,DateTime.Parse(txtFecha.Text),recaudacion,1,1);

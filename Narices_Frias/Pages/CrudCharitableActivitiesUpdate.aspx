@@ -58,7 +58,7 @@
                             </div>
                     <div class="form-group row">
                         <div class="offset-sm-2 col-xl-12">
-                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click1"/>
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click1" OnClientClick="return validateForm();"/>
                             <asp:Button ID="btnDelete" runat="server" Text="Eliminar" OnClick="btnDelete_Click"/>
                             <a href='CrudCharitableactivities.aspx'>Volver</a>
                         </div>
@@ -116,4 +116,62 @@
             </div>
         </div>
     </div>
+    <script>
+    function validateForm() {
+        var isFormValid = true;
+
+        
+        var nameTextBox = document.getElementById('<%= txtName.ClientID %>');
+        var nameValue = nameTextBox.value.trim();
+        if (nameValue === "") {
+            alert("El campo Nombre es obligatorio.");
+            isFormValid = false;
+            nameTextBox.focus();
+        } else if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
+            alert("El campo Nombre no debe contener caracteres especiales ni números.");
+            isFormValid = false;
+            nameTextBox.value = ""; 
+            nameTextBox.focus();
+        }
+
+        
+        var descripcionTextBox = document.getElementById('<%= txtDescripcion.ClientID %>');
+        var descripcionValue = descripcionTextBox.value.trim();
+        if (descripcionValue === "") {
+            alert("El campo Descripción es obligatorio.");
+            isFormValid = false;
+            descripcionTextBox.focus();
+        } else if (!/^[a-zA-Z\s]+$/.test(descripcionValue)) {
+            alert("El campo Descripción no debe contener caracteres especiales ni números.");
+            isFormValid = false;
+            descripcionTextBox.value = ""; 
+            descripcionTextBox.focus();
+        }
+
+        
+        var fechaTextBox = document.getElementById('<%= txtFecha.ClientID %>');
+        var fechaValue = fechaTextBox.value.trim();
+        if (fechaValue === "") {
+            alert("El campo Fecha es obligatorio.");
+            isFormValid = false;
+            fechaTextBox.focus();
+        }
+
+        
+        var totalRecaudadoTextBox = document.getElementById('<%= txtTotalRecaudado.ClientID %>');
+        var totalRecaudadoValue = totalRecaudadoTextBox.value.trim();
+        if (totalRecaudadoValue === "") {
+            alert("El campo Total Recaudado es obligatorio.");
+            isFormValid = false;
+            totalRecaudadoTextBox.focus();
+        } else if (!/^\d+(\.\d{1,2})?$/.test(totalRecaudadoValue)) {
+            alert("El campo Total Recaudado debe contener solo números y puede tener hasta dos decimales.");
+            isFormValid = false;
+            totalRecaudadoTextBox.value = ""; 
+            totalRecaudadoTextBox.focus();
+        }
+
+        return isFormValid;
+    }
+    </script>
 </asp:Content>

@@ -5,12 +5,13 @@
 
     <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
     <div class="container-fluid CrudSection">
-        <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
+        
+        <div class="row">
+            <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
                    <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
                     <h5><i class="icon fas fa-check"></i> Alerta!</h5>
                     Registro insertado con exito!!..
                 </div>
-        <div class="row">
             <div class="crudSearcher">
                 <h1>Gestion de Actividades Beneficas</h1>
             </div>
@@ -58,9 +59,9 @@
                                     <Columns>
                                     <asp:BoundField DataField="id" HeaderText="ID" />
                                     <asp:BoundField DataField="name" HeaderText="Nombres" />
-                                    <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                                    <asp:BoundField DataField="recaudado" HeaderText="Total Recaudado" />
+                                    <asp:BoundField DataField="description" HeaderText="Descripcion" />
+                                    <asp:BoundField DataField="date" HeaderText="Fecha" />
+                                    <asp:BoundField DataField="moneyRaising" HeaderText="Total Recaudado" />
                                     <asp:TemplateField HeaderText="Acciones">
                                     <ItemTemplate>
                                             <a href='CrudCharitableActivitiesUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
@@ -75,7 +76,7 @@
 
 
 
-                                    <asp:Button runat="server" ID="btnRegistrar" ForeColor="White"  Text="Registrar" CssClass="btnCrudRegister" OnClick="btnRegistrar_Click" />  
+                                    <asp:Button runat="server" ID="btnRegistrar" ForeColor="White"  Text="Registrar" CssClass="btnCrudRegister" OnClick="btnRegistrar_Click" OnClientClick="return validateForm();" />  
 
                                 </div>
                             </div>
@@ -105,6 +106,64 @@
             </div>
         </div>
     </div>
+    <script>
+    function validateForm() {
+        var isFormValid = true;
+
+        
+        var nameTextBox = document.getElementById('<%= txtName.ClientID %>');
+        var nameValue = nameTextBox.value.trim();
+        if (nameValue === "") {
+            alert("El campo Nombre es obligatorio.");
+            isFormValid = false;
+            nameTextBox.focus();
+        } else if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
+            alert("El campo Nombre no debe contener caracteres especiales ni números.");
+            isFormValid = false;
+            nameTextBox.value = ""; 
+            nameTextBox.focus();
+        }
+
+        
+        var descripcionTextBox = document.getElementById('<%= txtDescripcion.ClientID %>');
+        var descripcionValue = descripcionTextBox.value.trim();
+        if (descripcionValue === "") {
+            alert("El campo Descripción es obligatorio.");
+            isFormValid = false;
+            descripcionTextBox.focus();
+        } else if (!/^[a-zA-Z\s]+$/.test(descripcionValue)) {
+            alert("El campo Descripción no debe contener caracteres especiales ni números.");
+            isFormValid = false;
+            descripcionTextBox.value = ""; 
+            descripcionTextBox.focus();
+        }
+
+        
+        var fechaTextBox = document.getElementById('<%= txtFecha.ClientID %>');
+        var fechaValue = fechaTextBox.value.trim();
+        if (fechaValue === "") {
+            alert("El campo Fecha es obligatorio.");
+            isFormValid = false;
+            fechaTextBox.focus();
+        }
+
+        
+        var totalRecaudadoTextBox = document.getElementById('<%= txtTotalRecaudado.ClientID %>');
+        var totalRecaudadoValue = totalRecaudadoTextBox.value.trim();
+        if (totalRecaudadoValue === "") {
+            alert("El campo Total Recaudado es obligatorio.");
+            isFormValid = false;
+            totalRecaudadoTextBox.focus();
+        } else if (!/^\d+(\.\d{1,2})?$/.test(totalRecaudadoValue)) {
+            alert("El campo Total Recaudado debe contener solo números y puede tener hasta dos decimales.");
+            isFormValid = false;
+            totalRecaudadoTextBox.value = ""; 
+            totalRecaudadoTextBox.focus();
+        }
+
+        return isFormValid;
+    }
+    </script>
 
 
 
