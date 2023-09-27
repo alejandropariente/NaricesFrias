@@ -21,29 +21,47 @@
                     <div class="form-group">
                         <label for="txtName">Nombre:</label>
                         <asp:TextBox ID="txtName" CssClass="form-control form-control-lg" placeholder="Ingresar Nombre" runat="server" onblur="validateName()"></asp:TextBox>
+                        <asp:Label runat="server" ID="lblName" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                                 <label for=""></label>
                                 <asp:TextBox ID="txtfirstName" CssClass="form-control form-control-lg"
                                     placeholder="Ingresar Primer Apellido" runat="server" onblur=validateName()></asp:TextBox>
+                         <asp:Label runat="server" ID="lblfirst" CssClass="error">
+                                    
+                                </asp:Label>
                             </div>
                             <div class="form-group">
                                 <label for=""></label>
                                 <asp:TextBox ID="txtMiddleName" CssClass="form-control form-control-lg"
                                     placeholder="Ingresar Segundo Apellido" runat="server" onblur=validateName()></asp:TextBox>
+                                 <asp:Label runat="server" ID="lblMiddle" CssClass="error">
+                                    
+                                </asp:Label>
                             </div>
                     <div class="form-group">
                         <label for="txtBornDate">Fecha de Nacimiento:</label>
                         <asp:TextBox ID="txtBornDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblDate" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtCi">Ci:</label>
                         <asp:TextBox ID="txtCi" CssClass="form-control form-control-lg" placeholder="Ingresar CI" runat="server" onblur="validateCI()"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblCi" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtEmail">Correo Electrónico:</label>
                         <asp:TextBox ID="txtEmail" CssClass="form-control form-control-lg" placeholder="Ingresar Correo" runat="server" onblur="validateEmail()"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblEmail" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="ddlRol">Rol:</label>
@@ -52,26 +70,44 @@
                             <asp:ListItem Value="2">Voluntario</asp:ListItem>
                             <asp:ListItem Value="3">Usuario</asp:ListItem>
                         </asp:DropDownList>
+                         <asp:Label runat="server" ID="lblRol" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtPhone">Celular:</label>
                         <asp:TextBox ID="txtPhone" CssClass="form-control form-control-lg" placeholder="Ingresar Celular" runat="server" onblur="validatePhone()"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblPhone" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtDireccion">Dirección:</label>
                         <asp:TextBox ID="txtDireccion" CssClass="form-control form-control-lg" placeholder="Ingresar Dirección" runat="server"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblDireccion" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtUniversidad">Número de Universidad:</label>
                         <asp:TextBox ID="txtUniversidad" CssClass="form-control form-control-lg" placeholder="Ingresar Número de Universidad" runat="server"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblUni" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtPassword">Contraseña:</label>
                         <asp:TextBox ID="txtPassword" CssClass="form-control form-control-lg" placeholder="Ingresar Contraseña" runat="server" onblur="validatePassword()"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblPass" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtPasswordRepeat">Repetir Contraseña:</label>
                         <asp:TextBox ID="txtPasswordRepeat" CssClass="form-control form-control-lg" placeholder="Repetir Contraseña" runat="server" onblur="validatePasswordRepeat()"></asp:TextBox>
+                         <asp:Label runat="server" ID="lblPass1" CssClass="error">
+                                    
+                                </asp:Label>
                     </div>
                     <div class="form-group row">
                         <div class="offset-sm-2 col-xl-12">
