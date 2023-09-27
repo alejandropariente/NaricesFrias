@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
 
     <div class="container-fluid">
         <div class="row">
@@ -14,7 +15,7 @@
                 <h1>Gestion de Usuarios</h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin:0;">
             <div class="col-xl-12">
                 
              <form>
@@ -93,7 +94,7 @@
 
         <div class="row">
             <div class="col-xl-12">
-                <div>
+                <div class="crudMenu">
                     <nav>
                         <ul>
                             <li><a href="#">

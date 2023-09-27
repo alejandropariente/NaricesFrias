@@ -3,6 +3,7 @@ using NFDao.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace NFDao.Implementation
 {
+    
     public class ShelterStaffImpl : BaseCrud<ShelterStaff> , IShelterStaff
     {
         public ShelterStaffImpl()
@@ -65,6 +67,40 @@ namespace NFDao.Implementation
 
                 throw ex;
             }
+        }
+        
+        public SystemUser Login(string username, string password)
+        {
+            string query = @"SELECT id
+                           FROM SystemUser s.id
+                           INNER JOIN Person p ON p.id = s.id
+                           WHERE p.status = 1 AND s.userName = @userName AND s.password = HASHBYTES('MD5',@password)";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@userName", username);
+            command.Parameters.AddWithValue("@password", password).SqlDbType = SqlDbType.VarChar;
+            try
+            {
+                return Get(ExecuteScalar(command));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public int ExecuteScalar(SqlCommand command)
+        {
+            try
+            {
+                command.Connection.Open();
+                return (int)command.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { command.Connection.Close(); }
         }
     }
 }

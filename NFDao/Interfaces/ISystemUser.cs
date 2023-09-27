@@ -10,5 +10,6 @@ namespace NFDao.Interfaces
     public interface ISystemUser
     {
         int UpdateSystemUser(SystemUser user);
+        SystemUser Login(string username, string password);
     }
 }
