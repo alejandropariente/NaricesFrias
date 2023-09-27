@@ -131,6 +131,7 @@
     <Content Include="Images\NaricesFriasLogo.png" />
     <Content Include="Images\NaricesFriasLogoWhite.png" />
     <Content Include="Images\UserIconBlack.png" />
+    <Content Include="Pages\AppointmentsCrud.aspx" />
     <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
@@ -200,6 +201,7 @@
     <Content Include="Site.Master" />
     <Content Include="Stylesheets\Default.css" />
     <Content Include="Stylesheets\MasterPage.css" />
+    <Content Include="Stylesheets\MenuStyle.css" />
     <Content Include="Stylesheets\StylesCrud.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -239,6 +241,13 @@
     </Compile>
     <Compile Include="Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppointmentsCrud.aspx.cs">
+      <DependentUpon>AppointmentsCrud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AppointmentsCrud.aspx.designer.cs">
+      <DependentUpon>AppointmentsCrud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\cashierCrud.aspx.cs">
       <DependentUpon>cashierCrud.aspx</DependentUpon>
