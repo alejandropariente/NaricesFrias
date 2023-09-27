@@ -10,5 +10,6 @@ namespace NFDao.Interfaces
     public interface IShelterStaff
     {
         int UpdateStaff(ShelterStaff staff);
+       
     }
 }
