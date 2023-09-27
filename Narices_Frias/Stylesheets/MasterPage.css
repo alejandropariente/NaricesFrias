@@ -1,0 +1,75 @@
+﻿body {
+    color: black;
+}
+
+header{
+    margin-top: 1em;
+    margin-bottom:2em;
+}
+.headerLogo{
+    padding-left:3em !important;
+}
+.headerLogo img {
+    width: 220px;
+}
+.navContainer{
+    display:grid;
+    align-items:end;
+    margin-top: 1em;
+}
+
+.headerMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    justify-content: end;
+}
+.headerMenu li{
+    list-style: none;
+    
+}
+li a{
+    color:black;
+}
+
+footer {
+    background-color: #FEDC00;
+    padding-top: 5em;
+    margin-top:0;
+}
+.logoFooter{
+    display:grid;
+    justify-content:center;
+    margin-bottom: 4em;
+}
+.logoFooter img {
+    width: 420px;
+    z-index:0;
+}
+.footerCircle {
+    background: #FEEA9D;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: 5em;
+    z-index:0;
+}
+.footerCopy{
+    width:100%;
+    display:grid;
+    justify-content:center;
+    margin-top:2em;
+}
+.footerCopy h5 {
+    text-align: center;
+}
+.footerNavCont nav ul li{
+    list-style:none;
+    margin-top:1.5em;
+
+}
+#btnFooter{
+    background-color:black !important;
+    border:0 ;
+    padding:0.5em 1em;
+}

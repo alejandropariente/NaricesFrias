@@ -2,7 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
+
+    <div class="container-fluid CrudSection">
         <div class="row">
             <div class="col-xl-12">
                 <h1>Registrarse</h1>
@@ -28,6 +30,11 @@
                             </div>
                             <div class="form-group">
                                 <label for=""></label>
+                                <asp:TextBox ID="txtUsername" CssClass="form-control form-control-lg"
+                                    placeholder="Ingresar Nombre de Usuario" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for=""></label>
                                 <asp:TextBox ID="txtBornDate" runat="server" CssClass="form-control" TextMode="Date" ></asp:TextBox>
 
                             </div>
@@ -43,8 +50,10 @@
                             </div>
                             
                             <div class="form-group row">
-                                <div class="offset-sm-2 col-xl-12">
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
+
+                               <div> class="btnRegister offset-sm-2 col-xl-12">
+                                      <asp:Button Text="Registrar" ID="btnRegistrar" runat="server" CssClass="boton" OnClick="btnRegistrar_Click" />
+
                                 </div>
                             </div>
                         </form>
