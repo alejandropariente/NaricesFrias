@@ -10,10 +10,10 @@ namespace NFDao.Model
 {
     public class BaseConnection
     {
-        private string sever = "LAPTOP-6LDU093U\\SQLEXPRESS01";
+        private string sever = "F22-I9000K\\PROYECTOSQL";
         private string dataBase = "DbNaricesFrias";
-        private string user = "sa";
-        private string password = "Univalle";
+        private string user = "Proyecto";
+        private string password = "Univalle.";
         private string connectionString;
         private SqlConnection connection;
 
@@ -34,20 +34,6 @@ namespace NFDao.Model
             {
                 command.Connection.Open();
                 return command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally { command.Connection.Close(); }
-        }
-        public int ExecuteScalar(SqlCommand command)
-        {
-            try
-            {
-                command.Connection.Open();
-                return (int) command.ExecuteScalar();
             }
             catch (Exception ex)
             {
