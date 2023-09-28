@@ -43,7 +43,7 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
-            <footer>
+            <footer class="col-xl-12">
                 <div class="container-fluid">
                     <div class="row">
             <div class="col-xl-5 logoFooter">

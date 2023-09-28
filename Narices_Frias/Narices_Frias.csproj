@@ -132,6 +132,8 @@
     <Content Include="Images\NaricesFriasLogoWhite.png" />
     <Content Include="Images\UserIconBlack.png" />
     <Content Include="Pages\cashierCrud.aspx" />
+    <Content Include="Pages\CrudCharitableActivities.aspx" />
+    <Content Include="Pages\CrudPets.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
     <Content Include="Pages\MedicCrud.aspx" />
     <Content Include="Pages\MedicCrudUpdate.aspx" />
@@ -139,6 +141,7 @@
     <Content Include="Pages\SignIn.aspx" />
     <Content Include="Pages\UserCrud.aspx" />
     <Content Include="Pages\UserUpdate.aspx" />
+    <Content Include="Pages\CrudCharitableActivitiesUpdate.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -196,7 +199,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Stylesheets\LogIn.css" />
+    <Content Include="Stylesheets\Default.css" />
     <Content Include="Stylesheets\MasterPage.css" />
     <Content Include="Stylesheets\StylesCrud.css" />
     <Content Include="ViewSwitcher.ascx" />
@@ -244,6 +247,20 @@
     </Compile>
     <Compile Include="Pages\cashierCrud.aspx.designer.cs">
       <DependentUpon>cashierCrud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudCharitableActivities.aspx.cs">
+      <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudCharitableActivities.aspx.designer.cs">
+      <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudPets.aspx.cs">
+      <DependentUpon>CrudPets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudPets.aspx.designer.cs">
+      <DependentUpon>CrudPets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudVolunteer.aspx.cs">
       <DependentUpon>CrudVolunteer.aspx</DependentUpon>
@@ -293,6 +310,13 @@
     </Compile>
     <Compile Include="Pages\UserUpdate.aspx.designer.cs">
       <DependentUpon>UserUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudCharitableActivitiesUpdate.aspx.cs">
+      <DependentUpon>CrudCharitableActivitiesUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudCharitableActivitiesUpdate.aspx.designer.cs">
+      <DependentUpon>CrudCharitableActivitiesUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
