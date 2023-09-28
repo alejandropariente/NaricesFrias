@@ -118,5 +118,10 @@ namespace Narices_Frias.Pages
             midiv.Attributes.Add("class", "alert alert-danger alert-dismissible");
             midiv.InnerText = message;
         }
+
+        protected void btnClose_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

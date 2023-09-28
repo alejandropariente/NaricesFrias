@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudPets.aspx.cs" Inherits="Narices_Frias.Pages.CrudPets" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="PetsUpdate.aspx.cs" Inherits="Narices_Frias.Pages.PetsUpdate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
+        <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
     <div class="container-fluid CrudSection">
         <div class="row">
             <div class="crudSearcher">
@@ -10,12 +10,17 @@
             </div>
         </div>
          <div class="container-fluid" style="padding:0;">
-        <div class="row" style="margin-right:0; margin-left:0;">
-            <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
-                <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
-                <h5><i class="icon fas fa-check"></i> Alerta!</h5>
-                                    Registro insertado con exito!!..
-             </div>
+       <div class="alert alert-success alert-dismissible" id="Div1" runat="server">
+
+<asp:Button Text="x" ID="Button1" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" Onclick ="Button1_Click"/>
+<h5><i class="icon fas fa-check"></i> Alerta!</h5>
+                    Registro Eliminado con exito!!..
+</div>
+<div class="alert alert-success alert-dismissible" id="midiv" runat="server">
+<asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
+<h5><i class="icon fas fa-check"></i> Alerta!</h5>
+                    Registro modificado con exito!!..
+
             <div class="crudSearcher">
                 <h1>Gestion de Usuarios</h1>
             </div>
@@ -62,13 +67,10 @@
                                    
                                     <asp:BoundField DataField="animalCategoryId" HeaderText="Categoria" />
                                     <asp:TemplateField HeaderText="Acciones">
-                                   <ItemTemplate>
-                                    <a href='PetsUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+                                    <ItemTemplate>
+                                   
 
-
-                                     <a href='CrudPets.aspx'>Volver</a>
-
-                                   </ItemTemplate>
+                                    </ItemTemplate>
                                     </asp:TemplateField>
                                     </Columns>
                                     </asp:GridView>
@@ -77,37 +79,20 @@
 
 
 
-                                    <asp:Button runat="server" ID="btnRegistrar" ForeColor="White"  Text="Registrar" CssClass="btnCrudRegister" OnClick="btnRegistrar_Click" />  
+                                    
 
                                 </div>
                             </div>
                         </form>
             </div>
         </div>
-        <div class="row">
+               <div class="row">
             <div class="col-xl-12">
-                <div class="crudMenu">
-                    <nav>
-                        <ul>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconInsert.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconUpdate.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconDelete.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                        </ul>
-                    </nav>
+                <div>
+                   <a href='UserCrud.aspx'>Volver</a>
+<asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick ="btnActualizar_Click"/>
+<asp:Button ID="btnDelete" runat ="server" Text="Eliminar" OnClientClick="return confirm('¿Estás seguro de que deseas eliminar este registro?');" OnClick="btnDelete_Click" />
                 </div>
             </div>
         </div>
-    </div>
-
-
-
 </asp:Content>
