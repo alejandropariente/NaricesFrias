@@ -76,8 +76,10 @@
     <Compile Include="Implementation\AnimalDateImpl.cs" />
     <Compile Include="Implementation\AnimalImpl.cs" />
     <Compile Include="Implementation\BaseCrud.cs" />
+    <Compile Include="Implementation\BillImpl.cs" />
     <Compile Include="Implementation\CharitableActivitiesImpl.cs" />
     <Compile Include="Implementation\PersonImpl.cs" />
+    <Compile Include="Implementation\ProductImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
     <Compile Include="Interfaces\IShelterStaff.cs" />
