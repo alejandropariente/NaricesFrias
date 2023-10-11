@@ -85,9 +85,13 @@
     <Compile Include="Model\Animal.cs" />
     <Compile Include="Model\AnimalDate.cs" />
     <Compile Include="Model\BaseConnection.cs" />
+    <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\BillDetail.cs" />
+    <Compile Include="Model\BillName.cs" />
     <Compile Include="Model\CharitableActivities.cs" />
     <Compile Include="Model\KeyQuery.cs" />
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ShelterStaff.cs" />
     <Compile Include="Model\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
