@@ -14,13 +14,14 @@ namespace NFDao.Model
         public string description { get; set; }
         public decimal unitPrice { get; set; }
         public int stock { get; set; }
-        public MemoryStream photo { get; set; }
+        public byte[] photo { get; set; }
+        public int userId { get; set; }
         public Product()
         {
             
         }
 
-        public Product(short id, string name, string description, decimal unitPrice, int stock, MemoryStream photo)
+        public Product(short id, string name, string description, decimal unitPrice, int stock, byte[] photo, int userId)
         {
             this.id = id;
             this.name = name;
@@ -28,15 +29,17 @@ namespace NFDao.Model
             this.unitPrice = unitPrice;
             this.stock = stock;
             this.photo = photo;
+            this.userId = userId;
         }
 
-        public Product(string name, string description, decimal unitPrice, int stock, MemoryStream photo)
+        public Product(string name, string description, decimal unitPrice, int stock, byte[] photo,int userId)
         {
             this.name = name;
             this.description = description;
             this.unitPrice = unitPrice;
             this.stock = stock;
             this.photo = photo;
+            this.userId=userId;
         }
     }
 }

@@ -11,20 +11,67 @@ using System.Web.UI.WebControls;
 
 namespace Narices_Frias.Pages
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
         Product p;
         ProductImpl pImpl;
-        byte[] imageData;
-
+        byte [] imageData1;
         protected void Page_Load(object sender, EventArgs e)
         {
+            midiv.Visible = false;
             Select();
-            midiv.Visible= false;
+            Div1.Visible = false;
+            if (!IsPostBack)
+            {
+                string id = Request.QueryString["id"];
+
+                try
+                {
+
+                    pImpl = new ProductImpl();
+                    p = pImpl.Get(int.Parse(id));
+                    if (p != null)
+                    {
+                        txtName.Text = p.name;
+                        txtDescription.Text = p.description;
+                        txtPrice.Text = p.unitPrice.ToString();
+                        txtStock.Text = p.stock.ToString();
+                        byte[] imageData = p.photo; // Esta función debería obtener los datos desde la base de datos.
+
+                        if (imageData != null)
+                        {
+                            // Convertir los datos binarios en una imagen.
+                            string base64String = Convert.ToBase64String(imageData);
+                            string imageUrl = "data:image/jpeg;base64," + base64String; // Cambia "image/jpeg" según el tipo de imagen almacenada.
+
+                            // Mostrar la imagen en una etiqueta <img>.
+                            imgImage.ImageUrl = imageUrl; // imgImage es el ID del control <asp:Image> en tu página ASPX.
+                        }
+                        
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+        
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
         void Select()
         {
-            
+
             try
             {
                 pImpl = new ProductImpl();
@@ -38,12 +85,6 @@ namespace Narices_Frias.Pages
 
                 throw ex;
             }
-        }
-        bool IsImage(HttpPostedFile file)
-        {
-            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" }; // Lista de extensiones permitidas.
-            string fileExtension = Path.GetExtension(file.FileName).ToLower();
-            return allowedExtensions.Contains(fileExtension);
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -114,7 +155,7 @@ namespace Narices_Frias.Pages
                                 {
                                     using (BinaryReader reader = new BinaryReader(stream))
                                     {
-                                        imageData = reader.ReadBytes((int)stream.Length);
+                                        imageData1 = reader.ReadBytes((int)stream.Length);
                                     }
                                 }
 
@@ -122,19 +163,32 @@ namespace Narices_Frias.Pages
                             }
                         }
                     }
-                    string name = txtName.Text;
-                    decimal price = decimal.Parse(txtPrice.Text);
-                    int stock = int.Parse(txtStock.Text);
-                    string descripcion = txtDescription.Text;
-                    
-                    p = new Product(name,descripcion,price,stock,imageData,1);
                     pImpl = new ProductImpl();
+                    string id = Request.QueryString["id"];
+                    p = pImpl.Get(int.Parse(id));
+                    p.name = txtName.Text;
+                    p.description = txtDescription.Text;
+                    p.unitPrice = decimal.Parse(txtPrice.Text);
+                    p.stock = int.Parse(txtStock.Text);
+                    p.userId = 1;
+                    p.photo = imageData1;
+                   
 
-                    int n = pImpl.Insert(p);
-                    if (n > 1)
+
+
+
+                    int n = pImpl.Update(p);
+                    if (n > 0)
                     {
+
                         midiv.Visible = true;
+                        txtName.Text = "";
+                        txtDescription.Text = "";
+                        txtStock.Text = "";
+                        txtPrice.Text = "";
+
                     }
+                    
 
                 }
             }
@@ -144,10 +198,32 @@ namespace Narices_Frias.Pages
                 throw ex;
             }
         }
-
-        protected void btnClose_Click(object sender, EventArgs e)
+        bool IsImage(HttpPostedFile file)
         {
-            midiv.Visible=false;
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" }; // Lista de extensiones permitidas.
+            string fileExtension = Path.GetExtension(file.FileName).ToLower();
+            return allowedExtensions.Contains(fileExtension);
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            pImpl = new ProductImpl();
+            string id1 = Request.QueryString["id"];
+            int id = int.Parse(id1);
+            int v = pImpl.Delete(id);
+            if (v > 0)
+            {
+                Div1.Visible = true;
+                txtName.Text = "";
+                txtDescription.Text = "";
+                txtPrice.Text = "";
+                txtStock.Text = "";
+            }
         }
     }
 }

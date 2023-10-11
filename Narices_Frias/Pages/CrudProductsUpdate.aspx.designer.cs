@@ -11,7 +11,7 @@ namespace Narices_Frias.Pages
 {
 
 
-    public partial class WebForm2
+    public partial class WebForm3
     {
 
         /// <summary>
@@ -31,6 +31,24 @@ namespace Narices_Frias.Pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnClose;
+
+        /// <summary>
+        /// Control Div1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Control txtName.
@@ -114,6 +132,15 @@ namespace Narices_Frias.Pages
         protected global::System.Web.UI.WebControls.FileUpload fileUploadControl;
 
         /// <summary>
+        /// Control imgImage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgImage;
+
+        /// <summary>
         /// Control dgvSalida.
         /// </summary>
         /// <remarks>
@@ -121,6 +148,15 @@ namespace Narices_Frias.Pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView dgvSalida;
+
+        /// <summary>
+        /// Control btnDelete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
         /// Control btnRegistrar.
