@@ -37,20 +37,20 @@
                                 <asp:TextBox ID="txtPassword" CssClass="logInInputs form-control form-control-lg "
                                     placeholder="Ingresar Contrasena" runat="server"></asp:TextBox>
                             </div>
-                            
+                            <div style="text-align:center;" id="myAlert" runat="server" class="alert alert-danger alert-dismissible">
+                                        Los campos de usuario y contraseña son obligatorios.
+                            </div>
                             <div class="form-group row">
                                 <div class="containerButton offset-sm-2 col-xl-12">
                                     <div class="btnIngresar">
                                       <asp:Button Text="Ingresar" ID="btnIngresar" runat="server" CssClass="boton" OnClick="btnIngresar_Click" />
                                     </div>
                                 </div>
-                                <div id="myAlert" runat="server" class="alert alert-danger alert-dismissible" style="display: none;">
-                                        Los campos de usuario y contraseña son obligatorios.
-                                </div>
+                                
                             </div>
                         </form>
-                        <h4 class="forgotPass"><a href=""> Olvidaste tu cotrasena? </a></h4>
-                    </div
+                        <h4 class="forgotPass"><a href="/Pages/RecoverAcount.aspx"> Olvidaste tu cotrasena? </a></h4>
+                    </div>
                     
                 </div>
             </div>
