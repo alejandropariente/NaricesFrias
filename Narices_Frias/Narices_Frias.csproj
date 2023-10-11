@@ -166,6 +166,7 @@
     <Content Include="Images\UserIconBlack.png" />
     <Content Include="Pages\AppointmentsCrud.aspx" />
     <Content Include="Pages\cashierCrud.aspx" />
+    <Content Include="Pages\ContentGestorCharitable.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
@@ -290,6 +291,13 @@
     </Compile>
     <Compile Include="Pages\cashierCrud.aspx.designer.cs">
       <DependentUpon>cashierCrud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ContentGestorCharitable.aspx.cs">
+      <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ContentGestorCharitable.aspx.designer.cs">
+      <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudCharitableActivities.aspx.cs">
       <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>
