@@ -10,6 +10,12 @@
 .btnRegister{
     margin-left:0;
 }
+.image-preview {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+}
+
 .form-control {
     background-color: #FEF0B9;
     border:0;
