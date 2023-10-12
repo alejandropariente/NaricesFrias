@@ -253,40 +253,7 @@
             }
         }
 
-        function validatePassword() {
-            var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
-            var passwordValue = passwordTextBox.value;
 
-            if (passwordValue.trim() === "") {
-                return; 
-            }
-
-            
-            var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{9,}$/;
-            if (!regex.test(passwordValue)) {
-                alert("La contraseña debe tener al menos 9 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.");
-                passwordTextBox.value = "";
-                passwordTextBox.focus();
-            }
-        }
-
-        function validatePasswordRepeat() {
-            var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
-            var passwordRepeatTextBox = document.getElementById('<%= txtPasswordRepeat.ClientID %>');
-            var passwordValue = passwordTextBox.value;
-            var passwordRepeatValue = passwordRepeatTextBox.value;
-
-            if (passwordRepeatValue.trim() === "") {
-                return; 
-            }
-
-            if (passwordValue !== passwordRepeatValue) {
-                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-                passwordTextBox.value = "";
-                passwordRepeatTextBox.value = "";
-                passwordTextBox.focus();
-            }
-        }
         function validateDateOfBirth() {
             var dateOfBirthTextBox = document.getElementById('<%= txtBornDate.ClientID %>');
             var dateOfBirthValue = dateOfBirthTextBox.value;
