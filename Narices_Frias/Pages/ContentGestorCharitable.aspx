@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="ContentGestorCharitable.aspx.cs" Inherits="Narices_Frias.Pages.ContentGestorCharitable" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .image-preview {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+}
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:FileUpload ID="fileUploadControl" runat="server" AllowMultiple="true" />

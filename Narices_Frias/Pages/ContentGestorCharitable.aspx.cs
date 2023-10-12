@@ -37,7 +37,8 @@ namespace Narices_Frias.Pages
                         // Crear una nueva imagen control y establecer su ruta de imagen.
                         Image img = new Image();
                         img.ImageUrl = "~/uploads/" + fileName;
-                        
+                        img.CssClass = "image-preview";
+
 
                         // Agregar la imagen al contenedor en la página, por ejemplo, un Panel.
                         imagePanel.Controls.Add(img);
