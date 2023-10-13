@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NFDao.Implementation;
+using NFDao.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,16 +12,19 @@ namespace Narices_Frias.Pages
 {
     public partial class ContentGestorCharitable : System.Web.UI.Page
     {
+        string uploadFolderPath;
+        CharitableActivitiesImpl impl;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            uploadFolderPath = Server.MapPath("~/uploads/");
+            impl = new CharitableActivitiesImpl();
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             if (fileUploadControl.HasFiles)
             {
-                string uploadFolderPath = Server.MapPath("~/uploads/"); // Ruta donde se guardarán las imágenes.
+                 // Ruta donde se guardarán las imágenes.
 
                 if (!Directory.Exists(uploadFolderPath))
                 {
@@ -56,7 +61,38 @@ namespace Narices_Frias.Pages
 
         protected void SavePost_Click(object sender, EventArgs e)
         {
+            List<byte[]> photos = new List<byte[]>();
+            foreach (HttpPostedFile file in fileUploadControl.PostedFiles)
+            {
+                if (IsImage(file))
+                {
+                    string fileName = Path.GetFileName(file.FileName);
+                    string filePath = Path.Combine(uploadFolderPath, fileName);
+                    file.SaveAs(filePath);
 
+                    // Leer el archivo de imagen y convertirlo en un array de bytes.
+
+                    using (Stream stream = file.InputStream)
+                    {
+                        using (BinaryReader reader = new BinaryReader(stream))
+                        {
+                            photos.Add(reader.ReadBytes((int)stream.Length));
+                        }
+                    }
+
+
+                }
+            }
+            CharitableActivities c = new CharitableActivities(txtName.Text,txtDescription.InnerText,txtDate.SelectedDate,0,1,1);
+            
+            if (impl.InsertPost(c, photos) == photos.Count)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }
