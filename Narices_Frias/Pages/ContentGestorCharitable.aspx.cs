@@ -42,6 +42,7 @@ namespace Narices_Frias.Pages
 
                         // Agregar la imagen al contenedor en la página, por ejemplo, un Panel.
                         imagePanel.Controls.Add(img);
+                        
                     }
                 }
             }
@@ -51,6 +52,11 @@ namespace Narices_Frias.Pages
             string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" }; // Lista de extensiones permitidas.
             string fileExtension = Path.GetExtension(file.FileName).ToLower();
             return allowedExtensions.Contains(fileExtension);
+        }
+
+        protected void SavePost_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
