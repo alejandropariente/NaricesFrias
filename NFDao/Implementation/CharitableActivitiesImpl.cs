@@ -8,6 +8,7 @@ using System.Web;
 using System.Threading.Tasks;
 using Microsoft.SqlServer.Server;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace NFDao.Implementation
 {
@@ -76,6 +77,21 @@ namespace NFDao.Implementation
                 }
             }
             return photoCounter;
+        }
+        public List<string> GetPhotos(int charitableId)
+        {
+            List<string> photos = new List<string>();
+            string query = @"SELECT photo FROM CharitableActivitiesPost WHERE charitableActivitiesId = @id";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@id",charitableId);
+            DataTable dt = DataTableCommand(command);
+
+            
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                photos.Add("data:image/jpeg;base64," + Convert.ToBase64String((byte[])dt.Rows[i][0]));
+            }
+            return photos;
         }
     }
 }
