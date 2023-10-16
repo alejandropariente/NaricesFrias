@@ -1,4 +1,5 @@
-﻿using NFDao.Model;
+﻿using Microsoft.SqlServer.Server;
+using NFDao.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace NFDao.Interfaces
     {
         int UpdateSystemUser(SystemUser user);
         SystemUser Login(string username, string password);
+        int ChangePassword(int id,string newPassword);
+        int ChangePassword(string email, string newPassword);
+        int VerifyEmail(string email);
+        int RecoverAcount(string email);
     }
 }

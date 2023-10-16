@@ -1,17 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudCharitableActivities.aspx.cs" Inherits="Narices_Frias.Pages.CrudCharitableActivities" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudCharitableActivitiesUpdate.aspx.cs" Inherits="Narices_Frias.Pages.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
     <div class="container-fluid CrudSection">
-        
-        <div class="row">
-            <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
+        <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
                    <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
                     <h5><i class="icon fas fa-check"></i> Alerta!</h5>
                     Registro insertado con exito!!..
                 </div>
+        <div class="alert alert-success alert-dismissible" id="Div1" runat="server">
+                   <asp:Button Text="x" ID="Button1" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="Button1_Click"/>
+                    <h5><i class="icon fas fa-check"></i> Alerta!</h5>
+                    Registro Eliminado con exito!!..
+                </div>
+        <div class="row">
             <div class="crudSearcher">
                 <h1>Gestion de Actividades Beneficas</h1>
             </div>
@@ -53,15 +56,22 @@
                                 </asp:Label>
                                                              
                             </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-2 col-xl-12">
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click1" OnClientClick="return validateForm();"/>
+                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" OnClick="btnDelete_Click"/>
+                            <a href='CrudCharitableactivities.aspx'>Volver</a>
+                        </div>
+                    </div>
                             <div class="form-group row">
                                 <div class="btnRegister offset-sm-2 col-xl-12">
                                     <asp:GridView ID="dgvSalida" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped dataTable dtr-inline">
                                     <Columns>
                                     <asp:BoundField DataField="id" HeaderText="ID" />
                                     <asp:BoundField DataField="name" HeaderText="Nombres" />
-                                    <asp:BoundField DataField="description" HeaderText="Descripcion" />
-                                    <asp:BoundField DataField="date" HeaderText="Fecha" />
-                                    <asp:BoundField DataField="moneyRaising" HeaderText="Total Recaudado" />
+                                    <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
+                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                                    <asp:BoundField DataField="recaudado" HeaderText="Total Recaudado" />
                                     <asp:TemplateField HeaderText="Acciones">
                                     <ItemTemplate>
                                             <a href='CrudCharitableActivitiesUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
@@ -76,7 +86,7 @@
 
 
 
-                                    <asp:Button runat="server" ID="btnRegistrar" ForeColor="White"  Text="Registrar" CssClass="btnCrudRegister" OnClick="btnRegistrar_Click" OnClientClick="return validateForm();" />  
+                                     
 
                                 </div>
                             </div>
@@ -154,17 +164,15 @@
             alert("El campo Total Recaudado es obligatorio.");
             isFormValid = false;
             totalRecaudadoTextBox.focus();
-        } else if (!/^\d+(\.\d{1,2})?$/.test(totalRecaudadoValue)) {
-            alert("El campo Total Recaudado debe contener solo números y puede tener hasta dos decimales.");
+        } else if (!/^\d+(\.\d{1,2})?|\d+(,\d{1,2})?$/.test(totalRecaudadoValue)) {
+            alert("El campo Total Recaudado debe contener solo números y puede tener hasta dos decimales (usando coma o punto como separador decimal).");
             isFormValid = false;
             totalRecaudadoTextBox.value = ""; 
             totalRecaudadoTextBox.focus();
         }
 
+
         return isFormValid;
     }
     </script>
-
-
-
 </asp:Content>

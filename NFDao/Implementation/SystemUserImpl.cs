@@ -1,6 +1,8 @@
 ﻿
+using Microsoft.SqlServer.Server;
 using NFDao.Interfaces;
 using NFDao.Model;
+using NFDao.Tools;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,7 +36,7 @@ namespace NFDao.Implementation
 
         public SystemUser Login(string username, string password)
         {
-            string query = @"SELECT id
+            string query = @"SELECT s.id
                            FROM SystemUser s
                            INNER JOIN Person p ON p.id = s.id
                            WHERE p.status = 1 AND s.userName = @userName AND s.password = HASHBYTES('MD5',@password)";
@@ -43,13 +45,52 @@ namespace NFDao.Implementation
             command.Parameters.AddWithValue("@password", password).SqlDbType = SqlDbType.VarChar;
             try
             {
-                return Get(ExecuteScalar(command));
+                return ExecuteScalarId(command) == 0 ? null : Get(ExecuteScalarId(command));
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+        }
+
+        public int RecoverAcount(string email)
+        {
+            if(VerifyEmail(email) != 0)
+            {
+                EmailManager emailmanager = new EmailManager(email);
+                string tempPass = GenerateTempPass(6);
+                if (ChangePassword(email,tempPass) > 0)
+                {
+                    return emailmanager.RecoverAcount(tempPass) ? 1 : 0;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        private string GenerateTempPass(int length)
+        {
+            Random random = new Random();
+            char[] randomChars = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                randomChars[i] = GenerateRandomChar(random);
+            }
+
+            return new string(randomChars);
+        }
+
+        private char GenerateRandomChar(Random random)
+        {
+            int randomNumber = random.Next(32, 127);
+            return (char)randomNumber;
         }
 
         public int UpdateSystemUser(SystemUser user)
@@ -67,6 +108,56 @@ namespace NFDao.Implementation
             command.Parameters.AddWithValue("@email", user.email);
             command.Parameters.AddWithValue("@role", user.role);
             command.Parameters.AddWithValue("@birthdate", user.birthdate);
+            try
+            {
+                return ExecuteCommand(command);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int VerifyEmail(string email)
+        {
+            string query = @"SELECT id FROM SystemUser WHERE email = @email";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@email", email);
+            try
+            {
+                return ExecuteScalarId(command);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int ChangePassword(int id, string newPassword)
+        {
+            string query = @"UPDATE SystemUser SET password = HASHBYTES('MD5',@password) WHERE id = @id";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@password", newPassword).SqlDbType = SqlDbType.VarChar;
+            command.Parameters.AddWithValue("@id", id);
+            try
+            {
+                return ExecuteCommand(command);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int ChangePassword(string email, string newPassword)
+        {
+            string query = @"UPDATE SystemUser SET password = HASHBYTES('MD5',@password) WHERE email = @email";
+            SqlCommand command = CreateComand(query);
+            command.Parameters.AddWithValue("@password", newPassword).SqlDbType = SqlDbType.VarChar;
+            command.Parameters.AddWithValue("@email", email);
             try
             {
                 return ExecuteCommand(command);

@@ -22,7 +22,7 @@ namespace Narices_Frias
                 if (txtUsername.Text == "" || txtPassword.Text == "")
                 {
                     myAlert.Visible = true;
-                    myAlert.InnerHtml = "no puedes llenar campos vacios";
+                    myAlert.InnerHtml = "Rellene los campos";
                 }
                 else
                 {
@@ -38,23 +38,23 @@ namespace Narices_Frias
                     }
                     else
                     {
-                       if(User.role==0)//administrador
+                        Session["User"] = User;
+                        switch (User.role)
                         {
-                            Response.Redirect("~/Pages/MedicCrud.aspx");
+                            case 0:
+                                //Response.Redirect("~/Pages/MedicCrud.aspx");
+                                break;
+                            case 1:
+
+                                break;
+                            case 2:
+
+                                break;
+                            case 3:
+
+                                break;
                         }
-                        else if (User.role == 1)//medico
-                        {
-                            Response.Redirect("~/Pages/MedicCrud.aspx");
-                        }
-                        else if (User.role == 2)//cajero
-                        {
-                            Response.Redirect("~/Pages/cashierCrud.aspx");
-                        }
-                        else if (User.role == 3)//usuario
-                        {
-                            Response.Redirect("~/Pages/UserCrud.aspx");
-                        }
-                       
+                        
                     }
                 }
             }
