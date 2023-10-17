@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="ContentGestorCharitable.aspx.cs" Inherits="Narices_Frias.Pages.ContentGestorCharitable" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="/Stylesheets/CrudCharitableActivities.css">
     <style>
         .image-preview {
     width: 200px;
