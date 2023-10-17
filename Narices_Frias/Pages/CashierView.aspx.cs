@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,13 +15,19 @@ namespace Narices_Frias.Pages
     {
         ProductImpl impl;
         BillImpl billImpl;
+        BillNameImpl billNameImpl;
+        BillDetailImpl billDetailImpl;
         List<Product> productList;
+        List<BillDetail> details;
         
         protected void Page_Load(object sender, EventArgs e)
         {
             impl = new ProductImpl();
             billImpl = new BillImpl();
+            billNameImpl = new BillNameImpl();
+            billDetailImpl = new BillDetailImpl();
             productList = new List<Product>();
+            details = new List<BillDetail>();
             Select();
         }
         void Select()
@@ -63,7 +70,11 @@ namespace Narices_Frias.Pages
         private void AddToBillPreview(object sender, EventArgs e, Product p)
         {
             productList.Add(p);
-            billPreview.Controls.Add(CreateProductBillDetail(p));
+            Panel panel = CreateProductBillDetail(p);
+            TextBox txtAmount = (TextBox)panel.Controls[2];
+            int amount = int.Parse(txtAmount.Text);
+            details.Add(new BillDetail(p.id,0,p.unitPrice,amount,1));
+            billPreview.Controls.Add(panel);
         }
 
         Panel CreateProductBillDetail(Product info)
@@ -91,12 +102,25 @@ namespace Narices_Frias.Pages
         private void RemoveProduct(object sender, EventArgs e, Product p,Panel panelProduct)
         {
             productList.Remove(p);
+            BillDetail billDetailToDelete = details.FirstOrDefault(d => d.productId == p.id);
+            details.Remove(billDetailToDelete);
             billPreview.Controls.Remove(panelProduct);
         }
 
         protected void btnGenerateBill_Click(object sender, EventArgs e)
         {
-            int billId = billImpl.getBillId();
+            BillName bn = billNameImpl.BillNameExists(txtNit.Text);
+            if(bn != null)
+            {
+                int billIdNew = billImpl.getBillId(new Bill(details.Sum(d => d.amount*d.price),bn.id,1,1));
+                details.ForEach(d => d.billId = billIdNew);
+                int resul = billDetailImpl.InserDetails(details);
+                if (resul == details.Count)
+                {
+                    
+                }
+            }
+            
         }
     }
 }
