@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
-
+<%--    hola--%>
     <div class="container-fluid CrudSection">
         <div class="row">
             <div class="crudSearcher">
