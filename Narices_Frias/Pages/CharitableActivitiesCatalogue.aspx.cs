@@ -28,6 +28,8 @@ namespace Narices_Frias.Pages
         Panel CreateCard(CharitableActivities info , List<string>photos)
         {
             Panel panel = new Panel();
+            Panel imagesPanel = new Panel();
+            panel.CssClass = "post";
             Label title = new Label();
             Label description = new Label();
             Label date = new Label();
@@ -42,9 +44,9 @@ namespace Narices_Frias.Pages
             {
                 images[i] = new Image();
                 images[i].ImageUrl = photos[i];
-                panel.Controls.Add(images[i]);
+                imagesPanel.Controls.Add(images[i]);
             }
-            
+            panel.Controls.Add(imagesPanel);
             return panel;
         }
     }

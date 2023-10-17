@@ -83,6 +83,7 @@
     <Compile Include="Implementation\ProductImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
+    <Compile Include="Interfaces\Ibill.cs" />
     <Compile Include="Interfaces\ICharitableActivities.cs" />
     <Compile Include="Interfaces\IShelterStaff.cs" />
     <Compile Include="Interfaces\ISystemUser.cs" />
