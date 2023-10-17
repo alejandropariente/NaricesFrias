@@ -12,19 +12,20 @@ namespace NFDao.Model
         public int billId { get; set; }
         public decimal price { get; set; }
         public int amount { get; set; }
+        public int userId { get; set; }
 
         public BillDetail()
         {
             
         }
 
-        public BillDetail(short productId, int billId, decimal price, int amount)
+        public BillDetail(short productId, int billId, decimal price, int amount, int userId)
         {
             this.productId = productId;
             this.billId = billId;
             this.price = price;
             this.amount = amount;
+            this.userId = userId;
         }
-
     }
 }

@@ -29,6 +29,8 @@
         </div>
     </div>
     <div class="row">
-
+        <h1>Nit :</h1>
+        <asp:TextBox runat="server" ID="txtNit"></asp:TextBox>
+        <a href="#">Nuevo Cliente</a>
     </div>
 </asp:Content>

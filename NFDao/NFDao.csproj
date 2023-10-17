@@ -77,13 +77,17 @@
     <Compile Include="Implementation\AnimalDateImpl.cs" />
     <Compile Include="Implementation\AnimalImpl.cs" />
     <Compile Include="Implementation\BaseCrud.cs" />
+    <Compile Include="Implementation\BillDetailImpl.cs" />
     <Compile Include="Implementation\BillImpl.cs" />
+    <Compile Include="Implementation\BillNameImpl.cs" />
     <Compile Include="Implementation\CharitableActivitiesImpl.cs" />
     <Compile Include="Implementation\PersonImpl.cs" />
     <Compile Include="Implementation\ProductImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
     <Compile Include="Interfaces\Ibill.cs" />
+    <Compile Include="Interfaces\IBillDetail.cs" />
+    <Compile Include="Interfaces\IbillName.cs" />
     <Compile Include="Interfaces\ICharitableActivities.cs" />
     <Compile Include="Interfaces\IShelterStaff.cs" />
     <Compile Include="Interfaces\ISystemUser.cs" />
