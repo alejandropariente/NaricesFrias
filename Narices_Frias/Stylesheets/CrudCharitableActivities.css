@@ -1,0 +1,63 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter&family=Play:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight:900;
+}
+.formSectionCharitable {
+    background-color: #FEBD01;
+    display: grid;
+    padding: 2em 20em;
+}
+#ContentPlaceHolder1_txtName{
+    margin-top:1em;
+    width:500px;
+    height:35px;
+}
+#ContentPlaceHolder1_txtDescription {
+    margin-top: 1em;
+    height: 70px;
+}
+#ContentPlaceHolder1_txtDate {
+    border:0;
+    border-radius:20px;
+    margin-bottom: 1em;
+    background-color: #FEDC00;
+    width:750px;
+    justify-self:center;
+    height:300px;
+}
+
+tbody{
+    border:0;
+}
+#ContentPlaceHolder1_fileUploadControl{
+    margin:2em 0;
+    justify-self:center;
+}
+.formSectionCharitable input {
+    margin-bottom: 1em;
+}
+.formSectionCharitable span{
+    margin-top:2em;
+}
+
+
+.buttonSection{
+    display:grid;
+    grid-template-columns: 10fr 1fr 10fr;
+}
+#ContentPlaceHolder1_btnUpload {
+    border-radius:15px;
+    border-color:black;
+    background-color: black;
+    color: white;
+    height:50px;
+}
+#ContentPlaceHolder1_SavePost {
+    border-radius: 15px;
+    border-color: black;
+    background-color: black;
+    color: white;
+    height: 50px;
+}
