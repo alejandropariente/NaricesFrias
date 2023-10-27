@@ -50,18 +50,20 @@
         <asp:Label runat="server" ID="lblDescription">Descripcion :</asp:Label>
         <textarea runat="server" ID="txtDescription"></textarea>
         <asp:Label runat="server" ID="lblDate">Fecha :</asp:Label>
+        <asp:ScriptManager runat="server" ID="scriptmanager1"></asp:ScriptManager>
             <asp:UpdatePanel runat="server">
         <ContentTemplate>
             <asp:Calendar runat="server" ID="txtDate" ></asp:Calendar>
         </ContentTemplate>
     </asp:UpdatePanel>
-        <asp:FileUpload ID="fileUploadControl" runat="server" AllowMultiple="true" />
+        <asp:FileUpload ID="fileUploadControl" runat="server" AllowMultiple="true" onchange="previewImages()" />
         <div class="buttonSection">
-            <asp:Button ID="btnUpload" runat="server" Text="Subir Imágenes" OnClick="btnUpload_Click" onchange="previewImages() />
 
-            <div id="imagePreview"></div>
+            <div style="display:flex;" id="imagePreview"></div>
+            <br />
             <asp:Button ID="SavePost" runat="server" Text="Subir Imágenes" OnClick="SavePost_Click" />
         </div>
+    </div>
         <div id="ventanaEmergente" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); text-align: center; padding-top: 100px;">
     <div style="background-color: white; width: 300px; margin: 0 auto; padding: 20px; border-radius: 5px;">
         <h2>Error</h2>
