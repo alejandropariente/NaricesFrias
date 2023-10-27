@@ -51,13 +51,14 @@ namespace Narices_Frias.Pages
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescription;
 
         /// <summary>
-        /// Control lblDate.
+        /// Control lblDate
+        /// scriptmanager1 control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
+        protected global::System.Web.UI.ScriptManager scriptmanager1;
 
         /// <summary>
         /// Control txtDate.
@@ -97,6 +98,7 @@ namespace Narices_Frias.Pages
 
         /// <summary>
         /// Control SavePost.
+        /// SavePost control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

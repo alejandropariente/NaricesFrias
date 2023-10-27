@@ -24,7 +24,7 @@ namespace NFDao.Implementation
 
         public BillName BillNameExists(string nit)
         {
-            string query = @"SELECT id WHERE status = 1 AND nit = @nit";
+            string query = @"SELECT id FROM BillName WHERE status = 1 AND nit = @nit";
             SqlCommand command = CreateComand(query);
             command.Parameters.AddWithValue("@nit", nit);
 
