@@ -72,6 +72,7 @@ namespace Narices_Frias.Pages
             productList.Add(p);
             Panel panel = CreateProductBillDetail(p);
             TextBox txtAmount = (TextBox)panel.Controls[2];
+            txtAmount.Text = "1";
             int amount = int.Parse(txtAmount.Text);
             details.Add(new BillDetail(p.id,0,p.unitPrice,amount,1));
             billPreview.Controls.Add(panel);

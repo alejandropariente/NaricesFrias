@@ -185,6 +185,7 @@
     <Content Include="Pages\MenuCruds.aspx" />
     <Content Include="Pages\RecoverAcount.aspx" />
     <Content Include="Pages\SignIn.aspx" />
+    <Content Include="Pages\UpdatePets.aspx" />
     <Content Include="Pages\UserCrud.aspx" />
     <Content Include="Pages\UserUpdate.aspx" />
     <Content Include="Pages\CrudCharitableActivitiesUpdate.aspx" />
@@ -389,6 +390,13 @@
     </Compile>
     <Compile Include="Pages\SignIn.aspx.designer.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UpdatePets.aspx.cs">
+      <DependentUpon>UpdatePets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UpdatePets.aspx.designer.cs">
+      <DependentUpon>UpdatePets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserCrud.aspx.cs">
       <DependentUpon>UserCrud.aspx</DependentUpon>
