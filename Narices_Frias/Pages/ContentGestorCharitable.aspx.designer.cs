@@ -51,6 +51,7 @@ namespace Narices_Frias.Pages
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescription;
 
         /// <summary>
+        /// Control lblDate.
         /// Control lblDate
         /// scriptmanager1 control.
         /// </summary>
