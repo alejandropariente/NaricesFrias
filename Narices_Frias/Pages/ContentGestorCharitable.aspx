@@ -61,7 +61,7 @@
 
             <div style="display:flex;" id="imagePreview"></div>
             <br />
-            <asp:Button ID="SavePost" runat="server" Text="Subir Imágenes" OnClick="SavePost_Click" />
+            <asp:Button ID="SavePost" runat="server" Text="Publicar Post" OnClick="SavePost_Click" />
         </div>
     </div>
         <div id="ventanaEmergente" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); text-align: center; padding-top: 100px;">
