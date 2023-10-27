@@ -11,6 +11,7 @@ namespace NFDao.Implementation
     {
         public AnimalImpl()
         {
+            //Consultas Animal
             this.querys = new KeyQuery[5] {
                 new KeyQuery("Select" , @"SELECT * FROM vwCharitableActivities ORDER BY 2") ,
                 new KeyQuery("Insert" , @"INSERT INTO CharitableActivities(name,description,date,moneyRaising,shelterId,userId) VALUES(@name,@description,@date,@moneyRaising,@shelterId,@userId);") ,

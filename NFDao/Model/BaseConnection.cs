@@ -10,10 +10,10 @@ namespace NFDao.Model
 {
     public class BaseConnection
     {
-        private string sever = "F22-I9000K\\PROYECTOSQL";
+        private string sever = "JHOAN-B\\SQLEXPRESS";
         private string dataBase = "DbNaricesFrias";
-        private string user = "Proyecto";
-        private string password = "Univalle.";
+        private string user = "sa";
+        private string password = "123";
         private string connectionString;
         private SqlConnection connection;
 
