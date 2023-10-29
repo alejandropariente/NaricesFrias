@@ -51,7 +51,7 @@
                             
                             <div class="form-group row">
 
-                               <div> class="btnRegister offset-sm-2 col-xl-12">
+                               <div  class="btnRegister offset-sm-2 col-xl-12">>
                                       <asp:Button Text="Registrar" ID="btnRegistrar" runat="server" CssClass="boton" OnClick="btnRegistrar_Click" />
 
                                 </div>
