@@ -20,7 +20,7 @@ namespace Narices_Frias.Pages
         {
 
             Select();
-            midiv.Visible = false;
+            //midiv.Visible = false;
 
         }
         void Select()
@@ -54,8 +54,8 @@ namespace Narices_Frias.Pages
             {
                 if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtRaza.Text) || string.IsNullOrEmpty(txtEdad.Text))
                 {
-                    midiv.Visible = true;
-                    midiv.InnerHtml = "Por favor, complete todos los campos.";
+                    //midiv.Visible = true;
+                   // midiv.InnerHtml = "Por favor, complete todos los campos.";
                     return;
                 }
 
@@ -87,8 +87,8 @@ namespace Narices_Frias.Pages
                         }
                         else
                         {
-                            midiv.Visible = true;
-                            midiv.InnerHtml = "El archivo no es una imagen válida.";
+                            //midiv.Visible = true;
+                            //midiv.InnerHtml = "El archivo no es una imagen válida.";
                             return;
                         }
                     }
@@ -107,7 +107,7 @@ namespace Narices_Frias.Pages
                     int n = pImpl.Insert(p);
                     if (n > 1)
                     {
-                        midiv.Visible = true;
+                        //midiv.Visible = true;
                     }
 
                 
@@ -121,7 +121,7 @@ namespace Narices_Frias.Pages
 
         protected void btnClose_Click(object sender, EventArgs e)
         {
-            midiv.Visible = false;
+            //midiv.Visible = false;
         }
     }
 }

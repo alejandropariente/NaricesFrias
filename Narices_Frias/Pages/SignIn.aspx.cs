@@ -42,7 +42,7 @@ namespace Narices_Frias.Pages
                 if (resultado > 0)
                 {
                     
-                    Response.Redirect("~/Pages/MedicCrud.aspx");
+                    Response.Redirect("Landing.aspx");
                 }
                 else
                 {
