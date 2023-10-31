@@ -65,6 +65,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,12 +77,18 @@
     <Compile Include="Implementation\AnimalDateImpl.cs" />
     <Compile Include="Implementation\AnimalImpl.cs" />
     <Compile Include="Implementation\BaseCrud.cs" />
+    <Compile Include="Implementation\BillDetailImpl.cs" />
     <Compile Include="Implementation\BillImpl.cs" />
+    <Compile Include="Implementation\BillNameImpl.cs" />
     <Compile Include="Implementation\CharitableActivitiesImpl.cs" />
     <Compile Include="Implementation\PersonImpl.cs" />
     <Compile Include="Implementation\ProductImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
+    <Compile Include="Interfaces\Ibill.cs" />
+    <Compile Include="Interfaces\IBillDetail.cs" />
+    <Compile Include="Interfaces\IbillName.cs" />
+    <Compile Include="Interfaces\ICharitableActivities.cs" />
     <Compile Include="Interfaces\IShelterStaff.cs" />
     <Compile Include="Interfaces\ISystemUser.cs" />
     <Compile Include="Model\Animal.cs" />
@@ -91,6 +98,7 @@
     <Compile Include="Model\BillDetail.cs" />
     <Compile Include="Model\BillName.cs" />
     <Compile Include="Model\CharitableActivities.cs" />
+    <Compile Include="Model\CharitableActivitiesPost.cs" />
     <Compile Include="Model\KeyQuery.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Product.cs" />

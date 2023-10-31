@@ -22,7 +22,7 @@
                  <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-7 headerLogo">
-                            <img src="/Images/NaricesFriasLogo.png" alt="">
+                            <a href="../Pages/Landing.aspx"><img src="/Images/NaricesFriasLogo.png" alt=""></a>
                         </div>
                         <div class="col-xl-5 navContainer">
                             <nav>
@@ -30,6 +30,9 @@
                                     <li><a href="#">Catalogo</a></li>
                                     <li><a href="#">Que Somos?</a></li>
                                     <li><a href="#">Contactanos</a></li>
+                                    <li><a href="../Pages/CharitableActivitiesCatalogue.aspx">Publicaciones</a></li>
+                                    <li><a href="../Pages/SignIn.aspx">Registrarse</a></li>
+                                    <li><a href="../Default.aspx">Iniciar sesion</a></li>
                                 </ul>
                             </nav>
                         </div>

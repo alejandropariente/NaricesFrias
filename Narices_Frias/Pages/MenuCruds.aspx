@@ -55,7 +55,7 @@
             </a>
         </div>
         <div class="col-xl-4 optionCard">
-            <a href="/Pages/CrudCharitableActivities">
+            <a href="/Pages/ContentGestorCharitable">
                 <div class="cardContainer">
                     <p>Actividades Beneficas</p>
                 </div>

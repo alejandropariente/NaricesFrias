@@ -10,15 +10,23 @@ namespace NFDao.Model
     {
         public int id { get; set; }
         public string name { get; set; }
+        public string nit { get; set; }
         public BillName()
         {
             
         }
 
-        public BillName(int id, string name)
+        public BillName(string name, string nit)
+        {
+            this.name = name;
+            this.nit = nit;
+        }
+
+        public BillName(int id, string name, string nit)
         {
             this.id = id;
             this.name = name;
+            this.nit = nit;
         }
     }
 }

@@ -1,0 +1,173 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter&family=Play:wght@400;700&display=swap');
+
+.header_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main {
+    background-image: url(/Images/Frame\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 724px;
+}
+
+.landingLeft {
+    display: grid;
+}
+
+    .landingLeft p {
+        font-family: 'Inter', sans-serif;
+        font-size: 42px;
+        font-weight: 900;
+        margin-left: 3em;
+        margin-right: 4em;
+        margin-top: 4em;
+    }
+
+    .landingLeft .btnContact {
+        border-radius: 15px;
+        border-color: black;
+        background-color: black;
+        justify-self: start;
+        font-size: 16px;
+        margin-left: 8em;
+        margin-top: 5em;
+        width: 212px;
+        height: 42px;
+    }
+
+    .landingLeft h6 {
+        margin-top: 5em;
+        margin-left: 6em;
+        font-size: 24px;
+    }
+
+.main .col-xl-4 {
+    display: grid;
+}
+
+.cardDog {
+    border-radius: 18px;
+    background-color: white;
+    display: grid;
+    height: 370px;
+    width: 250px;
+    align-self: center;
+}
+
+    .cardDog img {
+        width: 250px;
+    }
+
+    .cardDog h4 {
+        text-align: center;
+    }
+
+    .cardDog h6 {
+        text-align: center;
+    }
+
+    .cardDog a {
+        justify-self: center;
+        border-color: black;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+        width: 95px;
+        height: 35px;
+    }
+
+
+.naricesFriasCenter {
+    padding-top: 12em;
+    padding-left: 10em;
+}
+
+.naricesFriasDescription h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    margin-top: 2em;
+    margin-right: 1em;
+}
+
+.naricesFriasDescription h4 {
+    font-size: 18px;
+    margin-top: 5em;
+    width: 360px;
+}
+
+.naricesFriasDescription div {
+    display: grid;
+}
+
+    .naricesFriasDescription div a {
+        border-color: #FEDF6A;
+        background-color: #FEDF6A;
+        color: black;
+        margin-top: 5em;
+        margin-right: 10em;
+        justify-self: end;
+        width: 180px;
+    }
+
+.imgPerritos {
+    padding-right: 25em;
+}
+
+    .imgPerritos img {
+        margin-top: 10em;
+        width: 400px;
+    }
+
+.Contcircle {
+    display: grid;
+    width: 100%;
+}
+
+    .Contcircle div {
+        background-color: #FEDF6A;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        justify-self: end;
+        margin-right: 22em;
+    }
+
+.servicesSection {
+    margin-top: 10em;
+    margin-bottom: 6em;
+}
+
+    .servicesSection .col-xl-4 {
+        display: grid;
+    }
+
+        .servicesSection .col-xl-4 img {
+            width: 180px;
+            justify-self: center;
+        }
+
+        .servicesSection .col-xl-4 h3 {
+            text-align: center;
+        }
+
+        .servicesSection .col-xl-4 p {
+            text-align: center;
+            font-size: 18px;
+            padding: 0 4em;
+        }
+
+.halfCircleLeft {
+    padding-left: 0 !important;
+}
+
+.halfCircleRight {
+    display: grid;
+    padding-right: 0 !important;
+}
+
+    .halfCircleRight img {
+        justify-self: end;
+    }

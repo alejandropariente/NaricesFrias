@@ -6,6 +6,9 @@
 .optionCard {
     padding: 1.5em;
 }
+a{
+    text-decoration:none;
+}
 p{
     color:black;
     text-align:center;
@@ -15,4 +18,8 @@ p{
 .cardContainer {
     background-color: #FFB800;
     border-radius: 20px;
+}
+
+.cardContainer:hover {
+    background-color: #FFC531;
 }

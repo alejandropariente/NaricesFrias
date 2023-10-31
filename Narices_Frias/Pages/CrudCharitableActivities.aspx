@@ -55,6 +55,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="btnRegister offset-sm-2 col-xl-12">
+                                    <div id="scrollableDiv" style="overflow: auto; height: 300px;">
                                     <asp:GridView ID="dgvSalida" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped dataTable dtr-inline">
                                     <Columns>
                                     <asp:BoundField DataField="id" HeaderText="ID" />
@@ -65,13 +66,15 @@
                                     <asp:TemplateField HeaderText="Acciones">
                                     <ItemTemplate>
                                             <a href='CrudCharitableActivitiesUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
-                                            
+                                            <asp:Button runat="server" Text="Eliminar" />
+                                            <p>Total recaudado</p>
+                                            <asp:TextBox runat="server"></asp:TextBox>
                                             
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     </Columns>
                                     </asp:GridView>
-
+                                    </div>
 
 
 

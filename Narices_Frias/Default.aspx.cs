@@ -39,21 +39,22 @@ namespace Narices_Frias
                     else
                     {
                         Session["User"] = User;
-                        switch (User.role)
-                        {
-                            case 0:
-                                //Response.Redirect("~/Pages/MedicCrud.aspx");
-                                break;
-                            case 1:
+                        Response.Redirect("/Pages/MenuCruds.aspx");
+                        //switch (User.role)
+                        //{
+                        //    case 0:
+                        //        //Response.Redirect("~/Pages/MedicCrud.aspx");
+                        //        break;
+                        //    case 1:
 
-                                break;
-                            case 2:
+                        //        break;
+                        //    case 2:
 
-                                break;
-                            case 3:
+                        //        break;
+                        //    case 3:
 
-                                break;
-                        }
+                        //        break;
+                        //}
                         
                     }
                 }
