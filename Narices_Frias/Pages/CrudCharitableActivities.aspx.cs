@@ -33,6 +33,7 @@ namespace Narices_Frias.Pages
                 dgvSalida.DataSource = caImpl.Select();
                 dgvSalida.DataBind();
                 dgvSalida.Columns[0].Visible = false;
+                
             }
             catch (Exception ex)
             {

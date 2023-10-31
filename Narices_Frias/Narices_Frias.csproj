@@ -175,6 +175,7 @@
     <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CashierView.aspx" />
     <Content Include="Pages\CharitableActivitiesCatalogue.aspx" />
+    <Content Include="Pages\CharitableActivitiesView.aspx" />
     <Content Include="Pages\ContentGestorCharitable.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
@@ -248,6 +249,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Stylesheets\CharitableActivities.css" />
     <Content Include="Stylesheets\CrudCharitableActivities.css" />
     <Content Include="Stylesheets\Default.css" />
     <Content Include="Stylesheets\Landing.css" />
@@ -320,6 +322,13 @@
     </Compile>
     <Compile Include="Pages\CharitableActivitiesCatalogue.aspx.designer.cs">
       <DependentUpon>CharitableActivitiesCatalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CharitableActivitiesView.aspx.cs">
+      <DependentUpon>CharitableActivitiesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CharitableActivitiesView.aspx.designer.cs">
+      <DependentUpon>CharitableActivitiesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ContentGestorCharitable.aspx.cs">
       <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>
