@@ -171,6 +171,7 @@
     <Content Include="Images\NaricesFriasLogo.png" />
     <Content Include="Images\NaricesFriasLogoWhite.png" />
     <Content Include="Images\UserIconBlack.png" />
+    <Content Include="Pages\AnimalCards.aspx" />
     <Content Include="Pages\AppointmentsCrud.aspx" />
     <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CashierView.aspx" />
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AnimalCards.aspx.cs">
+      <DependentUpon>AnimalCards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AnimalCards.aspx.designer.cs">
+      <DependentUpon>AnimalCards.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AppointmentsCrud.aspx.cs">
       <DependentUpon>AppointmentsCrud.aspx</DependentUpon>
