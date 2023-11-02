@@ -175,7 +175,6 @@
     <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CashierView.aspx" />
     <Content Include="Pages\CharitableActivitiesCatalogue.aspx" />
-    <Content Include="Pages\CharitableActivitiesView.aspx" />
     <Content Include="Pages\ContentGestorCharitable.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
@@ -322,13 +321,6 @@
     </Compile>
     <Compile Include="Pages\CharitableActivitiesCatalogue.aspx.designer.cs">
       <DependentUpon>CharitableActivitiesCatalogue.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CharitableActivitiesView.aspx.cs">
-      <DependentUpon>CharitableActivitiesView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\CharitableActivitiesView.aspx.designer.cs">
-      <DependentUpon>CharitableActivitiesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ContentGestorCharitable.aspx.cs">
       <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>

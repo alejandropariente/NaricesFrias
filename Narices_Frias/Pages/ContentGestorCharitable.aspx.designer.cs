@@ -15,15 +15,6 @@ namespace Narices_Frias.Pages
     {
 
         /// <summary>
-        /// lblName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
-
-        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -33,13 +24,13 @@ namespace Narices_Frias.Pages
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// lblDescription control.
+        /// lblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.Label lblName;
 
         /// <summary>
         /// txtDescription control.
@@ -51,22 +42,13 @@ namespace Narices_Frias.Pages
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescription;
 
         /// <summary>
-        /// lblDate control.
+        /// lblDescrip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
-
-        /// <summary>
-        /// scriptmanager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager scriptmanager1;
+        protected global::System.Web.UI.WebControls.Label lblDescrip;
 
         /// <summary>
         /// txtDate control.
@@ -75,7 +57,34 @@ namespace Narices_Frias.Pages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar txtDate;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
+
+        /// <summary>
+        /// lblfecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblfecha;
+
+        /// <summary>
+        /// txtMoneyRaising control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMoneyRaising;
+
+        /// <summary>
+        /// lblRecaudacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRecaudacion;
 
         /// <summary>
         /// fileUploadControl control.
