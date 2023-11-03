@@ -177,6 +177,8 @@
     <Content Include="Pages\CashierView.aspx" />
     <Content Include="Pages\CharitableActivitiesCatalogue.aspx" />
     <Content Include="Pages\ContentGestorCharitable.aspx" />
+    <Content Include="Pages\CrudAnimals\AnimalForm.aspx" />
+    <Content Include="Pages\CrudAnimals\AnimalView.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
@@ -336,6 +338,20 @@
     </Compile>
     <Compile Include="Pages\ContentGestorCharitable.aspx.designer.cs">
       <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalForm.aspx.cs">
+      <DependentUpon>AnimalForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalForm.aspx.designer.cs">
+      <DependentUpon>AnimalForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalView.aspx.cs">
+      <DependentUpon>AnimalView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalView.aspx.designer.cs">
+      <DependentUpon>AnimalView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudCharitableActivities.aspx.cs">
       <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>

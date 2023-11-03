@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.SqlServer.Server;
 using System.Data.SqlClient;
 using System.Data;
+using NFDao.Tools;
 
 namespace NFDao.Implementation
 {
@@ -89,7 +90,7 @@ namespace NFDao.Implementation
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                photos.Add("data:image/jpeg;base64," + Convert.ToBase64String((byte[])dt.Rows[i][0]));
+                photos.Add(ImageConverterDAO.ConvertImageToURL((byte[])dt.Rows[i][0]));
             }
             return photos;
         }

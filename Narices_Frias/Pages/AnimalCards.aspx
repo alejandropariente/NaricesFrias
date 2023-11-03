@@ -22,7 +22,7 @@
         <asp:Repeater ID="AnimalRepeater" runat="server">
             <ItemTemplate>
                 <div class="post">
-                    <asp:Image ID="AnimalImage" runat="server" ImageUrl='<%# Eval("Photo") %>' Width="100" Height="100" />
+                    <asp:Image ID="AnimalImage" runat="server" ImageUrl='<%#NFDao.Tools.ImageConverterDAO.ConvertImageToURL((byte[])Eval("Photo")) %>' Width="100" Height="100" />
                     <h2><%# Eval("Name") %></h2>
                     <p>Raza: <%# Eval("AnimalBreed") %></p>
                     <p>Edad: <%# Eval("Age") %> años</p>
