@@ -27,6 +27,9 @@
                     <p>Raza: <%# Eval("AnimalBreed") %></p>
                     <p>Edad: <%# Eval("Age") %> años</p>
                 </div>
+                <div>
+                    <a >Reservar cita para Apadrinar</a>
+                </div>
             </ItemTemplate>
         </asp:Repeater>
     </div>

@@ -27,7 +27,7 @@
                         <div class="col-xl-5 navContainer">
                             <nav>
                                 <ul class="headerMenu">
-                                    <li><a href="#">Catalogo</a></li>
+                                    <li><a href="/Pages/AnimalCards.aspx">Catalogo de perritos</a></li>
                                     <li><a href="#">Que Somos?</a></li>
                                     <li><a href="#">Contactanos</a></li>
                                     <li><a href="../Pages/CharitableActivitiesCatalogue.aspx">Publicaciones</a></li>

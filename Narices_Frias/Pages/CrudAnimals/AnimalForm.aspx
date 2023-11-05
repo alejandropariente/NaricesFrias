@@ -20,6 +20,10 @@
                         imagePreview.appendChild(img);
                     }
                     else {
+                        var exits = fileInput.parentNode.querySelector('.errorSpan');
+                        if (exits) {
+                            fileInput.parentNode.removeChild(exits);
+                        }
                         SetError(fileInput.parentNode,"Solo se admiten imagenes");
                         fileInput.value = '';
                         return
@@ -60,11 +64,12 @@
             
             });
             if (photo.files.length === 0) {
-                
-                
+
+
                 SetError(photo.parentNode, "Debe seleccionar una imagen");
                 state = false;
             }
+            
             
             let regex = /^[a-zA-Z0-9\s]+$/;
             if (nombre.value.length > 50) {
@@ -126,6 +131,8 @@
     <div>
         <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
     </div>
+    
     <div style="display:flex;" id="imagePreview"></div>
+
     <asp:Button Text="Registar Animal" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
 </asp:Content>

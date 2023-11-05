@@ -25,5 +25,21 @@ namespace Narices_Frias.Pages.CrudAnimals
             dgvAnimals.DataBind();
             dgvAnimals.Columns[0].Visible = false;
         }
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id = int.Parse(btn.CommandArgument);
+            if (impl.Delete(id) > 0)
+            {
+                Select();
+            }
+            else
+            {
+
+            }
+        }
+
+        
     }
 }

@@ -3,10 +3,11 @@
     <link rel="stylesheet" href="/Stylesheets/CrudCharitableActivities.css">
     <style>
         .image-preview {
-    width: 200px;
-    height: 150px;
-    margin: 10px;
-}
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+        }
+
     </style>
     <script>
         function previewImages() {
@@ -88,7 +89,7 @@
         </div>
     </div>
         <div id="ventanaEmergente" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); text-align: center; padding-top: 100px;">
-    <div style="background-color: white; width: 300px; margin: 0 auto; padding: 20px; border-radius: 5px;">
+        <div style="background-color: white; width: 300px; margin: 0 auto; padding: 20px; border-radius: 5px;">
         <h2>Error</h2>
         <p>Se ha producido un error. Por favor, inténtalo de nuevo.</p>
         <button onclick="cerrarVentanaEmergente()">Cerrar</button>
