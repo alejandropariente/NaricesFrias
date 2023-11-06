@@ -61,11 +61,11 @@ namespace Narices_Frias.Pages
             }
             if (state)
             {
-                CharitableActivities c = new CharitableActivities(txtName.Text, txtDescription.InnerText, txtDate.SelectedDate, 0, 1, 1);
+                CharitableActivities c = new CharitableActivities(txtName.Text, txtDescription.InnerText,DateTime.Parse(txtDate.Text),decimal.Parse(txtMoneyRaising.Text), 1, 1);
 
                 if (impl.InsertPost(c, photos) == photos.Count)
                 {
-                    Response.Redirect("CharitableActivitiesCatalogue.aspx");
+                    Response.Redirect("CrudCharitableActivities.aspx");
                 }
                 else
                 {

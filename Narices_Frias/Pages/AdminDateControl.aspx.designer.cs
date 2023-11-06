@@ -11,34 +11,34 @@ namespace Narices_Frias.Pages
 {
 
 
-    public partial class CrudCharitableActivities
+    public partial class AdminDateControl
     {
 
         /// <summary>
-        /// midiv control.
+        /// dgvdates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl midiv;
+        protected global::System.Web.UI.WebControls.GridView dgvdates;
 
         /// <summary>
-        /// btnClose control.
+        /// warningDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl warningDiv;
 
         /// <summary>
-        /// dgvSalida control.
+        /// dgvDateHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvSalida;
+        protected global::System.Web.UI.WebControls.GridView dgvDateHistory;
     }
 }

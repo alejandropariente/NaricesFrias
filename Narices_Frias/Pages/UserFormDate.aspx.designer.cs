@@ -11,34 +11,43 @@ namespace Narices_Frias.Pages
 {
 
 
-    public partial class CrudCharitableActivities
+    public partial class UserFormDate
     {
 
         /// <summary>
-        /// midiv control.
+        /// cbType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl midiv;
+        protected global::System.Web.UI.WebControls.DropDownList cbType;
 
         /// <summary>
-        /// btnClose control.
+        /// txtDescriptionDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescriptionDate;
 
         /// <summary>
-        /// dgvSalida control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvSalida;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
+
+        /// <summary>
+        /// SendDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SendDate;
     }
 }
