@@ -159,6 +159,9 @@
     <Content Include="Global.asax" />
     <Content Include="Images\AdoptIcon.png" />
     <Content Include="Images\ApadrinarIcon.png" />
+    <Content Include="Images\carrousel1.jpeg" />
+    <Content Include="Images\carrousel2.jpg" />
+    <Content Include="Images\carrousel3.jpg" />
     <Content Include="Images\Frame 1.png" />
     <Content Include="Images\halfCircle1.png" />
     <Content Include="Images\halfCircle2.png" />
