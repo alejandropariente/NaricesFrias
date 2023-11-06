@@ -85,6 +85,7 @@
     <Compile Include="Implementation\ProductImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
+    <Compile Include="Interfaces\IAnimalDate.cs" />
     <Compile Include="Interfaces\Ibill.cs" />
     <Compile Include="Interfaces\IBillDetail.cs" />
     <Compile Include="Interfaces\IbillName.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Model\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\EmailManager.cs" />
+    <Compile Include="Tools\ImageConverterDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

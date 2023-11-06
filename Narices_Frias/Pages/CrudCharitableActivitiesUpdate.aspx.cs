@@ -32,22 +32,7 @@ namespace Narices_Frias.Pages
                         txtName.Text = ca.name;
                         txtDescripcion.Text = ca.description;
                         txtTotalRecaudado.Text = ca.moneyRaising.ToString();
-                        
-
-                        string fechaDesdeBaseDeDatos = ca.date.ToString();
-                        fechaDesdeBaseDeDatos = fechaDesdeBaseDeDatos.Trim('{', '}');
-                        if (DateTime.TryParseExact(fechaDesdeBaseDeDatos, "M/d/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime fecha))
-                        {
-
-                            DateTime fechaSinHoraMinutosSegundos = fecha.Date;
-
-
-                            string fechaFormateada = fechaSinHoraMinutosSegundos.ToString("yyyy-MM-dd");
-
-                            txtFecha.Text = fechaFormateada;
-                        }
-                       
-
+                        txtFecha.Text = ca.date.ToString("yyyy-MM-dd");
                     }
                 }
                 catch (Exception ex)
@@ -164,11 +149,8 @@ namespace Narices_Frias.Pages
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            caImpl = new CharitableActivitiesImpl();
-            string id1 = Request.QueryString["id"];
-            int id = int.Parse(id1);
-            int v = caImpl.Delete(id);
-            if (v > 0)
+            int id = int.Parse(Request.QueryString["id"]);
+            if (caImpl.Delete(id) > 0)
             {
                 Div1.Visible = true;
                 txtName.Text = "";

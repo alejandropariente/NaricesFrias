@@ -159,6 +159,9 @@
     <Content Include="Global.asax" />
     <Content Include="Images\AdoptIcon.png" />
     <Content Include="Images\ApadrinarIcon.png" />
+    <Content Include="Images\carrousel1.jpeg" />
+    <Content Include="Images\carrousel2.jpg" />
+    <Content Include="Images\carrousel3.jpg" />
     <Content Include="Images\Frame 1.png" />
     <Content Include="Images\halfCircle1.png" />
     <Content Include="Images\halfCircle2.png" />
@@ -171,13 +174,15 @@
     <Content Include="Images\NaricesFriasLogo.png" />
     <Content Include="Images\NaricesFriasLogoWhite.png" />
     <Content Include="Images\UserIconBlack.png" />
+    <Content Include="Pages\AdminDateControl.aspx" />
     <Content Include="Pages\AnimalCards.aspx" />
-    <Content Include="Pages\AppointmentsCrud.aspx" />
     <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CashierView.aspx" />
     <Content Include="Pages\CharitableActivitiesCatalogue.aspx" />
-    <Content Include="Pages\CharitableActivitiesView.aspx" />
     <Content Include="Pages\ContentGestorCharitable.aspx" />
+    <Content Include="Pages\CrudAnimals\AnimalForm.aspx" />
+    <Content Include="Pages\CrudAnimals\AnimalUpdate.aspx" />
+    <Content Include="Pages\CrudAnimals\AnimalView.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
@@ -189,6 +194,7 @@
     <Content Include="Pages\SignIn.aspx" />
     <Content Include="Pages\UpdatePets.aspx" />
     <Content Include="Pages\UserCrud.aspx" />
+    <Content Include="Pages\UserFormDate.aspx" />
     <Content Include="Pages\UserUpdate.aspx" />
     <Content Include="Pages\CrudCharitableActivitiesUpdate.aspx" />
     <Content Include="Pages\CrudProducts.aspx" />
@@ -296,19 +302,19 @@
     <Compile Include="Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminDateControl.aspx.cs">
+      <DependentUpon>AdminDateControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminDateControl.aspx.designer.cs">
+      <DependentUpon>AdminDateControl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AnimalCards.aspx.cs">
       <DependentUpon>AnimalCards.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\AnimalCards.aspx.designer.cs">
       <DependentUpon>AnimalCards.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AppointmentsCrud.aspx.cs">
-      <DependentUpon>AppointmentsCrud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\AppointmentsCrud.aspx.designer.cs">
-      <DependentUpon>AppointmentsCrud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\cashierCrud.aspx.cs">
       <DependentUpon>cashierCrud.aspx</DependentUpon>
@@ -331,19 +337,33 @@
     <Compile Include="Pages\CharitableActivitiesCatalogue.aspx.designer.cs">
       <DependentUpon>CharitableActivitiesCatalogue.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CharitableActivitiesView.aspx.cs">
-      <DependentUpon>CharitableActivitiesView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\CharitableActivitiesView.aspx.designer.cs">
-      <DependentUpon>CharitableActivitiesView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ContentGestorCharitable.aspx.cs">
       <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ContentGestorCharitable.aspx.designer.cs">
       <DependentUpon>ContentGestorCharitable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalForm.aspx.cs">
+      <DependentUpon>AnimalForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalForm.aspx.designer.cs">
+      <DependentUpon>AnimalForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalUpdate.aspx.cs">
+      <DependentUpon>AnimalUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalUpdate.aspx.designer.cs">
+      <DependentUpon>AnimalUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalView.aspx.cs">
+      <DependentUpon>AnimalView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudAnimals\AnimalView.aspx.designer.cs">
+      <DependentUpon>AnimalView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudCharitableActivities.aspx.cs">
       <DependentUpon>CrudCharitableActivities.aspx</DependentUpon>
@@ -421,6 +441,13 @@
     </Compile>
     <Compile Include="Pages\UserCrud.aspx.designer.cs">
       <DependentUpon>UserCrud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserFormDate.aspx.cs">
+      <DependentUpon>UserFormDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserFormDate.aspx.designer.cs">
+      <DependentUpon>UserFormDate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserUpdate.aspx.cs">
       <DependentUpon>UserUpdate.aspx</DependentUpon>

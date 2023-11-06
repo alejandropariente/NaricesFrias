@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Narices_Frias.Pages
+namespace Narices_Frias.Pages.CrudAnimals
 {
 
 
-    public partial class CharitableActivitiesView
+    public partial class AnimalView
     {
 
         /// <summary>
-        /// dgvCharitables control.
+        /// dgvAnimals control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvCharitables;
+        protected global::System.Web.UI.WebControls.GridView dgvAnimals;
     }
 }
