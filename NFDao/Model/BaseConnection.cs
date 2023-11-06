@@ -13,7 +13,7 @@ namespace NFDao.Model
         private string sever = "DESKTOP-7S64QUV";
         private string dataBase = "DbNaricesFrias";
         private string user = "SA";
-        private string password = "123bolitas";
+        private string password = "----";
         private string connectionString;
         private SqlConnection connection;
 
