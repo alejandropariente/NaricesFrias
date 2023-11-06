@@ -113,13 +113,13 @@
     }
 
 .imgPerritos {
-    padding-right: 25em;
+    //padding-right: 15em;
+}
+.carouselExampleIndicators{
+    margin-right:10em;
 }
 
-    .imgPerritos img {
-        margin-top: 10em;
-        width: 400px;
-    }
+
 
 .Contcircle {
     display: grid;
