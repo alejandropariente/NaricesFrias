@@ -20,7 +20,7 @@ namespace NFDao.Implementation
         {
             return typeof(x).GetProperties();
         }
-        private List<T> ConvertDataTableToList<T>(DataTable dataTable) where T : new()
+        protected List<T> ConvertDataTableToList<T>(DataTable dataTable) where T : new()
         {
             List<T> list = new List<T>();
 
