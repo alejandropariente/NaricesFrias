@@ -59,34 +59,40 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="scrollableDiv" style="overflow: auto; height: auto;">
-    <asp:GridView runat="server" ID="dgvAnimals" AutoGenerateColumns="false">
-        <Columns>
-            <asp:BoundField DataField="id" HeaderText="ID" />
-            <asp:BoundField DataField="name" HeaderText="Nombre" />
-            <asp:TemplateField HeaderText="Categoria">
-                <ItemTemplate>
-                    <asp:Label runat="server"><%# int.Parse(Eval("animalCategoryId").ToString()) == 1 ? "Perro":"Gato" %></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:BoundField DataField="animalBreed" HeaderText="Raza" />
-            <asp:TemplateField HeaderText="Acciones">
-                <ItemTemplate>
-                    <a class="btn btn-primary" href='AnimalUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
 
-                    <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Delete_Click"  CommandArgument='<%# Eval("ID") %>' />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
-    </div>
-    <a class="btn btn-dark" href="AnimalForm.aspx">Registrar animal</a>
-    <div id="modalDeleteRecord" class="modal">
-        <div class="modal-content">
-            <h3>Seguro de eliminar el Registro?</h3>
-            <p>Are you sure you want to delete this record?</p>
-            <button  id="btnConfirmDelete" class="modal-button confirm">Yes</button>
-            <button  id="btnCancelDelete" class="modal-button cancel">No</button>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/Stylesheets/AnimalView.css">
+    <div class="AnimalViewSection">
+        <div id="scrollableDiv" style="overflow: auto; height: auto;">
+        <asp:GridView runat="server" ID="dgvAnimals" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="id" HeaderText="ID" />
+                <asp:BoundField DataField="name" HeaderText="Nombre" />
+                <asp:TemplateField HeaderText="Categoria">
+                    <ItemTemplate>
+                        <asp:Label runat="server"><%# int.Parse(Eval("animalCategoryId").ToString()) == 1 ? "Perro":"Gato" %></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="animalBreed" HeaderText="Raza" />
+                <asp:TemplateField HeaderText="Acciones">
+                    <ItemTemplate>
+                        <a class="btn btn-primary" href='AnimalUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+
+                        <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Delete_Click"  CommandArgument='<%# Eval("ID") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+        </div>
+        <a class="btn btn-dark" href="AnimalForm.aspx">Registrar animal</a>
+        <div id="modalDeleteRecord" class="modal">
+            <div class="modal-content">
+                <h3>Seguro de eliminar el Registro?</h3>
+                <p>Are you sure you want to delete this record?</p>
+                <button  id="btnConfirmDelete" class="modal-button confirm">Yes</button>
+                <button  id="btnCancelDelete" class="modal-button cancel">No</button>
+            </div>
         </div>
     </div>
 </asp:Content>

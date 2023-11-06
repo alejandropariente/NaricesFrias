@@ -1,0 +1,44 @@
+﻿body {
+}
+.CrudSection {
+    background-color: #FEDF6A;
+    padding:4em 5em;
+    display:grid;
+    justify-content:center;
+}
+
+.form-control {
+    background-color: #FEF0B9;
+    border: 0;
+    margin-top: 0.5em;
+    border-bottom: solid 2px black;
+}
+input{
+    border:solid 1px black;
+    background-color:#FEDC00;
+    border-radius:8px;
+    width:35em;
+    height:40px;
+    margin-top:2em;
+
+}
+select {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 35em;
+    height: 40px;
+    margin-top: 2em;
+}
+span{
+    display:inline-block;
+    width:5em;
+}
+.btnRegisterAni{
+    background-color:black;
+    color:white;
+}
+.SelectArch {
+    background-color: #FEDF6A;
+    border: 0;
+}

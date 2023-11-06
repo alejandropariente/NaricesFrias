@@ -256,6 +256,8 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Stylesheets\AnimalForm.css" />
+    <Content Include="Stylesheets\AnimalView.css" />
     <Content Include="Stylesheets\CharitableActivities.css" />
     <Content Include="Stylesheets\CrudCharitableActivities.css" />
     <Content Include="Stylesheets\Default.css" />
