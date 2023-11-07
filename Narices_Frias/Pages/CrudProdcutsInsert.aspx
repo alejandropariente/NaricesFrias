@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudProductsUpdate.aspx.cs" Inherits="Narices_Frias.Pages.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudProdcutsInsert.aspx.cs" Inherits="Narices_Frias.Pages.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>
         function previewImages() {
@@ -145,11 +145,8 @@
     <div>
         <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
     </div>
-
     
     <div style="display:flex;" id="imagePreview"></div>
-    <h2>Imagen antigua</h2>
-    <asp:Image runat="server" CssClass="image-preview" ID="oldPicture" />
 
-    <asp:Button Text="Actualizar Producto" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+    <asp:Button Text="Registar Producto" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
 </asp:Content>

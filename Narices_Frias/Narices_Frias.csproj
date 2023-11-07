@@ -199,6 +199,7 @@
     <Content Include="Pages\CrudCharitableActivitiesUpdate.aspx" />
     <Content Include="Pages\CrudProducts.aspx" />
     <Content Include="Pages\CrudProductsUpdate.aspx" />
+    <Content Include="Pages\CrudProdcutsInsert.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -476,6 +477,13 @@
     </Compile>
     <Compile Include="Pages\CrudProductsUpdate.aspx.designer.cs">
       <DependentUpon>CrudProductsUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudProdcutsInsert.aspx.cs">
+      <DependentUpon>CrudProdcutsInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudProdcutsInsert.aspx.designer.cs">
+      <DependentUpon>CrudProdcutsInsert.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
