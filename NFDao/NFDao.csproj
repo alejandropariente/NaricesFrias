@@ -103,6 +103,7 @@
     <Compile Include="Model\KeyQuery.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ShelterAnimalPost.cs" />
     <Compile Include="Model\ShelterStaff.cs" />
     <Compile Include="Model\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

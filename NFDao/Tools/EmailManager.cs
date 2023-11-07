@@ -6,6 +6,9 @@ using MailKit.Security;
 using MimeKit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
+using System.Net;
+using System.Threading;
 
 namespace NFDao.Tools
 {
@@ -22,110 +25,83 @@ namespace NFDao.Tools
         }
         public bool RecoverAcount(string newPassword)
         {
-            try
+            using (MailMessage email = new MailMessage())
             {
-                MimeMessage message = new MimeMessage();
-                message.From.Add(new MailboxAddress("Beerzon Oficial", this.mail));
-                message.To.Add(new MailboxAddress("", this.to));
-                message.Subject = "Credenciales";
-
-                var builder = new BodyBuilder();
+                email.From = new MailAddress(mail);
+                email.To.Add(new MailAddress(to));
+                email.Subject = "Recuperacion de credenciales";
+                email.IsBodyHtml = true;
                 string html = @"<!DOCTYPE html>
-                                    <html>
-
-                                    <head>
-                                      <title>Bienvenido a Beerzon</title>
-                                      <style>
+                                <html>
+                                <head>
+                                    <style>
                                         body {
-                                          font-family: Arial, sans-serif;
-                                          margin: 0;
-                                          padding: 0;
+                                            font-family: Arial, sans-serif;
+                                            background-color: #f0f0f0;
+                                            text-align: center;
                                         }
-
                                         .container {
-                                          background-color: #222121;
-                                          padding: 40px;
-                                          color: white;
-                                          width: 400px;
-                                          margin: 0 auto;
+                                            background-color: #ffffff;
+                                            padding: 20px;
+                                            border-radius: 10px;
+                                            width: 80%;
+                                            max-width: 400px;
+                                            margin: 0 auto;
                                         }
-
                                         h1 {
-                                          margin-bottom: 20px;
-                                          font-size: 24px;
+                                            color: #009900;
                                         }
-
                                         p {
-                                          margin-bottom: 10px;
-                                          font-size: 16px;
+                                            color: #333333;
                                         }
-
-                                        ul {
-                                          margin-top: 10px;
-                                          margin-bottom: 20px;
-                                          list-style-type: none;
-                                          padding: 0;
+                                        a {
+                                            text-decoration: none;
+                                            color: #009900;
                                         }
+                                    </style>
+                                </head>
+                                <body>
+                                    <div class=""container"">
+                                        <h1>Restablecer Contraseña en Narices Frías</h1>
+                                        <p>Hola,</p>
+                                        <p>Haz hemos restablecido tu contraseña:</p>
+                                        <p>usa esta contraseña temporal y cambiala al iniciar sesion : {{temp}}  </p>
+                                        <p>Si no solicitaste un restablecimiento de contraseña, puedes ignorar este correo.</p>
+                                    </div>
+                                </body>
+                                </html>";
+                html = html.Replace("{{temp}}", newPassword);
+                email.Body = html;
 
-                                        li {
-                                          margin-bottom: 5px;
-                                        }
-
-                                        strong {
-                                          font-weight: bold;
-                                        }
-
-                                        .username {
-                                          color: #5c0a15;
-                                        }
-
-                                        .footer {
-                                          font-size: 14px;
-                                          text-align: center;
-                                        }
-                                        .header {
-                                          background-color: #5c0a15;
-                                          padding: 20px;
-                                          text-align: center;
-                                        }
-                                      </style>
-                                    </head>
-
-                                    <body>
-                                        
-                                      <div class=""container"" style=""color: white;"">
-                                        <h1>¡Bienvenido a Beerzon!</h1>
-                                        <p>Estimado empleado,</p>
-                                        <p>Tu cuenta ha sido creada en Beerzon, la licorería más destacada. A continuación, encontrarás tus credenciales de inicio de sesión:</p>
-                                        <ul>
-                                          <li><strong>Usuario:</strong> <span class=""username"">[{username}]</span></li>
-                                          <li><strong>Contraseña:</strong> <span class=""username"">[{pass}]</span></li>
-                                        </ul>
-                                        <p>Te recomendamos cambiar tu contraseña después de iniciar sesión por primera vez.</p>
-                                        <p>¡Esperamos que disfrutes trabajar con nosotros!</p>
-                                        <p class=""footer"">Atentamente,<br>Equipo de Beerzon</p>
-                                      </div>
-                                    </body>
-
-                                    </html>";
-                builder.HtmlBody = html;
-                message.Body = builder.ToMessageBody();
-
-                using (var client = new SmtpClient())
+                using (System.Net.Mail.SmtpClient smtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587))
                 {
-                    client.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-                    client.Authenticate(this.mail, this.password);
-                    client.Send(message);
-                    client.Disconnect(true);
-                }
+                    smtpClient.EnableSsl = true;
+                    smtpClient.UseDefaultCredentials = false;
 
-                return true;
+                    smtpClient.Credentials = new NetworkCredential(mail, password);
+
+                    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    try
+                    {
+                        smtpClient.Send(email);
+                        return true;
+                    }
+                    catch (SmtpException ex)
+                    {
+                        // Manejo de errores específicos de SMTP
+                        Console.WriteLine("Error SMTP al enviar el correo: " + ex.Message);
+                        return false;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Otros errores
+                        Console.WriteLine("Error al enviar el correo: " + ex.Message);
+                        return false;
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-                return false;
-            }
+            
         }
     }
 }

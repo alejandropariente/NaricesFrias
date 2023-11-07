@@ -89,7 +89,7 @@ namespace NFDao.Implementation
 
         private char GenerateRandomChar(Random random)
         {
-            int randomNumber = random.Next(32, 127);
+            int randomNumber = random.Next(97, 122);
             return (char)randomNumber;
         }
 
