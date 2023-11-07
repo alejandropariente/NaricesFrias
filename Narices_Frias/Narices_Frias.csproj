@@ -196,7 +196,6 @@
     <Content Include="Pages\UserCrud.aspx" />
     <Content Include="Pages\UserFormDate.aspx" />
     <Content Include="Pages\UserUpdate.aspx" />
-    <Content Include="Pages\CrudCharitableActivitiesUpdate.aspx" />
     <Content Include="Pages\CrudProducts.aspx" />
     <Content Include="Pages\CrudProductsUpdate.aspx" />
     <Content Include="Pages\CrudProdcutsInsert.aspx" />
@@ -456,13 +455,6 @@
     </Compile>
     <Compile Include="Pages\UserUpdate.aspx.designer.cs">
       <DependentUpon>UserUpdate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CrudCharitableActivitiesUpdate.aspx.cs">
-      <DependentUpon>CrudCharitableActivitiesUpdate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\CrudCharitableActivitiesUpdate.aspx.designer.cs">
-      <DependentUpon>CrudCharitableActivitiesUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudProducts.aspx.cs">
       <DependentUpon>CrudProducts.aspx</DependentUpon>

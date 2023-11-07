@@ -15,33 +15,29 @@ namespace Narices_Frias.Pages
         CharitableActivitiesImpl caImpl;
         protected void Page_Load(object sender, EventArgs e)
         {
-            midiv.Visible = false;
+            caImpl = new CharitableActivitiesImpl();
             Select();
         }
 
-        protected void btnClose_Click(object sender, EventArgs e)
-        {
-            midiv.Visible= false;
-        }
         void Select()
         {
-            
-            try
-            {
-                caImpl = new CharitableActivitiesImpl();
-
-                dgvSalida.DataSource = caImpl.Select();
-                dgvSalida.DataBind();
-                dgvSalida.Columns[0].Visible = false;
-                
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            dgvActivities.DataSource = caImpl.Select();
+            dgvActivities.DataBind();
+            dgvActivities.Columns[0].Visible = false;
         }
 
-        
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id = int.Parse(btn.CommandArgument);
+            if (caImpl.Delete(id) > 0)
+            {
+                Select();
+            }
+            else
+            {
+
+            }
+        }
     }
 }
