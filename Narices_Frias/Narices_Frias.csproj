@@ -47,9 +47,6 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
-    <Reference Include="MailKit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
-      <HintPath>..\packages\MailKit.4.2.0\lib\net47\MailKit.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MimeKit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.4.2.0\lib\net47\MimeKit.dll</HintPath>
@@ -186,11 +183,15 @@
     <Content Include="Pages\CrudAnimals\AnimalView.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
+    <Content Include="Pages\CrudUsers\UserForm.aspx" />
+    <Content Include="Pages\CrudUsers\UserUpdate.aspx" />
+    <Content Include="Pages\CrudUsers\UserView.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
     <Content Include="Pages\Landing.aspx" />
     <Content Include="Pages\MedicCrud.aspx" />
     <Content Include="Pages\MedicCrudUpdate.aspx" />
     <Content Include="Pages\MenuCruds.aspx" />
+    <Content Include="Pages\MessageBoox.aspx" />
     <Content Include="Pages\RecoverAcount.aspx" />
     <Content Include="Pages\SignIn.aspx" />
     <Content Include="Pages\UpdatePets.aspx" />
@@ -257,13 +258,18 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Stylesheets\AdminDateControl.css" />
+    <Content Include="Stylesheets\AnimalForm.css" />
+    <Content Include="Stylesheets\AnimalView.css" />
     <Content Include="Stylesheets\CharitableActivities.css" />
     <Content Include="Stylesheets\CrudCharitableActivities.css" />
     <Content Include="Stylesheets\Default.css" />
     <Content Include="Stylesheets\Landing.css" />
     <Content Include="Stylesheets\MasterPage.css" />
     <Content Include="Stylesheets\MenuStyle.css" />
+    <Content Include="Stylesheets\RecoverAccount.css" />
     <Content Include="Stylesheets\StylesCrud.css" />
+    <Content Include="Stylesheets\UserFormDate.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -387,6 +393,27 @@
     <Compile Include="Pages\CrudPets.aspx.designer.cs">
       <DependentUpon>CrudPets.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CrudUsers\UserForm.aspx.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserForm.aspx.designer.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserUpdate.aspx.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserUpdate.aspx.designer.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserView.aspx.cs">
+      <DependentUpon>UserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserView.aspx.designer.cs">
+      <DependentUpon>UserView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CrudVolunteer.aspx.cs">
       <DependentUpon>CrudVolunteer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -421,6 +448,13 @@
     </Compile>
     <Compile Include="Pages\MenuCruds.aspx.designer.cs">
       <DependentUpon>MenuCruds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MessageBoox.aspx.cs">
+      <DependentUpon>MessageBoox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MessageBoox.aspx.designer.cs">
+      <DependentUpon>MessageBoox.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RecoverAcount.aspx.cs">
       <DependentUpon>RecoverAcount.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CashierView.aspx.cs" Inherits="Narices_Frias.Pages.CashierView" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CashierView.aspx.cs" Inherits="Narices_Frias.Pages.CashierView" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .productCard{
@@ -13,18 +13,50 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager runat="server" ID="scriptmanager1"></asp:ScriptManager>
     <div class="row">
         <div class="col-md-8" style="background-color:red;">
             <h1>Productos</h1>
-            <asp:Panel runat="server" ID="productPanel">
-
-            </asp:Panel>
+            <asp:Repeater runat="server" ID="productsPanel">
+                <ItemTemplate>
+                    <div class="productCard">
+                        <h2><%# Eval("name") %></h2>
+                        <p>
+                            Descripcion : 
+                                        <%# Eval("description") %>
+                        </p>
+                        <p>
+                            Precio unitario : 
+                                        <%# Eval("unitPrice") %>
+                        </p>
+                        <p>
+                            Stock disponible : 
+                                        <%# Eval("stock") %>
+                        </p>
+                        <asp:Image runat="server" ImageUrl='<%#NFDao.Tools.ImageConverterDAO.ConvertImageToURL((byte[])Eval("photo")) %>' />
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate>
+                                <asp:Button runat="server" Text="+" ID="AddButtom" CommandArgument='<%# Eval("id") %>' OnClick="AddButtom_Click" />
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="AddButtom" EventName="Click" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
         <div class="col-md-4" style="background-color:blue;">
             <h1>Facturas</h1>
-            <asp:Panel runat="server" ID="billPreview">
-
-            </asp:Panel>
+            
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:Panel runat="server" ID="billPreview">
+                        <!-- Contenido de billPreview, incluyendo los paneles agregados dinámicamente -->
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
             <asp:Button runat="server" ID="btnGenerateBill" Text="Generar factura" OnClick="btnGenerateBill_Click" />
         </div>
     </div>

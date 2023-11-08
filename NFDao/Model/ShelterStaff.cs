@@ -11,14 +11,13 @@ namespace NFDao.Model
         public string ci { get; set; }
         public string phone { get; set; }
         public string address { get; set; }
-        public string collegeNumber { get; set; }
         public ShelterStaff()
         {
             
         }
 
         public ShelterStaff(int id, string name, string lastName, string secondLastName, string userName, string password, string email, byte role, 
-            DateTime birthdate, string ci, string phone, string address, string collegeNumber, int userId)
+            DateTime birthdate, string ci, string phone, string address, int userId)
             :base(id, name, lastName, secondLastName,userName,password,email,role,birthdate, userId)
         {
             this.id = id;
@@ -34,11 +33,10 @@ namespace NFDao.Model
             this.ci = ci;
             this.phone = phone;
             this.address = address;
-            this.collegeNumber = collegeNumber;
             this.userId = userId;
         }
         public ShelterStaff(string name, string lastName, string secondLastName, string userName, string password, string email, byte role,
-            DateTime birthdate, string ci, string phone, string address, string collegeNumber, int userId)
+            DateTime birthdate, string ci, string phone, string address, int userId)
             : base(name, lastName, secondLastName, userName, password, email, role, birthdate, userId)
         {
             this.name = name;
@@ -53,7 +51,6 @@ namespace NFDao.Model
             this.ci = ci;
             this.phone = phone;
             this.address = address;
-            this.collegeNumber = collegeNumber;
             this.userId = userId;
         }
     }

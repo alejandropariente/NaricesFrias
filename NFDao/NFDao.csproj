@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\BillDetailComp.cs" />
     <Compile Include="Implementation\AnimalDateImpl.cs" />
     <Compile Include="Implementation\AnimalImpl.cs" />
     <Compile Include="Implementation\BaseCrud.cs" />
@@ -103,11 +104,13 @@
     <Compile Include="Model\KeyQuery.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ShelterAnimalPost.cs" />
     <Compile Include="Model\ShelterStaff.cs" />
     <Compile Include="Model\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\EmailManager.cs" />
     <Compile Include="Tools\ImageConverterDAO.cs" />
+    <Compile Include="Tools\TempPassGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

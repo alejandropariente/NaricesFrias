@@ -1,0 +1,8 @@
+﻿body {
+}
+.AnimalViewSection {
+    background-color: #febd01;
+    padding:4em;
+    display:grid;
+    justify-content:center;
+}

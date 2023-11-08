@@ -51,7 +51,7 @@ namespace Narices_Frias.Pages
 
                         ddlRol.Text = s.role.ToString();
                         txtDireccion.Text = s.address;
-                        txtUniversidad.Text = s.collegeNumber;
+                        //txtUniversidad.Text = s.collegeNumber;
                         txtCi.Text = s.ci;
 
                     }
@@ -192,7 +192,7 @@ namespace Narices_Frias.Pages
                 s.email = txtEmail.Text;
                 s.role = byte.Parse(ddlRol.Text);
                 s.address = txtDireccion.Text;
-                s.collegeNumber = txtUniversidad.Text;
+                //s.collegeNumber = txtUniversidad.Text;
 
 
 

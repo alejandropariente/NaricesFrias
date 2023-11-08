@@ -12,13 +12,31 @@ namespace Narices_Frias.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            waringDiv.Visible = false;
         }
 
         protected void btnRecover_Click(object sender, EventArgs e)
         {
             SystemUserImpl user = new SystemUserImpl();
-            user.RecoverAcount(txtEmailRecover.Text);
+            int result = user.RecoverAcount(txtEmailRecover.Text);
+            if ( result == -1)
+            {
+                waringDiv.Visible = true;
+                waringDiv.InnerText = "Email no existente";
+                waringDiv.Attributes["class"] = "alert-danger";
+            }
+            else if (result == 0)
+            {
+                waringDiv.Visible = true;
+                waringDiv.InnerText = "Hubo un error al enviar el mail";
+                waringDiv.Attributes["class"] = "alert-danger";
+            }
+            else if (result == 1)
+            {
+                waringDiv.Visible = true;
+                waringDiv.InnerText = "Correo enviado exitosamente";
+                waringDiv.Attributes["class"] = "alert-success";
+            }
         }
     }
 }

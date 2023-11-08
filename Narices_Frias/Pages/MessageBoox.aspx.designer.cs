@@ -11,34 +11,25 @@ namespace Narices_Frias.Pages
 {
 
 
-    public partial class AdminDateControl
+    public partial class MessageBoox
     {
 
         /// <summary>
-        /// Control dgvdates.
+        /// Control btnMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvdates;
+        protected global::System.Web.UI.WebControls.Button btnMostrar;
 
         /// <summary>
-        /// Control warningDiv.
+        /// Control LB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl warningDiv;
-
-        /// <summary>
-        /// Control dgvDateHistory.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvDateHistory;
+        protected global::System.Web.UI.WebControls.Label LB;
     }
 }
