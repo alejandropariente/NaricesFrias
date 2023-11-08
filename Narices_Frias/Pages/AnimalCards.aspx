@@ -26,10 +26,11 @@
                     <h2><%# Eval("Name") %></h2>
                     <p>Raza: <%# Eval("AnimalBreed") %></p>
                     <p>Edad: <%# Eval("Age") %> años</p>
+                    <div>
+                        <a href="UserFormDate.aspx" class="btn btn-success">Reservar cita para Apadrinar/adoptar</a>
+                    </div>
                 </div>
-                <div>
-                    <a >Reservar cita para Apadrinar</a>
-                </div>
+                
             </ItemTemplate>
         </asp:Repeater>
     </div>

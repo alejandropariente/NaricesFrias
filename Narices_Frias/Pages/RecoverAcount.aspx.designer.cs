@@ -16,6 +16,16 @@ namespace Narices_Frias.Pages
 
         /// <summary>
         /// Control txtEmailRecover.
+        /// waringDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl waringDiv;
+
+        /// <summary>
+        /// txtEmailRecover control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

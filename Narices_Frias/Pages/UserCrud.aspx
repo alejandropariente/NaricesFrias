@@ -53,6 +53,47 @@
 <asp:ListItem Value="2">Ayudante</asp:ListItem>
 </asp:DropDownList>
 </div>
+                 <asp:Panel ID="pnlMedico" runat="server">
+    <!-- Formulario para Médico -->
+    <div id="formularioMedico" style="display: none;">
+    <div class="form-group">
+        <label for="txtCI">CI:</label>
+        <asp:TextBox ID="txtCI" CssClass="form-control form-control-lg" placeholder="Ingresar CI" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label for="txtPhone">Teléfono:</label>
+        <asp:TextBox ID="txtPhone" CssClass="form-control form-control-lg" placeholder="Ingresar Teléfono" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label for="txtAddress">Dirección:</label>
+        <asp:TextBox ID="txtAddress" CssClass="form-control form-control-lg" placeholder="Ingresar Dirección" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label for="txtCollegeNumber">Número de Colegio:</label>
+        <asp:TextBox ID="txtCollegeNumber" CssClass="form-control form-control-lg" placeholder="Ingresar Número de Colegio" runat="server"></asp:TextBox>
+    </div>
+</div>
+
+</asp:Panel>
+
+<asp:Panel ID="pnlAyudante" runat="server">
+    <!-- Formulario para Ayudante -->
+<div id="formularioAyudante" style="display: none;">
+    <div class="form-group">
+        <label for="txtCIAyudante">CI:</label>
+        <asp:TextBox ID="txtCIAyudante" CssClass="form-control form-control-lg" placeholder="Ingresar CI" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label for="txtPhoneAyudante">Teléfono:</label>
+        <asp:TextBox ID="txtPhoneAyudante" CssClass="form-control form-control-lg" placeholder="Ingresar Teléfono" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label for="txtAddressAyudante">Dirección:</label>
+        <asp:TextBox ID="txtAddressAyudante" CssClass="form-control form-control-lg" placeholder="Ingresar Dirección" runat="server"></asp:TextBox>
+    </div>
+</div>
+</asp:Panel>
+
 
 <div class="form-group">
 <label for=""></label>
@@ -160,9 +201,27 @@
                }
            }
 
+           function showHideForm() {
+               var ddlRol = document.getElementById('<%= ddlRol.ClientID %>');
+              var pnlMedico = document.getElementById('<%= pnlMedico.ClientID %>');
+               var pnlAyudante = document.getElementById('<%= pnlAyudante.ClientID %>');
+
+               if (ddlRol.value === "1") { // "Médico" seleccionado
+                   pnlMedico.style.display = "block";
+                   pnlAyudante.style.display = "none";
+               } else if (ddlRol.value === "2") { // "Ayudante" seleccionado
+                   pnlMedico.style.display = "none";
+                   pnlAyudante.style.display = "block";
+               } else {
+                   pnlMedico.style.display = "none";
+                   pnlAyudante.style.display = "none";
+               }
+           }
+
+           // Llamamos a showHideForm() al cargar la página para manejar el estado inicial del formulario.
+           window.onload = showHideForm;
 
 
-           
 
         function validatePassword() {
             var passwordTextBox = document.getElementById('<%= txtPassword.ClientID %>');
@@ -294,9 +353,6 @@
 
                return isFormValid;
            }
-</script>
- 
-
-
+       </script>
 
 </asp:Content>

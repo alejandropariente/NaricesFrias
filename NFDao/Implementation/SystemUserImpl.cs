@@ -31,7 +31,8 @@ namespace NFDao.Implementation
                 new KeyQuery("Get",@"SELECT P.name , P.lastName , P.secondLastName , S.userName , s.email , s.role , s.birthdate
                                         FROM SystemUser S
                                         INNER JOIN Person P ON P.id = S.id
-                                        WHERE P.id = @id") };
+                                        WHERE P.id = @id") ,
+            };
         }
 
         public SystemUser Login(string username, string password)
@@ -59,7 +60,7 @@ namespace NFDao.Implementation
             if(VerifyEmail(email) != 0)
             {
                 EmailManager emailmanager = new EmailManager(email);
-                string tempPass = GenerateTempPass(6);
+                string tempPass = TempPassGenerator.GenerateTempPass(6);
                 if (ChangePassword(email,tempPass) > 0)
                 {
                     return emailmanager.RecoverAcount(tempPass) ? 1 : 0;
@@ -74,24 +75,7 @@ namespace NFDao.Implementation
                 return -1;
             }
         }
-        private string GenerateTempPass(int length)
-        {
-            Random random = new Random();
-            char[] randomChars = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                randomChars[i] = GenerateRandomChar(random);
-            }
-
-            return new string(randomChars);
-        }
-
-        private char GenerateRandomChar(Random random)
-        {
-            int randomNumber = random.Next(32, 127);
-            return (char)randomNumber;
-        }
+        
 
         public int UpdateSystemUser(SystemUser user)
         {
