@@ -1,125 +1,90 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudProducts.aspx.cs" Inherits="Narices_Frias.Pages.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CrudProducts.aspx.cs" Inherits="Narices_Frias.Pages.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        function Show() {
+            var ventanaEmergente = document.getElementById('modalDeleteRecord');
+            ventanaEmergente.style.display = 'block';
+            document.getElementById('btnConfirmDelete').addEventListener('click', function () {
+                ventanaEmergente.style.display = 'none';
+                return true;  // Resuelve la promesa con un valor "true" cuando se confirma
+            });
+
+            // Configura un manejador para el botón "Cancelar" en la ventana modal
+            document.getElementById('btnCancelDelete').addEventListener('click', function () {
+                ventanaEmergente.style.display = 'none';
+                return false; 
+            }
+
+    </script>
+    <style>
+        /* Styles for the popup window */
+        .modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Styles for the buttons */
+        .modal-button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .modal-button.confirm {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .modal-button.cancel {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/Stylesheets/StylesCrud.css">
+    <div id="scrollableDiv" style="overflow: auto; height: auto;">
+    <asp:GridView runat="server" ID="dgvProdcuts" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField DataField="id" HeaderText="ID" />
+            <asp:BoundField DataField="name" HeaderText="Nombre" />
+            <asp:BoundField DataField="description" HeaderText="Descripcion" />
+            <asp:BoundField DataField="unitPrice" HeaderText="Precio" />
+            <asp:BoundField DataField="stock" HeaderText="Cantidad" />
+            <asp:BoundField DataField="photo" HeaderText="Foto" />
+            <asp:TemplateField HeaderText="Acciones">
+                <ItemTemplate>
+                    <a class="btn btn-primary" href='CrudProductsUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
 
-    <div class="container-fluid CrudSection">
-        <div class="row">
-            <div class="alert alert-success alert-dismissible" id="midiv" runat="server">
-                   <asp:Button Text="x" ID="btnClose" runat="server" type="button" class="close" data-dismiss="alert" aria-hidden="true" OnClick="btnClose_Click"/>
-                    <h5><i class="icon fas fa-check"></i> Alerta!</h5>
-                    Registro insertado con exito!!..
-                </div>
-            <div class="crudProduct">
-                <h1>Gestion de Productos</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                
-                <form>
-                            <div class="form-group">
-                                <label for=""></label>
-                                <asp:TextBox ID="txtName" CssClass="form-control form-control-lg"
-                                    placeholder="Ingresar Nombre" runat="server"></asp:TextBox>
-                                <asp:Label runat="server" ID="lblName" CssClass="error">
-                                    
-                                </asp:Label>
-                            </div>
-                            <div class="form-group">
-                                <label for=""></label>
-                                <asp:TextBox ID="txtDescription" CssClass="form-control form-control-lg"
-                                    placeholder="Ingresar la descripcion" runat="server"></asp:TextBox>
-                                <asp:Label runat="server" ID="lblDesc" CssClass="error">
-                                    
-                                </asp:Label>
-                            </div>
-                            <div class="form-group">
-                                <label for=""></label>
-                                <asp:TextBox ID="txtPrice" CssClass="form-control form-control-lg"
-                                    placeholder="Ingresar el precio" runat="server" TextMode="Number"></asp:TextBox>
-                                <asp:Label runat="server" ID="lblPrice" CssClass="error">
-                                    
-                                </asp:Label>
-                            </div>
-                            <div class="form-group">
-                                <label for=""></label>
-                                <asp:TextBox ID="txtStock" CssClass="form-control form-control-lg"
-                                    placeholder="Ingresar la cantidad" runat="server"></asp:TextBox>
-                                <asp:Label runat="server" ID="lblStock" CssClass="error">
-                                    
-                                </asp:Label>
-                            </div>
-                            <div class="form-group">
-                                <label for=""></label>
-                                <asp:FileUpload ID="fileUploadControl" runat="server" AllowMultiple="true" placeholder="Seleccione una imagen" />
-                               
-
-
-
-
-                            </div>
-                            
-                            
-                           <div class="form-group row">
-                                <div class="btnRegister offset-sm-2 col-xl-12">
-                                    <asp:GridView ID="dgvSalida" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-striped dataTable dtr-inline">
-                                    <Columns>
-                                    <asp:BoundField DataField="id" HeaderText="ID" />
-                                    <asp:BoundField DataField="name" HeaderText="Nombres" />
-                                    <asp:BoundField DataField="description" HeaderText="Descripcion" />
-                                    <asp:BoundField DataField="unitPrice" HeaderText="Precio" />
-                                    <asp:BoundField DataField="stock" HeaderText="Total Recaudado" />
-                                        <asp:BoundField DataField="photo" HeaderText="Foto" />
-                                    <asp:TemplateField HeaderText="Acciones">
-                                    <ItemTemplate>
-                                            <a href='CrudProductsUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
-                                            
-                                            
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    </Columns>
-                                    </asp:GridView>
-
-
-
-
-
-                                    <asp:Button runat="server" ID="btnRegistrar" ForeColor="White"  Text="Registrar" CssClass="btnCrudRegister" OnClientClick ="return validateForm();" OnClick="btnRegistrar_Click" />  
-
-                                </div>
-                            </div>
-                        </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="crudMenu">
-                    <nav>
-                        <ul>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconInsert.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconUpdate.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                            <li><a href="#">
-                                <asp:Image runat="server" src="../Images/iconDelete.png"
-                                 alt="Sample image"/>
-                            </a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+                    <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Unnamed_Click" CommandArgument='<%# Eval("ID") %>' />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+    </div>
+    <a class="btn btn-dark" href="CrudProdcutsInsert.aspx">Registrar Producto</a>
+    <div id="modalDeleteRecord" class="modal">
+        <div class="modal-content">
+            <h3>Seguro de eliminar el Registro?</h3>
+            <p>Are you sure you want to delete this record?</p>
+            <button  id="btnConfirmDelete" class="modal-button confirm">Yes</button>
+            <button  id="btnCancelDelete" class="modal-button cancel">No</button>
         </div>
     </div>
-
-
-
-
-
-
 </asp:Content>

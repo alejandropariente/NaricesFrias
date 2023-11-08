@@ -11,7 +11,7 @@ namespace Narices_Frias.Pages
 {
 
 
-    public partial class WebForm3
+    public partial class WebForm4
     {
 
         /// <summary>
@@ -58,15 +58,6 @@ namespace Narices_Frias.Pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuPhoto;
-
-        /// <summary>
-        /// Control oldPicture.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image oldPicture;
 
         /// <summary>
         /// Control btnRegister.
