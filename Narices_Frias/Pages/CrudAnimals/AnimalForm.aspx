@@ -108,31 +108,38 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:Label runat="server">Nombre:</asp:Label>
-        <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label runat="server">Categoria:</asp:Label>
-        <asp:DropDownList ID="cbAnimalCategory" runat="server">
-            <asp:ListItem Selected="True" Text="Perro" Value="1" />
-            <asp:ListItem Text="Gato" Value="2" />
-        </asp:DropDownList>
-    </div>
-    <div>
-        <asp:Label runat="server">Raza:</asp:Label>
-        <asp:TextBox runat="server" ID="txtAnimalBreed" ></asp:TextBox>
-        <%--Div de error--%> 
-    </div>
-    <div>
-        <asp:Label runat="server">Edad:</asp:Label>
-        <asp:TextBox TextMode="Number" runat="server" ID="txtAge" ></asp:TextBox>
-    </div>
-    <div>
-        <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
-    </div>
-    
-    <div style="display:flex;" id="imagePreview"></div>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Play:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/Stylesheets/AnimalForm.css">
 
-    <asp:Button Text="Registar Animal" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+    <div class="CrudSection">
+        <div>
+            <asp:Label runat="server">Nombre:</asp:Label>
+            <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:Label runat="server">Categoria:</asp:Label>
+            <asp:DropDownList ID="cbAnimalCategory" runat="server">
+                <asp:ListItem Selected="True" Text="Perro" Value="1" />
+                <asp:ListItem Text="Gato" Value="2" />
+            </asp:DropDownList>
+        </div>
+        <div>
+            <asp:Label runat="server">Raza:</asp:Label>
+            <asp:TextBox runat="server" ID="txtAnimalBreed" ></asp:TextBox>
+            <%--Div de error--%> 
+        </div>
+        <div>
+            <asp:Label runat="server">Edad:</asp:Label>
+            <asp:TextBox TextMode="Number" runat="server" ID="txtAge" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:FileUpload CssClass="SelectArch" onchange="previewImages()" runat="server" ID="fuPhoto" />
+        </div>
+    
+        <div style="display:flex;" id="imagePreview"></div>
+        <asp:Button CssClass="btnRegisterAni" Text="Registar Animal" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+    </div>
+
+    
 </asp:Content>
