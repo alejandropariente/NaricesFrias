@@ -1,0 +1,16 @@
+﻿body {
+}
+.RecoverAcount {
+    background-color: #FEDF6A;
+    padding: 4em 2em;
+    display: grid;
+    justify-content: center;
+}
+input {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 35em;
+    height: 40px;
+    margin-top: 2em;
+}

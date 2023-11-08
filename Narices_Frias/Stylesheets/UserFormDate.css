@@ -1,0 +1,43 @@
+﻿body {
+}
+h1{
+    text-align:center;
+}
+.CrudSection {
+    background-color: #FEDF6A;
+    padding: 4em 2em;
+    display: grid;
+    justify-content: center;
+}
+input {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 45em;
+    height: 40px;
+    margin-top: 0.5em;
+}
+select {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 45em;
+    height: 40px;
+    margin-top: 0.5em;
+}
+textarea {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 45em;
+    height: 80px;
+}
+span {
+    margin-top: 2em;
+    display: block;
+}
+.btnRegisterAni {
+    background-color: black;
+    color: white;
+    margin-top:2em;
+}
