@@ -178,6 +178,7 @@
     <Content Include="Pages\AnimalCards.aspx" />
     <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CashierView.aspx" />
+    <Content Include="Pages\ChangePassword.aspx" />
     <Content Include="Pages\CharitableActivitiesCatalogue.aspx" />
     <Content Include="Pages\ContentGestorCharitable.aspx" />
     <Content Include="Pages\CrudAnimals\AnimalForm.aspx" />
@@ -329,6 +330,13 @@
     </Compile>
     <Compile Include="Pages\CashierView.aspx.designer.cs">
       <DependentUpon>CashierView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CharitableActivitiesCatalogue.aspx.cs">
       <DependentUpon>CharitableActivitiesCatalogue.aspx</DependentUpon>
