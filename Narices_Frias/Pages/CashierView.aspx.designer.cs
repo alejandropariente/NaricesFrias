@@ -15,13 +15,22 @@ namespace Narices_Frias.Pages
     {
 
         /// <summary>
-        /// productPanel control.
+        /// scriptmanager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel productPanel;
+        protected global::System.Web.UI.ScriptManager scriptmanager1;
+
+        /// <summary>
+        /// productsPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater productsPanel;
 
         /// <summary>
         /// billPreview control.

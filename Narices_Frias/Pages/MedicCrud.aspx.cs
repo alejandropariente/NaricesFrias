@@ -170,7 +170,7 @@ namespace Narices_Frias.Pages
                     string collegeNumber = txtUniversidad.Text;
                     string ci = txtCi.Text;
                     string nombreUsuario = GenerarNombreUsuario(name, lastName, ci);
-                    s = new ShelterStaff(name, lastName, secondLastname, nombreUsuario, password, email, role, DateTime.Parse(bornDate), ci, phone, address, collegeNumber, 1);
+                    //s = new ShelterStaff(name, lastName, secondLastname, nombreUsuario, password, email, role, DateTime.Parse(bornDate), ci, phone, address, collegeNumber, 1);
                     sImpl = new ShelterStaffImpl();
 
                     int n = sImpl.Insert(s);

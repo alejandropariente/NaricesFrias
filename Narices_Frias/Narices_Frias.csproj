@@ -182,6 +182,9 @@
     <Content Include="Pages\CrudAnimals\AnimalView.aspx" />
     <Content Include="Pages\CrudCharitableActivities.aspx" />
     <Content Include="Pages\CrudPets.aspx" />
+    <Content Include="Pages\CrudUsers\UserForm.aspx" />
+    <Content Include="Pages\CrudUsers\UserUpdate.aspx" />
+    <Content Include="Pages\CrudUsers\UserView.aspx" />
     <Content Include="Pages\CrudVolunteer.aspx" />
     <Content Include="Pages\Landing.aspx" />
     <Content Include="Pages\MedicCrud.aspx" />
@@ -375,6 +378,27 @@
     </Compile>
     <Compile Include="Pages\CrudPets.aspx.designer.cs">
       <DependentUpon>CrudPets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserForm.aspx.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserForm.aspx.designer.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserUpdate.aspx.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserUpdate.aspx.designer.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserView.aspx.cs">
+      <DependentUpon>UserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CrudUsers\UserView.aspx.designer.cs">
+      <DependentUpon>UserView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CrudVolunteer.aspx.cs">
       <DependentUpon>CrudVolunteer.aspx</DependentUpon>
