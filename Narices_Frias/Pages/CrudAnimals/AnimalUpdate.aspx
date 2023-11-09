@@ -114,6 +114,8 @@
     </style>
 </asp:Content>
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+                <link rel="stylesheet" href="/Stylesheets/AnimalForm.css">
+        <div class="CrudSection">
         <div>
         <asp:Label runat="server">Nombre:</asp:Label>
         <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
@@ -134,7 +136,7 @@
         <asp:Label runat="server">Edad:</asp:Label>
         <asp:TextBox TextMode="Number" runat="server" ID="txtAge" ></asp:TextBox>
     </div>
-    <asp:DropDownList runat="server" ID="cbAdopted" onchange="Adopted()">
+    <asp:DropDownList runat="server" CssClass="AdoptedSelect" ID="cbAdopted" onchange="Adopted()">
         <asp:ListItem Value="0" Text="Ninguno"></asp:ListItem>
         <asp:ListItem Value="1" Selected="true">Adoptado</asp:ListItem>
         <asp:ListItem Value="2">Apadrinado</asp:ListItem>
@@ -153,7 +155,7 @@
                     <asp:BoundField DataField="email" HeaderText="Correo" />
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
-                            <asp:Button runat="server" ID="btnSelect" OnClick="btnSelect_Click"  CssClass="btn btn-secondary" Text="Seleccionar" 
+                            <asp:Button runat="server" ID="btnSelect" OnClick="btnSelect_Click"  CssClass="btnSelecionar btn btn-secondary" Text="Seleccionar" 
                                 CommandArgument='<%# Eval("ID") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -171,4 +173,5 @@
 
 
     <asp:Button Text="Registar Animal" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+            </div>
 </asp:Content>
