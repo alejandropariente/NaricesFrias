@@ -24,12 +24,12 @@ namespace Narices_Frias.Pages
         {
             if (IsPostBack)
             {
-                comp = ViewState["comp"] as List<BillDetailComp>;
+                comp = Session["comp"] as List<BillDetailComp>;
             }
             else
             {
                 comp = new List<BillDetailComp>();
-                ViewState["comp"] = comp;
+                Session["comp"] = comp;
             }
             impl = new ProductImpl();
             billImpl = new BillImpl();
@@ -48,7 +48,7 @@ namespace Narices_Frias.Pages
         void UpdateBillPreview()
         {
             billPreview.Controls.Clear();
-            foreach (var item in ViewState["comp"] as List<BillDetailComp>)
+            foreach (var item in comp)
             {
                 billPreview.Controls.Add(item.panel);
             }
@@ -59,18 +59,21 @@ namespace Narices_Frias.Pages
 
         protected void btnGenerateBill_Click(object sender, EventArgs e)
         {
-            //BillName bn = billNameImpl.BillNameExists(txtNit.Text);
-            //if(bn != null)
-            //{
-            //    int billIdNew = billImpl.getBillId(new Bill(details.Sum(d => d.amount*d.price),bn.id,1,1));
-            //    details.ForEach(d => d.billId = billIdNew);
-            //    int resul = billDetailImpl.InserDetails(details);
-            //    if (resul == details.Count)
-            //    {
-                    
-            //    }
-            //}
-            
+            BillName bn = billNameImpl.BillNameExists(txtNit.Text);
+            if (bn != null)
+            {
+                string x = comp[0].amount.Text;
+                comp.ForEach(c => c.addAmount());
+                
+                int billIdNew = billImpl.getBillId(new Bill(comp.Sum(c => c.detail.price * c.detail.amount ), bn.id, 1, 1));
+                comp.ForEach(c => c.detail.billId = billIdNew);
+                int resul = billDetailImpl.InserDetails(comp.Select(c => c.detail).ToList());
+                if (resul == comp.Count)
+                {
+
+                }
+            }
+
         }
 
         protected void AddButtom_Click(object sender, EventArgs e)
@@ -78,9 +81,13 @@ namespace Narices_Frias.Pages
             Button btn = (Button) sender;
             int pId = int.Parse(btn.CommandArgument);
             Product p = impl.Get(pId);
-            BillDetailComp detail = new BillDetailComp(p, new BillDetail(p.id, 0, p.unitPrice, 0, 1),comp);
-            comp.Add(detail);
-            ViewState["comp"] = comp;
+            if(comp.Where(c => c.product.id == p.id).Count() == 0)
+            {
+                BillDetailComp detail = new BillDetailComp(p, new BillDetail(p.id, 0, p.unitPrice, 0, 1), comp);
+                comp.Add(detail);
+                Session["comp"] = comp;
+                
+            }
             UpdateBillPreview();
         }
     }

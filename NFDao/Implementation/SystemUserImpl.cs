@@ -81,7 +81,7 @@ namespace NFDao.Implementation
         {
             string query = @"BEGIN TRANSACTION
 	                                        UPDATE Person SET name = @name , lastName = @lastName , secondLastName = @secondLastName , lastUpdate = CURRENT_TIMESTAMP , userId = @userId  WHERE id = @id
-	                                        UPDATE SystemUser SET email = @email , role = @role , birthdate = @birthdate WHERE id = @id
+	                                        UPDATE SystemUser SET userName = @userName,email = @email , birthdate = @birthdate WHERE id = @id
                                             COMMIT";
             SqlCommand command = CreateComand(query);
             command.Parameters.AddWithValue("@id", user.id);
@@ -90,8 +90,8 @@ namespace NFDao.Implementation
             command.Parameters.AddWithValue("@secondLastName", user.secondLastName);
             command.Parameters.AddWithValue("@userId", user.userId);
             command.Parameters.AddWithValue("@email", user.email);
-            command.Parameters.AddWithValue("@role", user.role);
             command.Parameters.AddWithValue("@birthdate", user.birthdate);
+            command.Parameters.AddWithValue("@userName", user.birthdate);
             try
             {
                 return ExecuteCommand(command);

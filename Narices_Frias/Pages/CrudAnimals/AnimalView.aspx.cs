@@ -13,9 +13,11 @@ namespace Narices_Frias.Pages.CrudAnimals
     {
         AnimalImpl impl;
         Animal animal;
+        SystemUserImpl userImpl;
         protected void Page_Load(object sender, EventArgs e)
         {
             impl = new AnimalImpl();
+            userImpl = new SystemUserImpl();
             Select();
         }
 
@@ -39,7 +41,11 @@ namespace Narices_Frias.Pages.CrudAnimals
 
             }
         }
-
+        protected string ReturnSponsor(int id)
+        {
+            SystemUser user = userImpl.Get(id);
+            return user.name +" "+ user.lastName;
+        }
         
     }
 }

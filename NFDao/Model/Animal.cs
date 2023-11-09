@@ -15,6 +15,8 @@ namespace NFDao.Model
         public byte animalCategoryId { get; set; }
         public int userId { get; set; }
         public byte[] photo { get; set; }
+        public byte isAdoptedOrSponsored { get; set; }
+        public int systemUserId { get; set; }
         public byte shelterId { get; set; }
 
         public Animal()
@@ -22,7 +24,7 @@ namespace NFDao.Model
             
         }
 
-        public Animal(int id, string name, string animalBreed, byte age, byte animalCategoryId, int userId, byte[] photo, byte shelterId)
+        public Animal(int id, string name, string animalBreed, byte age, byte animalCategoryId, int userId, byte[] photo, byte isAdoptedOrSponsored, int systemUserId, byte shelterId)
         {
             this.id = id;
             this.name = name;
@@ -31,10 +33,12 @@ namespace NFDao.Model
             this.animalCategoryId = animalCategoryId;
             this.userId = userId;
             this.photo = photo;
+            this.isAdoptedOrSponsored = isAdoptedOrSponsored;
+            this.systemUserId = systemUserId;
             this.shelterId = shelterId;
         }
 
-        public Animal(string name, string animalBreed, byte age, byte animalCategoryId, int userId, byte[] photo, byte shelterId)
+        public Animal(string name, string animalBreed, byte age, byte animalCategoryId, int userId, byte[] photo, byte isAdoptedOrSponsored, int systemUserId, byte shelterId)
         {
             this.name = name;
             this.animalBreed = animalBreed;
@@ -42,6 +46,8 @@ namespace NFDao.Model
             this.animalCategoryId = animalCategoryId;
             this.userId = userId;
             this.photo = photo;
+            this.isAdoptedOrSponsored = isAdoptedOrSponsored;
+            this.systemUserId = systemUserId;
             this.shelterId = shelterId;
         }
     }

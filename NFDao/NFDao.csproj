@@ -86,6 +86,7 @@
     <Compile Include="Implementation\ProductImpl.cs" />
     <Compile Include="Implementation\ShelterStaffImpl.cs" />
     <Compile Include="Implementation\SystemUserImpl.cs" />
+    <Compile Include="Interfaces\Ianimal.cs" />
     <Compile Include="Interfaces\IAnimalDate.cs" />
     <Compile Include="Interfaces\Ibill.cs" />
     <Compile Include="Interfaces\IBillDetail.cs" />

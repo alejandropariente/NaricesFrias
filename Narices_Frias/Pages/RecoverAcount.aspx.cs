@@ -23,19 +23,19 @@ namespace Narices_Frias.Pages
             {
                 waringDiv.Visible = true;
                 waringDiv.InnerText = "Email no existente";
-                waringDiv.Attributes["class"] = "alert-danger";
+                waringDiv.Attributes["class"] = "alert alert-danger";
             }
             else if (result == 0)
             {
                 waringDiv.Visible = true;
                 waringDiv.InnerText = "Hubo un error al enviar el mail";
-                waringDiv.Attributes["class"] = "alert-danger";
+                waringDiv.Attributes["class"] = "alert alert-danger";
             }
             else if (result == 1)
             {
                 waringDiv.Visible = true;
                 waringDiv.InnerText = "Correo enviado exitosamente";
-                waringDiv.Attributes["class"] = "alert-success";
+                waringDiv.Attributes["class"] = "alert alert-success";
             }
         }
     }

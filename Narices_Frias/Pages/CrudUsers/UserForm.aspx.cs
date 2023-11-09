@@ -4,6 +4,7 @@ using NFDao.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,10 +19,12 @@ namespace Narices_Frias.Pages.CrudUsers
         {
             userImpl = new SystemUserImpl();
             shelterStaffImpl = new ShelterStaffImpl();
+            
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
         {
+            EmailManager emailManager = new EmailManager(txtEmail.Text);
             byte op = byte.Parse(cbOptions.SelectedValue.ToString());
             if ( op <= 2)
             {
@@ -31,7 +34,10 @@ namespace Narices_Frias.Pages.CrudUsers
 
                 if (shelterStaffImpl.Insert(st) > 0)
                 {
+                    Thread thread = new Thread(new ThreadStart(() => emailManager.SenCredentials(st)));
+                    thread.Start();
                     Response.Redirect("UserView.aspx");
+                    
                 }
                 else
                 {
@@ -45,7 +51,9 @@ namespace Narices_Frias.Pages.CrudUsers
                      1);
                 if (userImpl.Insert(su) > 0)
                 {
-
+                    Thread thread = new Thread(new ThreadStart(() => emailManager.SenCredentials(su)));
+                    thread.Start();
+                    Response.Redirect("UserView.aspx");
                 }
                 else
                 {

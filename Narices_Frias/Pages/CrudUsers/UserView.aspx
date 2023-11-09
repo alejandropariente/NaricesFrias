@@ -6,6 +6,11 @@
     <asp:GridView runat="server" ID="dgvUsers" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="ID" />
+            <asp:TemplateField HeaderText="Nombre Completo">
+                <ItemTemplate>
+                    <asp:Label runat="server"><%# Eval("name").ToString()+" "+Eval("lastName").ToString() %></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField DataField="userName" HeaderText="Nombre de usuario" />
             <asp:BoundField DataField="email" HeaderText="Correo" />
             <asp:TemplateField HeaderText="Cumpleaños">
@@ -15,7 +20,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
-                    <a class="btn btn-primary" href='UserUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+                    <a class="btn btn-primary" href='UserUpdate.aspx?id=<%# Eval("ID") %>&role=<%# Eval("role") %>'>Modificar</a>
 
                     <asp:Button runat="server" ID="btnDeleteUser" CssClass="btn btn-danger" Text="Eliminar" OnClick="btnDeleteUser_Click"
                         CommandArgument='<%# Eval("ID") %>' />
@@ -27,6 +32,11 @@
     <asp:GridView runat="server" ID="dgvShelterStaff" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="ID" />
+            <asp:TemplateField HeaderText="Nombre Completo">
+                <ItemTemplate>
+                    <asp:Label runat="server"><%# Eval("name").ToString()+" "+Eval("lastName").ToString() %></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField DataField="userName" HeaderText="Nombre de usuario" />
             <asp:TemplateField HeaderText="Rol">
                 <ItemTemplate>
@@ -45,7 +55,7 @@
             <asp:BoundField DataField="address" HeaderText="Direccion" />
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
-                    <a class="btn btn-primary" href='UserUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+                    <a class="btn btn-primary" href='UserUpdate.aspx?id=<%# Eval("ID") %>&role=<%# Eval("role") %>'>Modificar</a>
 
                     <asp:Button runat="server" ID="btnDeleteShelterStaff" CssClass="btn btn-danger" Text="Eliminar" OnClick="btnDeleteUser_Click"
                         CommandArgument='<%# Eval("ID") %>' />

@@ -2,14 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link rel="stylesheet" href="/Stylesheets/RecoverAccount.css">
+        <link rel="stylesheet" href="/Stylesheets/RecoverAccount.css" >
 
     <div class="RecoverAcount">
 
-        <div runat="server" id="waringDiv"> </div>
+        <div runat="server" id="waringDiv" role="alert"> </div>
         <div class="form-group inputContainer">
             <asp:TextBox ID="txtEmailRecover" CssClass="logInInputs form-control form-control-lg " placeholder="Ingresar Correo" runat="server"></asp:TextBox>
-            <asp:Button Text="Recover" ID="btnRecover" runat="server" CssClass="boton" OnClick="btnRecover_Click" />
+            <asp:Button Text="Recuperar" ID="btnRecover" runat="server" CssClass="boton" OnClick="btnRecover_Click" />
         </div>
     </div>
 </asp:Content>

@@ -1,8 +1,10 @@
 ﻿using NFDao.Implementation;
 using NFDao.Model;
+using NFDao.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
@@ -13,9 +15,11 @@ namespace Narices_Frias.Pages
     public partial class AdminDateControl : System.Web.UI.Page
     {
         AnimalDateImpl impl;
+        SystemUserImpl userImpl;
         protected void Page_Load(object sender, EventArgs e)
         {
             impl = new AnimalDateImpl();
+            userImpl = new SystemUserImpl();
             warningDiv.Visible = false;
             Select();
             
@@ -64,7 +68,13 @@ namespace Narices_Frias.Pages
             int id = int.Parse(btn.CommandArgument.ToString());
             if (impl.AnswerDate(id, 2) > 0)
             {
+                AnimalDate date = impl.Get(id);
+                SystemUser user = userImpl.Get(date.systemUserId);
+                EmailManager emailManager = new EmailManager(user.email);
+                Thread thread = new Thread(new ThreadStart(() => emailManager.AcceptedDate(user, date)));
+                thread.Start();
 
+                
             }
             else
             {
@@ -79,7 +89,11 @@ namespace Narices_Frias.Pages
             int id = int.Parse(btn.CommandArgument.ToString());
             if (impl.AnswerDate(id, 3) > 0)
             {
-
+                AnimalDate date = impl.Get(id);
+                SystemUser user = userImpl.Get(date.systemUserId);
+                EmailManager emailManager = new EmailManager(user.email);
+                Thread thread = new Thread(new ThreadStart(() => emailManager.RejectedDate(user, date)));
+                thread.Start();
             }
             else
             {

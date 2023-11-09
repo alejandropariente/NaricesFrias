@@ -37,7 +37,26 @@ namespace NFDao.Implementation
                     object value = row[col];
 
                     // Asigna el valor a la propiedad correspondiente en el objeto genérico
-                    typeof(T).GetProperty(propertyName)?.SetValue(obj, value);
+                    PropertyInfo propertyInfo = typeof(T).GetProperty(propertyName);
+
+                    if (propertyInfo != null && propertyInfo.PropertyType == typeof(int))
+                    {
+                        // Verifica si el valor es DBNull y, en ese caso, asigna 0 a la propiedad de tipo int
+                        if (value != DBNull.Value)
+                        {
+                            propertyInfo.SetValue(obj, value);
+                        }
+                        else
+                        {
+                            propertyInfo.SetValue(obj, 0);
+                        }
+                    }
+                    else
+                    {
+                        // Asigna el valor a la propiedad correspondiente en el objeto genérico sin realizar
+                        // ninguna modificación si no es de tipo int
+                        propertyInfo?.SetValue(obj, value);
+                    }
                 }
 
                 list.Add(obj);
@@ -74,9 +93,13 @@ namespace NFDao.Implementation
                 {
                     command.Parameters.AddWithValue("@" + propertyName, propertyValue).SqlDbType = SqlDbType.VarChar; ;
                 }
+                else if (propertyName == "systemUserId" && propertyValue.ToString() == "0")
+                {
+                    command.Parameters.AddWithValue("@" + propertyName,DBNull.Value);
+                }
                 else
                 {
-                    command.Parameters.AddWithValue("@" + propertyName, propertyValue);
+                    command.Parameters.AddWithValue("@" + propertyName, propertyValue ?? DBNull.Value);
                 }
                 
             }
@@ -106,9 +129,13 @@ namespace NFDao.Implementation
                 {
                     command.Parameters.AddWithValue("@" + propertyName, propertyValue).SqlDbType = SqlDbType.VarChar; ;
                 }
+                else if (propertyName == "systemUserId" && propertyValue.ToString() == "0")
+                {
+                    command.Parameters.AddWithValue("@" + propertyName, DBNull.Value);
+                }
                 else
                 {
-                    command.Parameters.AddWithValue("@" + propertyName, propertyValue);
+                    command.Parameters.AddWithValue("@" + propertyName, propertyValue ?? DBNull.Value);
                 }
             }
             try

@@ -51,6 +51,33 @@ namespace Narices_Frias.Pages.CrudAnimals
         protected global::System.Web.UI.WebControls.TextBox txtAge;
 
         /// <summary>
+        /// cbAdopted control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbAdopted;
+
+        /// <summary>
+        /// adoptedDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adoptedDiv;
+
+        /// <summary>
+        /// dgvUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvUsers;
+
+        /// <summary>
         /// fuPhoto control.
         /// </summary>
         /// <remarks>

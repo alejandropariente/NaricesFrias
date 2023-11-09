@@ -39,7 +39,7 @@ namespace NFDao.Components
 
             buttonDelete.Text = "-";
             buttonDelete.Click += (sender, e) => RemoveProduct(sender, e, panel , list);
-
+            amount.Text = "1";
             panel.Controls.Add(name);
             panel.Controls.Add(price);
             panel.Controls.Add(amount);
@@ -54,7 +54,7 @@ namespace NFDao.Components
         }
         public void addAmount()
         {
-            detail.amount = int.Parse(amount.Text);
+            detail.amount = int.Parse(amount.Text.ToString());
         }
     }
 }

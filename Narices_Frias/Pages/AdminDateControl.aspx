@@ -34,7 +34,7 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <div class="alert-info" runat="server" id="warningDiv">No hay citas pendientes</div>
+            <div class="alert alert-info" role="alert" runat="server" id="warningDiv">No hay citas pendientes</div>
             <h1>Historial de citas</h1>
             <asp:GridView runat="server" ID="dgvDateHistory" AutoGenerateColumns="false">
             <Columns>

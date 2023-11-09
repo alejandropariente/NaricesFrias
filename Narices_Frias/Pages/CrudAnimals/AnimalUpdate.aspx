@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="AnimalUpdate.aspx.cs" Inherits="Narices_Frias.Pages.CrudAnimals.AnimalUpdate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>
+        function Adopted() {
+            var cb = document.getElementById('<%= cbAdopted.ClientID %>');
+            var divForm = document.getElementById('<%= adoptedDiv.ClientID %>');
+            if (cb.value > 0) {
+                divForm.style.display = 'block';
+            }
+            else {
+                divForm.style.display = 'none';
+            }
+        }
+        
     function previewImages() {
         var fileInput = document.getElementById('<%= fuPhoto.ClientID %>');
         var imagePreview = document.getElementById('imagePreview');
@@ -122,6 +133,33 @@
     <div>
         <asp:Label runat="server">Edad:</asp:Label>
         <asp:TextBox TextMode="Number" runat="server" ID="txtAge" ></asp:TextBox>
+    </div>
+    <asp:DropDownList runat="server" ID="cbAdopted" onchange="Adopted()">
+        <asp:ListItem Value="0" Text="Ninguno"></asp:ListItem>
+        <asp:ListItem Value="1" Selected="true">Adoptado</asp:ListItem>
+        <asp:ListItem Value="2">Apadrinado</asp:ListItem>
+    </asp:DropDownList>
+    <div id="adoptedDiv" runat="server">
+        <div>
+            <asp:GridView runat="server" ID="dgvUsers" AutoGenerateColumns="false">
+                <Columns>
+                    <asp:BoundField DataField="id" HeaderText="ID" />
+                    <asp:TemplateField HeaderText="Nombre Completo">
+                        <ItemTemplate>
+                            <asp:Label runat="server"><%# Eval("name").ToString()+" "+Eval("lastName").ToString() %></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="userName" HeaderText="Nombre de usuario" />
+                    <asp:BoundField DataField="email" HeaderText="Correo" />
+                    <asp:TemplateField HeaderText="Acciones">
+                        <ItemTemplate>
+                            <asp:Button runat="server" ID="btnSelect" OnClick="btnSelect_Click"  CssClass="btn btn-secondary" Text="Seleccionar" 
+                                CommandArgument='<%# Eval("ID") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
     </div>
     <div>
         <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />

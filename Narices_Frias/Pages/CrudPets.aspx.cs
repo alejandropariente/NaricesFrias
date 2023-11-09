@@ -101,7 +101,7 @@ namespace Narices_Frias.Pages
 
 
 
-                p = new Animal(name, raza, age, role, 1,imageData,1);
+                //p = new Animal(name, raza, age, role, 1,imageData,1);
                     pImpl = new AnimalImpl();
 
                     int n = pImpl.Insert(p);

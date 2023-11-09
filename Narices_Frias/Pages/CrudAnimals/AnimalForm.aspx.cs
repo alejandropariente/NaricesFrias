@@ -15,6 +15,7 @@ namespace Narices_Frias.Pages.CrudAnimals
     public partial class AnimalForm : System.Web.UI.Page
     {
         AnimalImpl impl;
+        SystemUserImpl userImpl;
         Animal animal;
         string uploadFolderPath;
        
@@ -22,7 +23,14 @@ namespace Narices_Frias.Pages.CrudAnimals
         {
             uploadFolderPath = Server.MapPath("~/uploads/");
             impl = new AnimalImpl();
-            
+            userImpl = new SystemUserImpl();
+            SelectUsers();
+        }
+        void SelectUsers()
+        {
+            dgvUsers.DataSource = userImpl.Select();
+            dgvUsers.DataBind();
+            dgvUsers.Columns[0].Visible = false;
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -32,7 +40,7 @@ namespace Narices_Frias.Pages.CrudAnimals
             {
                 animal = new Animal(txtname.Text, txtAnimalBreed.Text, byte.Parse(txtAge.Text),
                                         byte.Parse(cbAnimalCategory.SelectedValue), 1, ImageConverterDAO.ConvertImageToByteArray(photo, uploadFolderPath)
-                                        , 1);
+                                        ,byte.Parse(cbAdopted.SelectedValue.ToString()), byte.Parse(cbAdopted.SelectedValue.ToString()) == 0 ? 0: int.Parse(Session["userPetId"].ToString()), 1);
                 if (impl.Insert(animal) > 0)
                 {
                     Response.Redirect("AnimalView.aspx");
@@ -42,6 +50,13 @@ namespace Narices_Frias.Pages.CrudAnimals
 
                 }
             }
+        }
+
+        protected void btnSelect_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int userId = int.Parse(btn.CommandArgument.ToString());
+            Session["userPetId"] = userId;  
         }
     }
 }

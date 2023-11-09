@@ -67,7 +67,6 @@
             <asp:BoundField DataField="description" HeaderText="Descripcion" />
             <asp:BoundField DataField="unitPrice" HeaderText="Precio" />
             <asp:BoundField DataField="stock" HeaderText="Cantidad" />
-            <asp:BoundField DataField="photo" HeaderText="Foto" />
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
                     <a class="btn btn-primary" href='CrudProductsUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>

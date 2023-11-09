@@ -75,6 +75,17 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="animalBreed" HeaderText="Raza" />
+                <asp:TemplateField HeaderText="Estado">
+                    <ItemTemplate>
+                        <asp:Label runat="server"><%# int.Parse(Eval("isAdoptedOrSponsored").ToString()) == 0 ? "Sin adoptar":
+                                                          int.Parse(Eval("isAdoptedOrSponsored").ToString()) == 1 ? "Adoptado":"Apadrinado"%></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Padrino">
+                    <ItemTemplate>
+                        <asp:Label runat="server"><%# int.Parse(Eval("systemUserId").ToString()) == 0 ? "------" : ReturnSponsor(int.Parse(Eval("systemUserId").ToString())) %></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
                         <a class="btn btn-primary" href='AnimalUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
