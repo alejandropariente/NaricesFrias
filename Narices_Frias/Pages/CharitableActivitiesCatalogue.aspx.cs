@@ -31,8 +31,10 @@ namespace Narices_Frias.Pages
             Panel imagesPanel = new Panel();
             panel.CssClass = "post";
             Label title = new Label();
+            title.CssClass = "title";
             Label description = new Label();
             Label date = new Label();
+            date.CssClass = "date";
             Image[] images = new Image[photos.Count];
             title.Text = info.name;
             description.Text = info.description;

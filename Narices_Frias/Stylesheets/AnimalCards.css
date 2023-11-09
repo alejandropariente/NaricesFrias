@@ -1,0 +1,32 @@
+﻿body {
+}
+.postContainer {
+    background-color: #FEDF6A;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+}
+.card {
+    background-color: #FEDC00;
+    border-radius:15px;
+    padding: 2em 3em;
+    margin: 1em;
+}
+.post {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: #FEBD01;
+    border:0;
+    border-radius:15px;
+}
+.post img{
+    justify-self:center;
+    width: 150px !important;
+    height: 150px !important;
+    margin: 20px 0;
+}
+
+.reservarCita {
+    text-align: center;
+}
