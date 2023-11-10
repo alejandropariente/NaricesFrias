@@ -33,13 +33,13 @@ namespace Narices_Frias.Pages
         protected global::System.Web.UI.WebControls.Repeater productsPanel;
 
         /// <summary>
-        /// billPreview control.
+        /// billPreviews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel billPreview;
+        protected global::System.Web.UI.WebControls.Repeater billPreviews;
 
         /// <summary>
         /// btnGenerateBill control.
