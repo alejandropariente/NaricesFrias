@@ -18,20 +18,24 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="/Stylesheets/AnimalCards.css">
     <div class="postContainer">
-        <asp:Repeater ID="AnimalRepeater" runat="server">
-            <ItemTemplate>
+    <asp:Repeater ID="AnimalRepeater" runat="server">
+        <ItemTemplate>
+            <div class="card">
+
+            
                 <div class="post">
                     <asp:Image ID="AnimalImage" runat="server" ImageUrl='<%#NFDao.Tools.ImageConverterDAO.ConvertImageToURL((byte[])Eval("Photo")) %>' Width="100" Height="100" />
                     <h2><%# Eval("Name") %></h2>
                     <p>Raza: <%# Eval("AnimalBreed") %></p>
                     <p>Edad: <%# Eval("Age") %> años</p>
-                    <div>
-                        <a href="UserFormDate.aspx" class="btn btn-success">Reservar cita para Apadrinar/adoptar</a>
-                    </div>
                 </div>
-                
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
+                <div class="reservarCita">
+                    <a >Reservar cita para Apadrinar</a>
+                </div>
+             </div>
+        </ItemTemplate>
+    </asp:Repeater>
+</div>
 </asp:Content>

@@ -42,3 +42,12 @@ span{
     background-color: #FEDF6A;
     border: 0;
 }
+
+
+.btnSelecionar{
+    width:200px;
+}
+.AdoptedSelect{
+    margin-bottom:2em;
+    margin-top:15px;
+}
