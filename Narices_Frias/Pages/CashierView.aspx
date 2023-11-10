@@ -36,7 +36,7 @@
                         <asp:Image runat="server" ImageUrl='<%#NFDao.Tools.ImageConverterDAO.ConvertImageToURL((byte[])Eval("photo")) %>' />
                         <asp:UpdatePanel runat="server">
                             <ContentTemplate>
-                                <asp:Button runat="server" Text="+" ID="AddButtom" CommandArgument='<%# Eval("id") %>' OnClick="AddButtom_Click" />
+                                <asp:Button CssClass="btn btn-success" runat="server" Text="+" ID="AddButtom" CommandArgument='<%# Eval("id") %>' OnClick="AddButtom_Click" />
                             </ContentTemplate>
                             <Triggers>
                                 <asp:AsyncPostBackTrigger ControlID="AddButtom" EventName="Click" />
@@ -51,9 +51,17 @@
             
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                    <asp:Panel runat="server" ID="billPreview">
-                        <!-- Contenido de billPreview, incluyendo los paneles agregados dinámicamente -->
-                    </asp:Panel>
+                    <asp:Repeater runat="server" ID="billPreviews">
+                        <ItemTemplate>
+                            <div>
+                                <p><%# Eval("product.name").ToString() %></p>
+                                <p><%# Eval("product.unitPrice").ToString() %></p>
+                                <asp:TextBox AutoPostBack="true" prodId='<%# Eval("product.id").ToString() %>' ID="detailAmount" OnTextChanged="detailAmount_TextChanged"
+                                     runat="server" TextMode="Number" Text='<%# int.Parse(Eval("detail.amount").ToString()) == 0 ? "1" : Eval("detail.amount").ToString() %>'></asp:TextBox>
+                                <asp:Button Text="-" CssClass="btn btn-danger" runat="server" ID="deleteDetail" OnClick="deleteDetail_Click" CommandArgument='<%# Eval("product.id") %>' />
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </ContentTemplate>
             </asp:UpdatePanel>
             

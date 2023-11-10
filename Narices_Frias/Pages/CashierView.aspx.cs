@@ -47,11 +47,12 @@ namespace Narices_Frias.Pages
         }
         void UpdateBillPreview()
         {
-            billPreview.Controls.Clear();
-            foreach (var item in comp)
-            {
-                billPreview.Controls.Add(item.panel);
-            }
+            billPreviews.DataSource = null;
+            billPreviews.DataBind();
+
+            billPreviews.DataSource = comp;
+            billPreviews.DataBind();
+            
         }
 
         
@@ -62,8 +63,6 @@ namespace Narices_Frias.Pages
             BillName bn = billNameImpl.BillNameExists(txtNit.Text);
             if (bn != null)
             {
-                string x = comp[0].amount.Text;
-                comp.ForEach(c => c.addAmount());
                 
                 int billIdNew = billImpl.getBillId(new Bill(comp.Sum(c => c.detail.price * c.detail.amount ), bn.id, 1, 1));
                 comp.ForEach(c => c.detail.billId = billIdNew);
@@ -88,6 +87,22 @@ namespace Narices_Frias.Pages
                 Session["comp"] = comp;
                 
             }
+            UpdateBillPreview();
+        }
+
+        protected void detailAmount_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            int proId = int.Parse(textBox.Attributes["prodId"].ToString());
+            int amount = int.Parse(textBox.Text.ToString());
+            comp.Where(c => c.product.id == proId).First().detail.amount = amount;
+        }
+
+        protected void deleteDetail_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int proId = int.Parse(btn.CommandArgument.ToString());
+            comp.RemoveAll(c => c.product.id == proId);
             UpdateBillPreview();
         }
     }

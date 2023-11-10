@@ -40,10 +40,17 @@ namespace NFDao.Components
             buttonDelete.Text = "-";
             buttonDelete.Click += (sender, e) => RemoveProduct(sender, e, panel , list);
             amount.Text = "1";
+            amount.AutoPostBack = false;
+            amount.TextChanged += getAmount;
             panel.Controls.Add(name);
             panel.Controls.Add(price);
             panel.Controls.Add(amount);
             panel.Controls.Add(buttonDelete);
+            
+        }
+        private void getAmount(object sender, EventArgs e)
+        {
+            addAmount();
         }
 
         private void RemoveProduct(object sender, EventArgs e, Panel panel,List<BillDetailComp> list)
