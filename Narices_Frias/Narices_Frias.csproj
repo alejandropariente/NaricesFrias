@@ -262,6 +262,7 @@
     <Content Include="Stylesheets\AnimalCards.css" />
     <Content Include="Stylesheets\AnimalForm.css" />
     <Content Include="Stylesheets\AnimalView.css" />
+    <Content Include="Stylesheets\cashierView.css" />
     <Content Include="Stylesheets\CharitableActivities.css" />
     <Content Include="Stylesheets\CharitableActivitiesCatalogue.css" />
     <Content Include="Stylesheets\CrudCharitableActivities.css" />
