@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="/Stylesheets/UserView.css">
+    <div class="viewSection">
+
+    
     <h2>Usuarios</h2>
     <asp:GridView runat="server" ID="dgvUsers" AutoGenerateColumns="false">
         <Columns>
@@ -64,4 +68,5 @@
         </Columns>
     </asp:GridView>
     <a href="UserForm.aspx" class="btn btn-dark">Crear nuevo usuario</a>
+        </div>
 </asp:Content>

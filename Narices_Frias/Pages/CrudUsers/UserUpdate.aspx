@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+<link rel="stylesheet" href="/Stylesheets/UserForm.css">
+    <div class="CrudSection">
         <div>
             <asp:Label runat="server">Nombre : </asp:Label>
             <asp:TextBox runat="server" ID="txtName"></asp:TextBox>
@@ -41,6 +42,7 @@
                 <textarea runat="server" id="txtAddress"></textarea>
             </div>
         </div>
+        <asp:Button runat="server" Text="Insertar" ID="btnInsert" OnClick="btnInsert_Click" />
     </div>
-<asp:Button runat="server" Text="Insertar" ID="btnInsert" OnClick="btnInsert_Click" />
+
 </asp:Content>
