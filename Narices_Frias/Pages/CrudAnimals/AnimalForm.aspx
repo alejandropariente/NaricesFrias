@@ -152,7 +152,7 @@
         </asp:DropDownList>
         <div id="adoptedDiv">
             <div>
-                <asp:GridView runat="server" ID="dgvUsers" AutoGenerateColumns="false">
+                <asp:GridView runat="server" CssClass="table" ID="dgvUsers" AutoGenerateColumns="false" >
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="ID" />
                         <asp:TemplateField HeaderText="Nombre Completo">
@@ -170,10 +170,11 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
+                <asp:Button runat="server" ID="btnDeleteSponsor" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnDeleteSponsor_Click" />
             </div>
         </div>
         <div>
-            <asp:FileUpload CssClass="SelectArch" onchange="previewImages()" runat="server" ID="fuPhoto" />
+            <asp:FileUpload CssClass="form-control" onchange="previewImages()" runat="server" ID="fuPhoto" />
         </div>
         <div style="display:flex;" id="imagePreview"></div>
         <asp:Button CssClass="btnRegisterAni" Text="Registar Animal" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />

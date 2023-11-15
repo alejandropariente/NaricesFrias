@@ -24,6 +24,7 @@ namespace Narices_Frias.Pages.CrudAnimals
             uploadFolderPath = Server.MapPath("~/uploads/");
             impl = new AnimalImpl();
             userImpl = new SystemUserImpl();
+            btnDeleteSponsor.Enabled = false;
             SelectUsers();
         }
         void SelectUsers()
@@ -56,7 +57,17 @@ namespace Narices_Frias.Pages.CrudAnimals
         {
             Button btn = (Button)sender;
             int userId = int.Parse(btn.CommandArgument.ToString());
-            Session["userPetId"] = userId;  
+            Session["userPetId"] = userId;
+            dgvUsers.DataSource = userImpl.Select().Where(u => u.id == userId);
+            dgvUsers.DataBind();
+            btnDeleteSponsor.Enabled = true; 
+        }
+
+        protected void btnDeleteSponsor_Click(object sender, EventArgs e)
+        {
+            Session["userPetId"] = null;
+            dgvUsers.DataSource = userImpl.Select();
+            dgvUsers.DataBind();
         }
     }
 }

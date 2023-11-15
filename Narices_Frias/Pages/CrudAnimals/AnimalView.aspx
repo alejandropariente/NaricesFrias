@@ -65,7 +65,7 @@
 <link rel="stylesheet" href="/Stylesheets/AnimalView.css">
     <div class="AnimalViewSection">
         <div id="scrollableDiv" style="overflow: auto; height: auto;">
-        <asp:GridView runat="server" ID="dgvAnimals" AutoGenerateColumns="false">
+        <asp:GridView runat="server" CssClass="table" ID="dgvAnimals" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="ID" />
                 <asp:BoundField DataField="name" HeaderText="Nombre" />

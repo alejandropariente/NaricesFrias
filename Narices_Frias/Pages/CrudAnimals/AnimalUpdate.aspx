@@ -136,14 +136,14 @@
         <asp:Label runat="server">Edad:</asp:Label>
         <asp:TextBox TextMode="Number" runat="server" ID="txtAge" ></asp:TextBox>
     </div>
-    <asp:DropDownList runat="server" CssClass="AdoptedSelect" ID="cbAdopted" onchange="Adopted()">
+    <asp:DropDownList AutoPostBack="true" OnTextChanged="cbAdopted_SelectedIndexChanged" runat="server" CssClass="AdoptedSelect" ID="cbAdopted" onchange="Adopted()">
         <asp:ListItem Value="0" Text="Ninguno"></asp:ListItem>
         <asp:ListItem Value="1" Selected="true">Adoptado</asp:ListItem>
         <asp:ListItem Value="2">Apadrinado</asp:ListItem>
     </asp:DropDownList>
     <div id="adoptedDiv" runat="server">
         <div>
-            <asp:GridView runat="server" ID="dgvUsers" AutoGenerateColumns="false">
+            <asp:GridView runat="server" ID="dgvUsers" CssClass="table" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="ID" />
                     <asp:TemplateField HeaderText="Nombre Completo">
@@ -161,6 +161,7 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+            <asp:Button runat="server" ID="btnDeleteSponsor" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnDeleteSponsor_Click" />
         </div>
     </div>
     <div>

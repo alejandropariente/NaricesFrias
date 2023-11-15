@@ -21,11 +21,13 @@ namespace Narices_Frias.Pages.CrudAnimals
             uploadFolderPath = Server.MapPath("~/uploads/");
             impl = new AnimalImpl();
             userImpl = new SystemUserImpl();
+            dgvUsers.Columns[0].Visible = false;
             if (!IsPostBack)
             {
                 fillFields();
             }
-            SelectUsers();
+            
+            
         }
         void SelectUsers()
         {
@@ -38,13 +40,25 @@ namespace Narices_Frias.Pages.CrudAnimals
             animal = impl.Get(int.Parse(Request.QueryString["id"]));
             if(animal.isAdoptedOrSponsored == 0)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "isAdopted", $"var miVariable = {false};", true);
+                cbAdopted.SelectedIndex = 0;
+                SelectUsers();
                 adoptedDiv.Visible = false;
+                btnDeleteSponsor.Enabled = false;
             }
             else
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "isAdopted", $"var miVariable = {true};", true);
+                if (animal.isAdoptedOrSponsored == 1)
+                {
+                    cbAdopted.SelectedIndex = 1;
+                }
+                else
+                {
+                    cbAdopted.SelectedIndex = 2;
+                }
                 adoptedDiv.Visible = true;
+                dgvUsers.DataSource = userImpl.Select().Where(u => u.id == animal.systemUserId);
+                dgvUsers.DataBind();
+                btnDeleteSponsor.Enabled = true;
             }
             txtname.Text = animal.name;
             txtAnimalBreed.Text = animal.animalBreed;
@@ -52,6 +66,7 @@ namespace Narices_Frias.Pages.CrudAnimals
             cbAnimalCategory.SelectedValue = animal.animalCategoryId.ToString();
 
             oldPicture.ImageUrl = ImageConverterDAO.ConvertImageToURL(animal.photo);
+            
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
@@ -73,6 +88,28 @@ namespace Narices_Frias.Pages.CrudAnimals
             Button btn = (Button)sender;
             int userId = int.Parse(btn.CommandArgument.ToString());
             Session["userPetId"] = userId;
+            dgvUsers.DataSource = userImpl.Select().Where(u => u.id == userId);
+            dgvUsers.DataBind();
+            btnDeleteSponsor.Enabled = true;
+        }
+        protected void btnDeleteSponsor_Click(object sender, EventArgs e)
+        {
+            Session["userPetId"] = null;
+            dgvUsers.DataSource = userImpl.Select();
+            dgvUsers.DataBind();
+            btnDeleteSponsor.Enabled = false;
+        }
+
+        protected void cbAdopted_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(cbAdopted.SelectedValue) > 0)
+            {
+                adoptedDiv.Visible = true;
+            }
+            else
+            {
+                adoptedDiv.Visible = false;
+            }
         }
     }
 
