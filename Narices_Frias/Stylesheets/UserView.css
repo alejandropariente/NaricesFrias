@@ -1,0 +1,31 @@
+﻿body {
+}
+.viewSection {
+    background-color: #FEDF6A;
+    padding: 3em 4em;
+    display:grid;
+    justify-content:center;
+}
+h2{
+    text-align:center;
+    margin:20px 0;
+}
+.viewSection div{
+    display: grid;
+    justify-content: center;
+}
+table {
+    background-color: #FEDC00;
+    border-radius:20px;
+}
+.viewSection > a{
+    width:200px;
+    justify-self:center;
+    margin-top:2em;
+}
+tbody {
+    border:0;
+}
+th,td{
+    padding:15px
+}

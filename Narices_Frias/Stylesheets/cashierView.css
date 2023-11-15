@@ -1,0 +1,87 @@
+﻿body {
+}
+.CrudSection {
+    background-color: #FEDF6A;
+    margin-left:0;
+    margin-right: 0;
+}
+.containerProducts{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+.col-md-8{
+    padding:2em 3em;
+}
+
+.rowcorrect {
+    margin-left: 0;
+    margin-right: 0;
+}
+.productCard {
+    border:0;
+    border-radius:20px;
+    background-color: #FEBD01;
+    display:grid;
+    justify-content:center;
+}
+.productCard img{
+    justify-self:center;
+    width:130px;
+    height:130px;
+}
+.productCard div{
+    justify-self:center;
+    margin-top:20px;
+}
+.col-md-4 {
+   background-color: #FEF0B9;
+
+}
+h2, p{
+    text-align:center;
+}
+p{
+    font-size:15px;
+}
+h1{
+    margin-bottom:1em;
+}
+.rowcorrect{
+    padding:3em;
+    display:grid;
+    justify-content:center;
+}
+.rowcorrect h1{
+    display: inline-block;
+    margin-right:1em;
+}
+    .rowcorrect input {
+        border: solid 1px;
+        border-radius: 15px;
+        background-color: #FEF0B9;
+        height:2.5em;
+        width: 20em;
+    }
+.rowcorrect a{
+    display:inline-block;
+    border-radius: 15px;
+    color:white;
+    background-color: black;
+    width: 15em;
+    height:2.5em;
+    text-align: center;
+    padding-top: 9px;
+}
+
+#ContentPlaceHolder1_btnGenerateBill {
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    width: 10em;
+    height: 50px;
+    margin-left: 35%;
+}
+.facturas{
+    text-align:center;
+    margin-top: 1em;
+}

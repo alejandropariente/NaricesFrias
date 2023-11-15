@@ -19,6 +19,8 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="/Stylesheets/UserForm.css">
+    <div class="CrudSection">
     <div>
         <asp:Label runat="server">Rol :</asp:Label>
         <asp:DropDownList ID="cbOptions" onchange="optioChange()" runat="server">
@@ -68,4 +70,5 @@
         </div>
     </div>
     <asp:Button runat="server" Text="Insertar" ID="btnInsert" OnClick="btnInsert_Click" />
+        </div>
 </asp:Content>
