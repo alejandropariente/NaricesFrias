@@ -31,13 +31,15 @@
                                     <li><a href="../Pages/CharitableActivitiesCatalogue.aspx">Publicaciones</a></li>
                                     <li><a href="../Pages/SignIn.aspx">Registrarse</a></li>
                                     <li><a href="../Default.aspx">Iniciar sesion</a></li>
-                                        <li runat="server"><a href="../pages/AdoptedDogs.aspx">Tus animales</a></li>
+                                        
                                          
                                    
-                                         <li runat="server"><a href="../pages/MenuCruds.aspx">Menu</a></li>
+                                         
                                          <%if (Session["User"] != null)
                                              { %>
+                                                <li runat="server"><a href="../pages/AdoptedDogs.aspx">Tus animales</a></li>
                                             <li runat="server"><a href="../pages/MenuCruds.aspx">Menu</a></li>
+                                            <li><asp:Button CssClass="btn btn-dark"  runat="server" OnClick="Unnamed_Click" Text="Cerrar sesion"/></li>
                                         <% } %>
                                 </ul>
                             </nav>

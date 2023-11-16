@@ -13,5 +13,11 @@ namespace Narices_Frias
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Redirect("../Default.aspx");
+        }
     }
 }
