@@ -59,31 +59,36 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="scrollableDiv" style="overflow: auto; height: auto;">
-    <asp:GridView runat="server" ID="dgvProdcuts" AutoGenerateColumns="false">
-        <Columns>
-            <asp:BoundField DataField="id" HeaderText="ID" />
-            <asp:BoundField DataField="name" HeaderText="Nombre" />
-            <asp:BoundField DataField="description" HeaderText="Descripcion" />
-            <asp:BoundField DataField="unitPrice" HeaderText="Precio" />
-            <asp:BoundField DataField="stock" HeaderText="Cantidad" />
-            <asp:TemplateField HeaderText="Acciones">
-                <ItemTemplate>
-                    <a class="btn btn-primary" href='CrudProductsUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+    <link rel="stylesheet" href="/Stylesheets/CrudProducts.css">
+    <div class="CrudSection">
 
-                    <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Unnamed_Click" CommandArgument='<%# Eval("ID") %>' />
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
-    </div>
-    <a class="btn btn-dark" href="CrudProdcutsInsert.aspx">Registrar Producto</a>
-    <div id="modalDeleteRecord" class="modal">
-        <div class="modal-content">
-            <h3>Seguro de eliminar el Registro?</h3>
-            <p>Are you sure you want to delete this record?</p>
-            <button  id="btnConfirmDelete" class="modal-button confirm">Yes</button>
-            <button  id="btnCancelDelete" class="modal-button cancel">No</button>
+        
+        <div id="scrollableDiv" style="overflow: auto; height: auto;">
+        <asp:GridView runat="server" ID="dgvProdcuts" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="id" HeaderText="ID" />
+                <asp:BoundField DataField="name" HeaderText="Nombre" />
+                <asp:BoundField DataField="description" HeaderText="Descripcion" />
+                <asp:BoundField DataField="unitPrice" HeaderText="Precio" />
+                <asp:BoundField DataField="stock" HeaderText="Cantidad" />
+                <asp:TemplateField HeaderText="Acciones">
+                    <ItemTemplate>
+                        <a class="btn btn-primary" href='CrudProductsUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+
+                        <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Unnamed_Click" CommandArgument='<%# Eval("ID") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+        </div>
+        <a class="btnRegistrar btn btn-dark" href="CrudProdcutsInsert.aspx">Registrar Producto</a>
+        <div id="modalDeleteRecord" class="modal">
+            <div class="modal-content">
+                <h3>Seguro de eliminar el Registro?</h3>
+                <p>Are you sure you want to delete this record?</p>
+                <button  id="btnConfirmDelete" class="modal-button confirm">Yes</button>
+                <button  id="btnCancelDelete" class="modal-button cancel">No</button>
+            </div>
         </div>
     </div>
 </asp:Content>

@@ -165,6 +165,8 @@
     <Content Include="Images\iconDelete.png" />
     <Content Include="Images\iconInsert.png" />
     <Content Include="Images\iconPasswordBlack.png" />
+    <Content Include="Images\icons8-facebook-50.png" />
+    <Content Include="Images\icons8-instagram-50.png" />
     <Content Include="Images\iconUpdate.png" />
     <Content Include="Images\imgLandingCard.png" />
     <Content Include="Images\Mosquera-perros 1.png" />
@@ -264,10 +266,12 @@
     <Content Include="Stylesheets\CharitableActivities.css" />
     <Content Include="Stylesheets\CharitableActivitiesCatalogue.css" />
     <Content Include="Stylesheets\CrudCharitableActivities.css" />
+    <Content Include="Stylesheets\CrudProducts.css" />
     <Content Include="Stylesheets\Default.css" />
     <Content Include="Stylesheets\Landing.css" />
     <Content Include="Stylesheets\MasterPage.css" />
     <Content Include="Stylesheets\MenuStyle.css" />
+    <Content Include="Stylesheets\productsInsert.css" />
     <Content Include="Stylesheets\RecoverAccount.css" />
     <Content Include="Stylesheets\StylesCrud.css" />
     <Content Include="Stylesheets\UserForm.css" />
