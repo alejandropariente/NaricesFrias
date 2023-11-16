@@ -59,6 +59,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <link rel="stylesheet" href="/Stylesheets/CrudCharitableActivities2.css">
+    <div class="CrudSection"> 
 <h1>Actividades beneficas</h1>
 <div id="scrollableDiv" style="overflow: auto; height: auto;">
     <asp:GridView runat="server" ID="dgvActivities" AutoGenerateColumns="false">
@@ -78,7 +80,7 @@
         </Columns>
     </asp:GridView>
     </div>
-    <a class="btn btn-dark" href="AnimalForm.aspx">Registrar animal</a>
+    <a class="btnRegistrar btn btn-dark" href="AnimalForm.aspx">Registrar animal</a>
     <div id="modalDeleteRecord" class="modal">
         <div class="modal-content">
             <h3>Seguro de eliminar el Registro?</h3>
@@ -87,4 +89,5 @@
             <button  id="btnCancelDelete" class="modal-button cancel">No</button>
         </div>
     </div>
+        </div>
 </asp:Content>

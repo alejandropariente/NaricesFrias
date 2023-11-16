@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="/Stylesheets/AdotedDogs.css">
+    <div class="CrudSection">
+
+    
     <h1>Tus animales :</h1>
     <div id="warningDiv" visible="false" runat="server" role="alert" class="alert-sucess">No tienes ningun perrito adoptado , Adopta uno!</div>
         <asp:GridView runat="server" CssClass="table" ID="dgvAnimals" AutoGenerateColumns="false">
@@ -22,4 +26,6 @@
                 </asp:TemplateField>         
             </Columns>
         </asp:GridView>
+        </div>
 </asp:Content>
+

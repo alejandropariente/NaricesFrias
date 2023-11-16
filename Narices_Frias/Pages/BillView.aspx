@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <link rel="stylesheet" href="/Stylesheets/BillView.css">
+    <div class="CrudSection">
+
+    
     <h1>Facturas</h1>
     <asp:GridView runat="server" CssClass="table" ID="dgvBills" AutoGenerateColumns="false" >
         <Columns>
@@ -28,5 +32,6 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-    <a class="btn btn-dark" href="CashierView.aspx">Agregar nueva factura</a>
+    <a class="btnRegistrar btn btn-dark" href="CashierView.aspx">Agregar nueva factura</a>
+        </div>
 </asp:Content>
