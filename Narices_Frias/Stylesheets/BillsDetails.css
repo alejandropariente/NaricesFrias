@@ -1,0 +1,38 @@
+﻿body {
+}
+.CrudSection {
+    background-color: #FEDF6A;
+    display: grid;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 4em 0;
+}
+.seccionDetalles {
+    background-color: #FEBD01;
+    border-radius:20px;
+    padding:2em 8em;
+}
+h1{
+    margin-bottom:25px;
+    text-align:center;
+    margin-top:20px;
+}
+h3{
+    font-size:18px;
+}
+table {
+    background-color: #FEBD01;
+    border: solid 1px;
+    border-radius:15px;
+    margin-bottom:40px;
+}
+
+th, td {
+    border-radius: 15px;
+    border:0;
+    border-top:solid 1px;
+    border-bottom:solid 1px;
+    padding: 2em;
+    text-align: center;
+}

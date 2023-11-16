@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <link rel="stylesheet" href="/Stylesheets/BillsDetails.css">
+    <div class="CrudSection">
+        <div class="seccionDetalles">
     <h1>Detalle</h1>
     <div>
         <h3>
@@ -14,6 +17,7 @@
             Total :  Bs. <%= RecoverTotal(int.Parse(Request.QueryString["id"].ToString())) %>
         </h3>
     </div>
+            </div>
     <h1>Productos :</h1>
     <asp:GridView runat="server" ID="dgvProducts" AutoGenerateColumns="false">
         <Columns>
@@ -27,4 +31,5 @@
         </Columns>
     </asp:GridView>
     <a href="BillView.aspx" class="btn btn-dark">Volver</a>
+        </div>
 </asp:Content>

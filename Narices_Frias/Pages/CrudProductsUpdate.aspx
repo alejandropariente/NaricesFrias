@@ -123,33 +123,36 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:Label runat="server">Nombre:</asp:Label>
-        <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
-    </div>
+    <link rel="stylesheet" href="/Stylesheets/productsInsert.css">
+    <div class="CrudSection">
+        <div>
+            <asp:Label runat="server">Nombre:</asp:Label>
+            <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
+        </div>
     
-    <div>
-        <asp:Label runat="server">Descripcion:</asp:Label>
-        <asp:TextBox runat="server" ID="txtdescription" ></asp:TextBox>
+        <div>
+            <asp:Label runat="server">Descripcion:</asp:Label>
+            <asp:TextBox runat="server" ID="txtdescription" ></asp:TextBox>
         
-    </div>
+        </div>
     
-    <div>
-        <asp:Label runat="server">Precio:</asp:Label>
-        <asp:TextBox runat="server" ID="txtPRice" ></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label runat="server">Cantidad:</asp:Label>
-        <asp:TextBox runat="server" ID="txtStock" ></asp:TextBox>
-    </div>
-    <div>
-        <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
-    </div>
+        <div>
+            <asp:Label runat="server">Precio:</asp:Label>
+            <asp:TextBox runat="server" ID="txtPRice" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:Label runat="server">Cantidad:</asp:Label>
+            <asp:TextBox runat="server" ID="txtStock" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
+        </div>
 
     
-    <div style="display:flex;" id="imagePreview"></div>
-    <h2>Imagen antigua</h2>
-    <asp:Image runat="server" CssClass="image-preview" ID="oldPicture" />
+        <div style="display:flex;" id="imagePreview"></div>
+        <h2>Imagen antigua</h2>
+        <asp:Image runat="server" CssClass="image-preview" ID="oldPicture" />
 
-    <asp:Button Text="Actualizar Producto" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+        <asp:Button Text="Actualizar Producto" CssClass="btnRegisterAni" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+      </div>
 </asp:Content>

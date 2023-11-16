@@ -123,30 +123,35 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:Label runat="server">Nombre:</asp:Label>
-        <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
-    </div>
-    
-    <div>
-        <asp:Label runat="server">Descripcion:</asp:Label>
-        <asp:TextBox runat="server" ID="txtdescription" ></asp:TextBox>
-        
-    </div>
-    
-    <div>
-        <asp:Label runat="server">Precio:</asp:Label>
-        <asp:TextBox runat="server" ID="txtPRice" ></asp:TextBox>
-    </div>
-    <div>
-        <asp:Label runat="server">Cantidad:</asp:Label>
-        <asp:TextBox runat="server" ID="txtStock" ></asp:TextBox>
-    </div>
-    <div>
-        <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
-    </div>
-    
-    <div style="display:flex;" id="imagePreview"></div>
+    <link rel="stylesheet" href="/Stylesheets/productsInsert.css">
+    <div class="CrudSection">
 
-    <asp:Button Text="Registar Producto" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+    
+        <div>
+            <asp:Label runat="server">Nombre:</asp:Label>
+            <asp:TextBox runat="server" ID="txtname" ></asp:TextBox>
+        </div>
+    
+        <div>
+            <asp:Label runat="server">Descripcion:</asp:Label>
+            <asp:TextBox runat="server" ID="txtdescription" ></asp:TextBox>
+        
+        </div>
+    
+        <div>
+            <asp:Label runat="server">Precio:</asp:Label>
+            <asp:TextBox runat="server" ID="txtPRice" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:Label runat="server">Cantidad:</asp:Label>
+            <asp:TextBox runat="server" ID="txtStock" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:FileUpload onchange="previewImages()" runat="server" ID="fuPhoto" />
+        </div>
+    
+        <div style="display:flex;" id="imagePreview"></div>
+
+        <asp:Button Text="Registar Producto" CssClass="btnRegisterAni" runat="server" ID="btnRegister" OnClientClick="return ValideForm()" OnClick="btnRegister_Click" />
+    </div>
 </asp:Content>

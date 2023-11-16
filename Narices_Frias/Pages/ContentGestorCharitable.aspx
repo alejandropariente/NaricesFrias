@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="ContentGestorCharitable.aspx.cs" Inherits="Narices_Frias.Pages.ContentGestorCharitable" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/Stylesheets/CrudCharitableActivities.css">
+   s
     <style>
         .image-preview {
             width: 200px;
@@ -44,7 +44,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/Stylesheets/CrudCharitableActivities.css">
+    <link rel="stylesheet" href="/Stylesheets/ContentGestorCharitable.css">
     <div class="formSectionCharitable">
         <div class="form-group">
     <label for="">Nombre:</label>
