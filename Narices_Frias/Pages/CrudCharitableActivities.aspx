@@ -80,7 +80,7 @@
         </Columns>
     </asp:GridView>
     </div>
-    <a class="btnRegistrar btn btn-dark" href="AnimalForm.aspx">Registrar animal</a>
+    <a class="btnRegistrar btn btn-dark" href="ContentGestorCharitable.aspx">Registrar Publicacion</a>
     <div id="modalDeleteRecord" class="modal">
         <div class="modal-content">
             <h3>Seguro de eliminar el Registro?</h3>

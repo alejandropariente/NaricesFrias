@@ -23,7 +23,7 @@ namespace Narices_Frias.Pages
         {
             var impl = new AnimalImpl();
             List<Animal> animals = impl.Select();
-            AnimalRepeater.DataSource = animals;
+            AnimalRepeater.DataSource = animals.Where(a => a.systemUserId == 0);
             AnimalRepeater.DataBind();
         }
 

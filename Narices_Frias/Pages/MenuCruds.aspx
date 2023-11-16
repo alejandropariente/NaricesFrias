@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-xl-4 optionCard">
-            <a href="/Pages/UserCrud">
+            <a href="/Pages/CrudUsers/UserView.aspx">
                 <div class="cardContainer">
                     <p>Usuarios</p>
                 </div>
@@ -23,39 +23,39 @@
             </a>
         </div>
         <div class="col-xl-4 optionCard">
-            <a href="/Pages/MedicCrud">
+            <a href="CrudProducts.aspx">
                 <div class="cardContainer">
-                    <p>Medicos</p>
+                    <p>Productos</p>
                 </div>
                 
             </a>
         </div>
         <div class="col-xl-4 optionCard">
-            <a href="/Pages/CrudPets">
+            <a href="/Pages/CrudAnimals/AnimalView.aspx">
                 <div class="cardContainer">
-                    <p>Mascotas</p>
+                    <p>Animales</p>
                 </div>
                 
             </a>
         </div>
         <div class="col-xl-4 optionCard">
-            <a href="/Pages/AppointmentsCrud">
+            <a href="AdminDateControl.aspx">
                 <div class="cardContainer">
-                    <p>Citas</p>
+                    <p>Administracion de citas</p>
                 </div>
                 
             </a>
         </div>
         <div class="col-xl-4 optionCard">
-            <a href="">
+            <a href="BillView.aspx">
                 <div class="cardContainer">
-                    <p>Mascotas</p>
+                    <p>Facturas</p>
                 </div>
                 
             </a>
         </div>
         <div class="col-xl-4 optionCard">
-            <a href="/Pages/ContentGestorCharitable">
+            <a href="CrudCharitableActivities.aspx">
                 <div class="cardContainer">
                     <p>Actividades Beneficas</p>
                 </div>

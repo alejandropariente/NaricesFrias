@@ -178,7 +178,6 @@
     <Content Include="Pages\AnimalCards.aspx" />
     <Content Include="Pages\BillsDetails.aspx" />
     <Content Include="Pages\BillView.aspx" />
-    <Content Include="Pages\cashierCrud.aspx" />
     <Content Include="Pages\CashierView.aspx" />
     <Content Include="Pages\ChangePassword.aspx" />
     <Content Include="Pages\CharitableActivitiesCatalogue.aspx" />
@@ -195,7 +194,6 @@
     <Content Include="Pages\MessageBoox.aspx" />
     <Content Include="Pages\RecoverAcount.aspx" />
     <Content Include="Pages\SignIn.aspx" />
-    <Content Include="Pages\UpdatePets.aspx" />
     <Content Include="Pages\UserCrud.aspx" />
     <Content Include="Pages\UserFormDate.aspx" />
     <Content Include="Pages\CrudProducts.aspx" />
@@ -356,13 +354,6 @@
     <Compile Include="Pages\BillView.aspx.designer.cs">
       <DependentUpon>BillView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\cashierCrud.aspx.cs">
-      <DependentUpon>cashierCrud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\cashierCrud.aspx.designer.cs">
-      <DependentUpon>cashierCrud.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\CashierView.aspx.cs">
       <DependentUpon>CashierView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -474,13 +465,6 @@
     </Compile>
     <Compile Include="Pages\SignIn.aspx.designer.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UpdatePets.aspx.cs">
-      <DependentUpon>UpdatePets.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\UpdatePets.aspx.designer.cs">
-      <DependentUpon>UpdatePets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserCrud.aspx.cs">
       <DependentUpon>UserCrud.aspx</DependentUpon>

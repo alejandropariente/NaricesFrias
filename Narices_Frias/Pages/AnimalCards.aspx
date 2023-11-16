@@ -32,7 +32,7 @@
                     <p>Edad: <%# Eval("Age") %> años</p>
                 </div>
                 <div class="reservarCita">
-                    <a >Reservar cita para Apadrinar</a>
+                    <a href="UserFormDate.aspx">Reservar cita para Apadrinar</a>
                 </div>
              </div>
         </ItemTemplate>
