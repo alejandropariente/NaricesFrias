@@ -172,6 +172,7 @@
     <Content Include="Images\NaricesFriasLogoWhite.png" />
     <Content Include="Images\UserIconBlack.png" />
     <Content Include="Pages\AdminDateControl.aspx" />
+    <Content Include="Pages\AdoptedDogs.aspx" />
     <Content Include="Pages\AnimalCards.aspx" />
     <Content Include="Pages\BillsDetails.aspx" />
     <Content Include="Pages\BillView.aspx" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="Pages\AdminDateControl.aspx.designer.cs">
       <DependentUpon>AdminDateControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdoptedDogs.aspx.cs">
+      <DependentUpon>AdoptedDogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdoptedDogs.aspx.designer.cs">
+      <DependentUpon>AdoptedDogs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AnimalCards.aspx.cs">
       <DependentUpon>AnimalCards.aspx</DependentUpon>
