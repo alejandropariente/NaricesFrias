@@ -31,11 +31,21 @@
                                     <li><a href="../Pages/CharitableActivitiesCatalogue.aspx">Publicaciones</a></li>
                                     <li><a href="../Pages/SignIn.aspx">Registrarse</a></li>
                                     <li><a href="../Default.aspx">Iniciar sesion</a></li>
-                                   <% if (Session["User"] == null) { %>
+                                    <% if (Session["User"] != null) { %>
                                         <li runat="server"><a href="../pages/AdoptedDogs.aspx">Tus animales</a></li>
-                                    <% } %>
-                                    <% if (Session["User"] == null) { %>
-                                         <li runat="server"><a href="../pages/UserFormDate.aspx"></a></li>
+                                         <li runat="server"><a href="../pages/UserFormDate.aspx">Agendacion de citas</a></li>
+                                     <% } %>
+                                    <% NFDao.Model.SystemUser user = (NFDao.Model.SystemUser)Session["User"]; %>
+                                    <% if ( user.role == 2 || user.role == 0) { %>
+                                         <li runat="server"><a href="../pages/MenuCruds.aspx">Menu</a></li>
+                                        <li runat="server"><a href="../pages/BillView.aspx">Facturacion</a></li>
+                                     <% } %>
+                                    <% if (user.role == 0) { %>
+                                         <li runat="server"><a href="../pages/CrudAnimals/AnimalView.aspx">Animales del refugio</a></li>
+                                         <li runat="server"><a href="../pages/Crudusers/UserView.aspx">Usuarios</a></li>
+                                            <li runat="server"><a href="../pages/CrudCharitableActivities.aspx">Actividades Beneficas</a></li>
+                                            <li runat="server"><a href="../pages/Crudusers/CrudProducts.aspx">Productos</a></li>
+                                            <li runat="server"><a href="../pages/Crudusers/UserView.aspx">Usuarios</a></li>
                                      <% } %>
 
                                     
