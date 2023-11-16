@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group inputContainer">
                                 <img src="/Images/iconPasswordBlack.png" class="PasswordIcon Icons" alt="">
-                                <asp:TextBox ID="txtPassword" CssClass="logInInputs form-control form-control-lg "
+                                <asp:TextBox TextMode="Password" ID="txtPassword" CssClass="logInInputs form-control form-control-lg "
                                     placeholder="Ingresar Contrasena" runat="server"></asp:TextBox>
                             </div>
                             <div style="text-align:center;" id="myAlert" runat="server" class="alert alert-danger alert-dismissible">
