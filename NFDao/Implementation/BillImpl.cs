@@ -13,7 +13,17 @@ namespace NFDao.Implementation
     {
         public BillImpl()
         {
-            
+            this.querys = new KeyQuery[5] {
+                new KeyQuery("Select" , @"SELECT * FROM vwBill ORDER BY 3") ,
+                new KeyQuery("Insert" , @"") ,
+                new KeyQuery("Update", @"") ,
+                new KeyQuery("Get",@"SELECT id , totalBill , billNameId
+                                    FROM Bill
+                                    WHERE id = @id") ,
+                new KeyQuery("Delete",@"BEGIN TRANSACTION
+                                        UPDATE Bill SET status = 0 WHERE id = @id
+                                        UPDATE BillDetail SET status = 0 WHERE billId = @id
+                                        COMMIT") };
         }
 
         public int getBillId(Bill bill)
