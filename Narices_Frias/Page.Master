@@ -28,11 +28,17 @@
                             <nav>
                                 <ul class="headerMenu">
                                     <li><a href="/Pages/AnimalCards.aspx">Catalogo de perritos</a></li>
-                                    <li><a href="#">Que Somos?</a></li>
-                                    <li><a href="#">Contactanos</a></li>
                                     <li><a href="../Pages/CharitableActivitiesCatalogue.aspx">Publicaciones</a></li>
                                     <li><a href="../Pages/SignIn.aspx">Registrarse</a></li>
                                     <li><a href="../Default.aspx">Iniciar sesion</a></li>
+                                   <% if (Session["User"] == null) { %>
+                                        <li runat="server"><a href="../pages/AdoptedDogs.aspx">Tus animales</a></li>
+                                    <% } %>
+                                    <% if (Session["User"] == null) { %>
+                                         <li runat="server"><a href="../pages/UserFormDate.aspx"></a></li>
+                                     <% } %>
+
+                                    
                                 </ul>
                             </nav>
                         </div>

@@ -10,5 +10,6 @@ namespace NFDao.Interfaces
     public interface IBillDetail
     {
         int InserDetails(List<BillDetail> details);
+        List<BillDetail> Details(int id);
     }
 }

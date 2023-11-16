@@ -59,6 +59,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<h1>Actividades beneficas</h1>
 <div id="scrollableDiv" style="overflow: auto; height: auto;">
     <asp:GridView runat="server" ID="dgvActivities" AutoGenerateColumns="false">
         <Columns>
@@ -70,7 +71,7 @@
             <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
                     
-
+                    <a class="btn btn-primary">Modificar</a>
                     <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Unnamed_Click" CommandArgument='<%# Eval("ID") %>' />
                 </ItemTemplate>
             </asp:TemplateField>

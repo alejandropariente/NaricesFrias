@@ -63,7 +63,7 @@
 </div>
 <div class="form-group">
     <label for="">Fecha:</label>
-    <asp:TextBox ID="txtDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+    <asp:TextBox ID="txtDate" runat="server" CssClass="form-control" TextMode="DateTimeLocal"></asp:TextBox>
     <asp:Label runat="server" ID="lblfecha" CssClass="error">
         
     </asp:Label>

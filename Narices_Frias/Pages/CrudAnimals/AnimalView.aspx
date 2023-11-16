@@ -65,36 +65,36 @@
 <link rel="stylesheet" href="/Stylesheets/AnimalView.css">
     <div class="AnimalViewSection">
         <div id="scrollableDiv" style="overflow: auto; height: auto;">
-        <asp:GridView runat="server" ID="dgvAnimals" AutoGenerateColumns="false">
-            <Columns>
-                <asp:BoundField DataField="id" HeaderText="ID" />
-                <asp:BoundField DataField="name" HeaderText="Nombre" />
-                <asp:TemplateField HeaderText="Categoria">
-                    <ItemTemplate>
-                        <asp:Label runat="server"><%# int.Parse(Eval("animalCategoryId").ToString()) == 1 ? "Perro":"Gato" %></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField DataField="animalBreed" HeaderText="Raza" />
-                <asp:TemplateField HeaderText="Estado">
-                    <ItemTemplate>
-                        <asp:Label runat="server"><%# int.Parse(Eval("isAdoptedOrSponsored").ToString()) == 0 ? "Sin adoptar":
-                                                          int.Parse(Eval("isAdoptedOrSponsored").ToString()) == 1 ? "Adoptado":"Apadrinado"%></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Padrino">
-                    <ItemTemplate>
-                        <asp:Label runat="server"><%# int.Parse(Eval("systemUserId").ToString()) == 0 ? "------" : ReturnSponsor(int.Parse(Eval("systemUserId").ToString())) %></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Acciones">
-                    <ItemTemplate>
-                        <a class="btn btn-primary" href='AnimalUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
+            <asp:GridView runat="server" CssClass="table" ID="dgvAnimals" AutoGenerateColumns="false">
+                <Columns>
+                    <asp:BoundField DataField="id" HeaderText="ID" />
+                    <asp:BoundField DataField="name" HeaderText="Nombre" />
+                    <asp:TemplateField HeaderText="Categoria">
+                        <ItemTemplate>
+                            <asp:Label runat="server"><%# int.Parse(Eval("animalCategoryId").ToString()) == 1 ? "Perro":"Gato" %></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="animalBreed" HeaderText="Raza" />
+                    <asp:TemplateField HeaderText="Estado">
+                        <ItemTemplate>
+                            <asp:Label runat="server"><%# int.Parse(Eval("isAdoptedOrSponsored").ToString()) == 0 ? "Sin adoptar":
+                                                              int.Parse(Eval("isAdoptedOrSponsored").ToString()) == 1 ? "Adoptado":"Apadrinado"%></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Padrino">
+                        <ItemTemplate>
+                            <asp:Label runat="server"><%# int.Parse(Eval("systemUserId").ToString()) == 0 ? "------" : ReturnSponsor(int.Parse(Eval("systemUserId").ToString())) %></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Acciones">
+                        <ItemTemplate>
+                            <a class="btn btn-primary" href='AnimalUpdate.aspx?id=<%# Eval("ID") %>'>Modificar</a>
 
-                        <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Delete_Click"  CommandArgument='<%# Eval("ID") %>' />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="Delete_Click"  CommandArgument='<%# Eval("ID") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
         <a class="btn btn-dark" href="AnimalForm.aspx">Registrar animal</a>
         <div id="modalDeleteRecord" class="modal">
