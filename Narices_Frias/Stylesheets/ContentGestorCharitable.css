@@ -1,0 +1,52 @@
+﻿body {
+}
+.formSectionCharitable {
+    background-color: #FEBD01;
+    display: grid;
+    padding: 4em 20em;
+    display:grid;
+    justify-content:center;
+}
+label{
+    display:block
+}
+.form-group input {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 35em;
+    height: 40px;
+    
+}
+
+select {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 35em;
+    height: 40px;
+    //margin-top: 2em;
+}
+textarea {
+    border: solid 1px black;
+    background-color: #FEDC00;
+    border-radius: 8px;
+    width: 35em;
+    
+}
+
+#ContentPlaceHolder1_fileUploadControl{
+    margin-top:2em;
+}
+.buttonSection{
+    display:grid;
+    justify-content:center;
+}
+
+#ContentPlaceHolder1_SavePost {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    width: 35em;
+    height: 40px;
+}

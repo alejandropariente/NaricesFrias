@@ -1,0 +1,27 @@
+﻿body {
+}
+.CrudSection {
+    background-color: #FEDF6A;
+    display: grid;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 4em 0;
+}
+
+table {
+    background-color: #FEBD01;
+    border: 0;
+}
+
+th, td {
+    border-radius: 15px;
+    padding: 2em;
+    text-align: center;
+}
+
+.btnRegistrar {
+    width: 13em;
+    justify-self: center;
+    margin-top: 3em;
+}

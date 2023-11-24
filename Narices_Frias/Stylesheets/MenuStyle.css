@@ -1,0 +1,25 @@
+﻿.menuSection {
+    background-color: #FFEB9E;
+    padding: 2em 6em;
+}
+
+.optionCard {
+    padding: 1.5em;
+}
+a{
+    text-decoration:none;
+}
+p{
+    color:black;
+    text-align:center;
+    padding:2em 2em;
+    font-size:24px;
+}
+.cardContainer {
+    background-color: #FFB800;
+    border-radius: 20px;
+}
+
+.cardContainer:hover {
+    background-color: #FFC531;
+}
