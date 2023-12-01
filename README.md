@@ -131,6 +131,7 @@ Bibliografía:
 https://learn.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver16
 https://learn.microsoft.com/en-us/dotnet/csharp/
 https://dotnet.microsoft.com/es-es/apps/aspnet
-
+Link video Youtube:
+https://youtu.be/mqwRraa0Ca8
 
 
